@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-01-09T08:04:10.162Z</updated>
+  <updated>2020-01-10T04:02:19.521Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,13 +21,24 @@
     <link href="http://yoursite.com/2020/01/09/test/"/>
     <id>http://yoursite.com/2020/01/09/test/</id>
     <published>2020-01-09T08:04:10.000Z</published>
-    <updated>2020-01-09T08:04:10.162Z</updated>
+    <updated>2020-01-10T04:02:19.521Z</updated>
+    
+    <content type="html"><![CDATA[<p>插入图片</p><img src="/2020/01/09/test/0001.jpg" class title="This is an example image">]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;插入图片&lt;/p&gt;
+&lt;img src=&quot;/2020/01/09/test/0001.jpg&quot; class title=&quot;This is an example image&quot;&gt;
+
+      
     
     </summary>
     
     
+    
+      <category term="琐记" scheme="http://yoursite.com/tags/%E7%90%90%E8%AE%B0/"/>
     
   </entry>
   
