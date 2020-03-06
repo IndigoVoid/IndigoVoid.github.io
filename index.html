@@ -351,7 +351,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-03-06T20:14:17+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-03-06T21:15:22+08:00">
                 2020-03-06
               </time>
             
@@ -383,6 +383,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/06/%E6%95%B0%E5%AD%A6%E5%B7%A5%E5%85%B7/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/06/%E6%95%B0%E5%AD%A6%E5%B7%A5%E5%85%B7/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -408,7 +418,7 @@
 
       
         
-          <p>整理一些物理中所需要的数学基础，便于使用的时候查找，持续更新中……<br></p>
+          <p>整理一些物理中所需要的数学基础，便于需要的时候查找，持续更新中……<br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/03/06/%E6%95%B0%E5%AD%A6%E5%B7%A5%E5%85%B7/#more" rel="contents">
@@ -540,6 +550,16 @@
           
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/09/test/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/09/test/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -945,6 +965,28 @@ setInterval("createtime()",250);
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '8zoA7YUWQkbfvz4u71p1vW7f-gzGzoHsz',
+        appKey: '6llxg78sSyToC9RHHsvTj0Ff',
+        placeholder: '在这里发表你的观点吧ヾ(≧▽≦*)o',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

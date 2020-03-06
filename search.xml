@@ -3,10 +3,12 @@
   <entry>
     <title>数学基础知识整理</title>
     <url>/2020/03/06/%E6%95%B0%E5%AD%A6%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<p>整理一些物理中所需要的数学基础，便于使用的时候查找，持续更新中……<br><a id="more"></a></p>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><h3 id="Pythagoras三角恒等式"><a href="#Pythagoras三角恒等式" class="headerlink" title="Pythagoras三角恒等式"></a>Pythagoras三角恒等式</h3><script type="math/tex; mode=display">
-\sin ^2 \theta+\cos ^2 \theta=1</script><script type="math/tex; mode=display">
-tan ^2 \theta+1=sec ^2\theta</script><script type="math/tex; mode=display">
+    <content><![CDATA[<p>整理一些物理中所需要的数学基础，便于需要的时候查找，持续更新中……<br><a id="more"></a></p>
+<h1 id="微积分"><a href="#微积分" class="headerlink" title="微积分"></a>微积分</h1><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><h3 id="Pythagoras三角恒等式"><a href="#Pythagoras三角恒等式" class="headerlink" title="Pythagoras三角恒等式"></a>Pythagoras三角恒等式</h3><script type="math/tex; mode=display">
+\sin ^2 \theta+\cos ^2 \theta=1</script><p>由勾股定理$a^2+b^2=c^2，(c\sin \theta)^2+(c\cos \theta)^2=c^2$等式两边同除以$c^2$得到上式。<br>将上式两边同除以$\cos^2 \theta$得到</p>
+<script type="math/tex; mode=display">
+tan ^2 \theta+1=sec ^2\theta</script><p>将上式等式两边同除以$\tan^2\theta$</p>
+<script type="math/tex; mode=display">
 1+\cot ^2 \theta=\csc^2 \theta</script><h3 id="角的和差恒等式"><a href="#角的和差恒等式" class="headerlink" title="角的和差恒等式"></a>角的和差恒等式</h3><h4 id="两角和差公式"><a href="#两角和差公式" class="headerlink" title="两角和差公式"></a>两角和差公式</h4><script type="math/tex; mode=display">
 \begin{array}{1}
 \sin (\alpha \pm \beta)=\sin \alpha \cos \beta \pm \cos \alpha \sin \beta \\
@@ -30,7 +32,7 @@ tan ^2 \theta+1=sec ^2\theta</script><script type="math/tex; mode=display">
 \begin{array}{c}\sin 2 x=2 \sin x \cos x \\\cos 2 x=\cos ^{2} x-\sin ^{2} x\end{array}</script><h4 id="半角公式"><a href="#半角公式" class="headerlink" title="半角公式"></a>半角公式</h4><h4 id="n倍角公式"><a href="#n倍角公式" class="headerlink" title="n倍角公式"></a>n倍角公式</h4><h3 id="幂简约公式"><a href="#幂简约公式" class="headerlink" title="幂简约公式"></a>幂简约公式</h3><h4 id="倍角公式"><a href="#倍角公式" class="headerlink" title="倍角公式"></a>倍角公式</h4><script type="math/tex; mode=display">
 \begin{array}{l}\sin ^{2} x=\frac{1}{2}(1-\cos 2)\\\cos ^{2} x=\frac{1}{2}(1+\cos 2 x)\end{array}</script><h3 id="和差化积公式"><a href="#和差化积公式" class="headerlink" title="和差化积公式"></a>和差化积公式</h3><script type="math/tex; mode=display">
 \begin{array}{l}\sin x+\sin y=2 \sin \left(\frac{x+y}{2}\right) \cos \left(\frac{x-y}{2}\right)\\\sin x-\sin y=2 \sin \left(\frac{x-y}{2}\right) \cos \left(\frac{x+y}{2}\right)\\\cos x+\cos y=2 \cos \left(\frac{x+y}{2}\right) \cos \left(\frac{x-y}{2}\right) \\\cos x-\cos y=-2 \sin \left(\frac{x+y}{2}\right) \sin \left(\frac{x-y}{2}\right)\end{array}</script><h2 id="双曲函数"><a href="#双曲函数" class="headerlink" title="双曲函数"></a>双曲函数</h2><script type="math/tex; mode=display">
-\begin{array}{1}\sinh x=\frac{\mathrm{e}^{x}-\mathrm{e}^{-x}}{2}\\\cosh x =\frac{\mathrm{e}^{x}+\mathrm{e}^{-x}}{2} \\\tanh x =\frac{\sinh x}{\cosh x}=\frac{\mathrm{e}^{x}-\mathrm{e}^{-x}}{\mathrm{e}^{x}+\mathrm{e}^{-x}}\end{array}</script><h2 id="高斯函数"><a href="#高斯函数" class="headerlink" title="高斯函数"></a>高斯函数</h2><h1 id="微积分"><a href="#微积分" class="headerlink" title="微积分"></a>微积分</h1><h1 id="数理方法"><a href="#数理方法" class="headerlink" title="数理方法"></a>数理方法</h1><h1 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h1><h1 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h1><h1 id="群论"><a href="#群论" class="headerlink" title="群论"></a>群论</h1><h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
+\begin{array}{1}\sinh x=\frac{\mathrm{e}^{x}-\mathrm{e}^{-x}}{2}\\\cosh x =\frac{\mathrm{e}^{x}+\mathrm{e}^{-x}}{2} \\\tanh x =\frac{\sinh x}{\cosh x}=\frac{\mathrm{e}^{x}-\mathrm{e}^{-x}}{\mathrm{e}^{x}+\mathrm{e}^{-x}}\end{array}</script><h2 id="高斯函数"><a href="#高斯函数" class="headerlink" title="高斯函数"></a>高斯函数</h2><h1 id="矢量分析"><a href="#矢量分析" class="headerlink" title="矢量分析"></a>矢量分析</h1><h1 id="数理方法"><a href="#数理方法" class="headerlink" title="数理方法"></a>数理方法</h1><h1 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h1><h1 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h1><h1 id="群论"><a href="#群论" class="headerlink" title="群论"></a>群论</h1><h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2>]]></content>
       <categories>
         <category>数学</category>
       </categories>
