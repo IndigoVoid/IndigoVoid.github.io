@@ -51,7 +51,7 @@ tan ^2 \theta+1=sec ^2\theta</script><script type="math/tex; mode=display">
 =A_xB_x+A_yB_y+A_zB_z</script><p>点积还可以写为：</p>
 <script type="math/tex; mode=display">
 \vec{A}\cdot\vec{B}=\vec{A}\vec{B}^T</script><p>这里，$\vec{B}^T$是行向量$\vec{B}$的转置。</p>
-<p><strong>注：点积的几何解释只适用于</strong>$\mathbb{R}^n(n<3)$ 。**在高维空间，点积只有一个定义**$<\vec{a},\vec{b}>=\sum^n_{i=1}A_iB_i$。</3)$></p>
+<p><strong>注：点积的几何解释只适用于</strong>$\mathbb{R}^n(n<3)$ 。**在高维空间，点积只有一个定义** $<\vec{a},\vec{b}>=\sum^n_{i=1}A_iB_i$。</3)$></p>
 <script type="math/tex; mode=display">
 \cos\theta=\frac{A_xB_x+A_yB_y+A_zB_z}{|\vec{A}||\vec{B}|}\\
 =\cos \alpha_a\cos \alpha_b+\cos\beta_a\cos\beta_b+\cos \gamma_a\cos\gamma_b</script><h5 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h5><ol>
@@ -62,8 +62,6 @@ tan ^2 \theta+1=sec ^2\theta</script><script type="math/tex; mode=display">
 <li><p>点积是双线性算子</p>
 <script type="math/tex; mode=display">
 \vec{a}\cdot(r\vec{b}+\vec{c})=r(\vec{a}\cdot\vec{b})+\vec{a}\cdot\vec{b}</script></li>
-</ol>
-<ol>
 <li><script type="math/tex; mode=display">
 (c_1\vec{a})\cdot(c_2\vec{b})=(c_1c_2)(\vec{a}\cdot\vec{b})</script></li>
 <li><p>不满足结合律（标量与向量的点积没有定义）</p>
