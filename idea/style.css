@@ -1,8 +1,8 @@
 .note ul{
-	margin:0px 325px;
-	width:100%;
+	margin:0px 90px;
+	width:180%;
 	overflow:hidden;
-	padding:3em;
+	padding:0em;
 }
 .note ul li{
 	float:left;
@@ -53,9 +53,28 @@
 	-o-transform:rotate(5deg);
 	position:relative;
 	top:5px;
-  background:#346C9C;
-  #º£¾üÀ¶
+  background:#065279;
+  #µåÀ¶
 
+}
+.note ul li:nth-child(4n) a{
+	-webkit-transform:rotate(6deg);
+	-moz-transform:rotate(6deg);
+	-o-transform:rotate(6deg);
+	position:relative;
+	top:5px;
+	background:#50616d;
+	#Ä«É«
+
+}
+.note ul li:nth-child(9n) a{
+	-webkit-transform:rotate(-7deg);
+	-moz-transform:rotate(-7deg);
+	-o-transform:rotate(-7deg);
+	position:relative;
+	top:5px;
+	background:#9d2933;
+	#ëÙÖ¬
 }
 .note ul li:nth-child(5n) a{
 	-webkit-transform:rotate(7deg);
@@ -63,7 +82,8 @@
 	-o-transform:rotate(7deg);
 	position:relative;
 	top:5px;
-	background:#ccf;
+	background:#725e82;
+	#ÎÚÉ«
 }
 .note ul li a:hover,ul li a:focus{
 	-moz-box-shadow:10px 10px 7px rgba(0,0,0,7);
@@ -75,5 +95,4 @@
 	transform:scale(1.25);
 	position:relative;
 	z-index:5;
-	
 }
