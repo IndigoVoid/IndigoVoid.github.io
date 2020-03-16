@@ -95,7 +95,8 @@ n_{0} p_{0}=N_{\mathrm{c}} N_{\mathrm{v}} \exp \left(-\frac{E_{\mathrm{c}}-E_{\m
 n_{0} p_{0}=4\left(\frac{k_{0}}{2 \pi \hbar^{2}}\right)^{3}\left(m_{\mathrm{n}}^{*} m_{\mathrm{p}}^{*}\right)^{3 / 2} T^{3} \exp \left(-\frac{E_{\mathrm{q}}}{k_{0} T}\right)</script><p>可见，电子和空穴的浓度乘积与费米能级无关。对一定的半导体材料乘积只取决于温度，与所含杂质无关。对于不同的半导体材料，因禁带宽度不同，载流子乘积也不同。对一定的半导体，当半导体处于热平衡态时，温度一定，载流子浓度的乘积保持恒定。</p>
 ]]></content>
       <categories>
-        <category>课程笔记-半导体</category>
+        <category>课程笔记</category>
+        <category>半导体</category>
       </categories>
       <tags>
         <tag>半导体</tag>
