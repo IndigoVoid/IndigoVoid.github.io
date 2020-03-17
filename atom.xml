@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-16T13:54:31.921Z</updated>
+  <updated>2020-03-17T07:27:12.712Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>量子不可克隆定理</title>
+    <link href="http://yoursite.com/2020/03/17/%E9%87%8F%E5%AD%90%E4%B8%8D%E5%8F%AF%E5%85%8B%E9%9A%86%E5%AE%9A%E7%90%86/"/>
+    <id>http://yoursite.com/2020/03/17/%E9%87%8F%E5%AD%90%E4%B8%8D%E5%8F%AF%E5%85%8B%E9%9A%86%E5%AE%9A%E7%90%86/</id>
+    <published>2020-03-17T05:55:35.000Z</published>
+    <updated>2020-03-17T07:27:12.712Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文为《A single quantum cannot be cloned》<a href="#refer-anchor-1"><sup>1</sup></a>阅读笔记。</p><a id="more"></a><p>假设存在克隆设备可以完成克隆操作，假设一量子态为$|s\rangle $，克隆操作为</p><script type="math/tex; mode=display">\left|\boldsymbol{A}_{0}\right\rangle|s\rangle \rightarrow\left|\boldsymbol{A}_{s}\right\rangle|s s\rangle</script><p>$\left|\boldsymbol{A}_{0}\right\rangle$和$\left|\boldsymbol{A}_{s}\right\rangle$分别是克隆设备完成操作前的量子态和最终的量子态。</p><p>假设一组正交完备的量子态$|0\rangle$和$|1\rangle$，一光子的量子态可表示为$\alpha|0\rangle+\beta|1\rangle$。（其中$\alpha^2+\beta^2=1$）</p><p>根据克隆，我们期待的结果是</p><script type="math/tex; mode=display">\left|\boldsymbol{A}_{0}\right\rangle(\alpha|0\rangle+\beta|1\rangle) \rightarrow\left|\boldsymbol{A}_{s}\right\rangle(\alpha|0\rangle+\beta|1\rangle)(\alpha|0\rangle+\beta|1\rangle)</script><p>根据叠加原理和线性算符的定义，我们将得到的结果是</p><script type="math/tex; mode=display">\left|\boldsymbol{A}_{0}\right\rangle(\alpha|0\rangle+\beta|1\rangle) \rightarrow\left|\boldsymbol{A}_{s}\right\rangle \alpha^2|00\rangle+\rightarrow\left|\boldsymbol{A}_{s}\right\rangle\beta^2|11\rangle</script><p>当$\alpha\beta\neq0$时，两结果是矛盾的。因而，未知单量子态不可能被克隆。</p><p><div id="refer-anchor-1"></div><br>[1]W. K. Wootters, W. H. Zurek.A single quantum cannot be cloned[J].Nature,1982,28(299):802-803.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文为《A single quantum cannot be cloned》&lt;a href=&quot;#refer-anchor-1&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;阅读笔记。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="文献笔记" scheme="http://yoursite.com/categories/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="量子信息" scheme="http://yoursite.com/categories/%E6%96%87%E7%8C%AE%E7%AC%94%E8%AE%B0/%E9%87%8F%E5%AD%90%E4%BF%A1%E6%81%AF/"/>
+    
+    
+      <category term="量子信息" scheme="http://yoursite.com/tags/%E9%87%8F%E5%AD%90%E4%BF%A1%E6%81%AF/"/>
+    
+      <category term="文献阅读笔记" scheme="http://yoursite.com/tags/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>计算半导体中载流子浓度</title>
