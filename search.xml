@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>养成良好的写作习惯之盘古之白</title>
-    <url>/2020/03/17/%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF/</url>
+    <url>/2020/03/17/%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF1/</url>
     <content><![CDATA[<p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为盘古之白。</p>
 <blockquote>
 <p>有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在34岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。<a href="#refer-anchor-1"><sup>1</sup></a></p>
@@ -17,15 +17,21 @@
 <p>西文 typography 里有句话：The space bar is not a design tool.</p>
 </blockquote>
 <p>注：如若是专有名词，例如豆瓣FM，则按照官方所定义的格式书写。由这两个例子可以发现，“豆瓣FM”是一个词，“西文 typography”是两个词，这也是我决定加空格的根本原因。</p>
-<p>中文和数字之间需要增加空格：</p>
+<ul>
+<li>中文和数字之间需要增加空格：</li>
+</ul>
 <blockquote>
 <p>今天得到了 10 元压岁钱。</p>
 </blockquote>
-<p>数字和单位之间需要增加空格：</p>
+<ul>
+<li>数字和单位之间需要增加空格：</li>
+</ul>
 <blockquote>
 <p>该质点的速度是 10 m/s。</p>
 </blockquote>
-<p>度/百分比与数字之间不需要增加空格：</p>
+<ul>
+<li>度/百分比与数字之间不需要增加空格：</li>
+</ul>
 <blockquote>
 <p>寒假作业完成了 10%。</p>
 </blockquote>
@@ -40,8 +46,8 @@
         <category>琐记</category>
       </categories>
       <tags>
-        <tag>小细节</tag>
         <tag>琐记</tag>
+        <tag>小细节</tag>
       </tags>
   </entry>
   <entry>
