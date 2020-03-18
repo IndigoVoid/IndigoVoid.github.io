@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-18T12:21:38.645Z</updated>
+  <updated>2020-03-18T12:31:58.249Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2020/03/18/Bloch%E7%90%83%E9%9D%A2/"/>
     <id>http://yoursite.com/2020/03/18/Bloch%E7%90%83%E9%9D%A2/</id>
     <published>2020-03-18T07:40:27.354Z</published>
-    <updated>2020-03-18T12:21:38.645Z</updated>
+    <updated>2020-03-18T12:31:58.249Z</updated>
     
-    <content type="html"><![CDATA[<p>这是一篇关于Bloch球面的笔记。</p><a id="more"></a><p>与经典比特只有0和1两个状态不同，量子比特可以处于 $|0\rangle$ 和 $|1\rangle$ 的一个线性叠加态上。</p><script type="math/tex; mode=display">|\psi\rangle=\alpha|0\rangle+\beta|1\rangle</script><p>式中，$\alpha$ 和 $\beta$ 为任意复数，且满足归一化条件 $|\alpha|^2+|\beta|^2=1$。</p><p>也可表示为极坐标形式</p><script type="math/tex; mode=display">|\psi\rangle=ae^{i\delta}|0\rangle+be^{i(\delta+\phi)}|1\rangle</script><p>其中 $a,\phi_a,b,\phi_b$ 为实参数。上式可去掉其中的全局相位（global phase）因子 $e^{i\delta}$</p><script type="math/tex; mode=display">|\psi\rangle=a|0\rangle+be^{i\phi}|1\rangle</script><p>其中 $a,b,\phi$ 为实参数。上式的系数仍需满足归一化条件。令 $be^{i\phi}=x+iy$ ，其中，x 和 y为实数，则</p><script type="math/tex; mode=display">|a|^2+|be^{i\phi}|^2=a^2+|x+iy|^2=a^2+x^2+y^2=1</script><p>取欧式空间中的球坐标</p><script type="math/tex; mode=display">x=r\sin\theta'\cos\phi,y=r\sin\theta'\sin\phi,z=r\cos\theta'</script><p>令 $r=1$，有 $a=z$，系统波函数可写为</p><script type="math/tex; mode=display">|\psi\rangle=z|0\rangle+(x+iy)|1\rangle\\=\cos\theta'|0\rangle+e^{i\phi}\sin\theta'|1\rangle</script><p>使用两个实参数 $\theta’,\phi$就可以确定单位球面上的一个点。</p><p>上式中 $|0\rangle$ 的系数 $\cos \theta’$ 是实数，而 $\cos\theta’$与 $a$ 对应，$a$ 代表的是复数 $\alpha$ 的模长，故 $\cos \theta’$ 应当是非负数，$\sin\theta’$ 同理。故而 $\theta, \phi$ 取值范围为</p><script type="math/tex; mode=display">0\leq\theta'\leq\frac\pi 2,0\leq\phi<2\pi</script><p>为了使 Bloch 球面与一般 $\mathbb{R}^3$ 中的球面表示方式一致，取 $\theta=2\theta’$。从而</p><script type="math/tex; mode=display">|\psi\rangle=\cos\frac\theta 2|0\rangle+e^{i\phi}\sin\frac\theta2|1\rangle\\=\left( \begin{matrix}   \cos\frac\theta2 \\   e^{i\phi}\sin\frac\theta2 \\  \end{matrix} \right)</script><p>其中 $0\leq\theta\leq\pi$ 。也即 $|\psi\rangle$ 对应的点是 $\psi(\cos\psi\sin\theta,\sin\psi\sin\theta,\cos\theta)$</p><p>图解：</p><img src="/2020/03/18/Bloch%E7%90%83%E9%9D%A2/800px-Bloch_Sphere.svg.png" class title="原图来自维基"><ul><li>Bloch球同一个直径的两个端点对应的态是正交的。</li><li>$\vec{n}$ 所在的直线与球面的交点是 $\sigma_n$ 的本征态，本征值为 $\plusmn$1。</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>这是一篇关于Bloch球面的笔记。</p><a id="more"></a><p>与经典比特只有0和1两个状态不同，量子比特可以处于 $|0\rangle$ 和 $|1\rangle$ 的一个线性叠加态上。</p><script type="math/tex; mode=display">|\psi\rangle=\alpha|0\rangle+\beta|1\rangle</script><p>式中，$\alpha$ 和 $\beta$ 为任意复数，且满足归一化条件 $|\alpha|^2+|\beta|^2=1$。</p><p>也可表示为极坐标形式</p><script type="math/tex; mode=display">|\psi\rangle=ae^{i\delta}|0\rangle+be^{i(\delta+\phi)}|1\rangle</script><p>其中 $a,\phi_a,b,\phi_b$ 为实参数。上式可去掉其中的全局相位（global phase）因子 $e^{i\delta}$</p><script type="math/tex; mode=display">|\psi\rangle=a|0\rangle+be^{i\phi}|1\rangle</script><p>其中 $a,b,\phi$ 为实参数。上式的系数仍需满足归一化条件。令 $be^{i\phi}=x+iy$ ，其中，x 和 y为实数，则</p><script type="math/tex; mode=display">|a|^2+|be^{i\phi}|^2=a^2+|x+iy|^2=a^2+x^2+y^2=1</script><p>取欧式空间中的球坐标</p><script type="math/tex; mode=display">x=r\sin\theta'\cos\phi,y=r\sin\theta'\sin\phi,z=r\cos\theta'</script><p>令 $r=1$，有 $a=z$，系统波函数可写为</p><script type="math/tex; mode=display">|\psi\rangle=z|0\rangle+(x+iy)|1\rangle\\=\cos\theta'|0\rangle+e^{i\phi}\sin\theta'|1\rangle</script><p>使用两个实参数 $\theta’,\phi$就可以确定单位球面上的一个点。</p><p>上式中 $|0\rangle$ 的系数 $\cos \theta’$ 是实数，而 $\cos\theta’$与 $a$ 对应，$a$ 代表的是复数 $\alpha$ 的模长，故 $\cos \theta’$ 应当是非负数，$\sin\theta’$ 同理。故而 $\theta, \phi$ 取值范围为</p><script type="math/tex; mode=display">0\leq\theta'\leq\frac\pi 2,0\leq\phi<2\pi</script><p>为了使 Bloch 球面与一般 $\mathbb{R}^3$ 中的球面表示方式一致，取 $\theta=2\theta’$。从而</p><script type="math/tex; mode=display">|\psi\rangle=\cos\frac\theta 2|0\rangle+e^{i\phi}\sin\frac\theta2|1\rangle\\=\left( \begin{matrix}   \cos\frac\theta2 \\   e^{i\phi}\sin\frac\theta2 \\  \end{matrix} \right)</script><p>其中 $0\leq\theta\leq\pi$ 。也即 $|\psi\rangle$ 对应的点是 $\psi(\cos\psi\sin\theta,\sin\psi\sin\theta,\cos\theta)$</p><p>图解：</p><img src="/2020/03/18/Bloch%E7%90%83%E9%9D%A2/800px-Bloch_Sphere.svg.png" class title="原图来自维基"><ul><li>Bloch球同一个直径的两个端点对应的态是正交的。</li><li>$\vec{n}$ 所在的直线与球面的交点是 $\sigma_n$ 的本征态，本征值为 $\plusmn1$。</li></ul>]]></content>
     
     <summary type="html">
     
@@ -63,9 +63,9 @@
       <category term="琐记" scheme="http://yoursite.com/categories/%E7%90%90%E8%AE%B0/"/>
     
     
-      <category term="琐记" scheme="http://yoursite.com/tags/%E7%90%90%E8%AE%B0/"/>
-    
       <category term="小细节" scheme="http://yoursite.com/tags/%E5%B0%8F%E7%BB%86%E8%8A%82/"/>
+    
+      <category term="琐记" scheme="http://yoursite.com/tags/%E7%90%90%E8%AE%B0/"/>
     
   </entry>
   

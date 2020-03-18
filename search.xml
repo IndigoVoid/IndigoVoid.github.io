@@ -36,7 +36,7 @@ x=r\sin\theta'\cos\phi,y=r\sin\theta'\sin\phi,z=r\cos\theta'</script><p>令 $r=1
 <img src="/2020/03/18/Bloch%E7%90%83%E9%9D%A2/800px-Bloch_Sphere.svg.png" class title="原图来自维基">
 <ul>
 <li>Bloch球同一个直径的两个端点对应的态是正交的。</li>
-<li>$\vec{n}$ 所在的直线与球面的交点是 $\sigma_n$ 的本征态，本征值为 $\plusmn$1。</li>
+<li>$\vec{n}$ 所在的直线与球面的交点是 $\sigma_n$ 的本征态，本征值为 $\plusmn1$。</li>
 </ul>
 ]]></content>
       <categories>
@@ -93,8 +93,8 @@ x=r\sin\theta'\cos\phi,y=r\sin\theta'\sin\phi,z=r\cos\theta'</script><p>令 $r=1
         <category>琐记</category>
       </categories>
       <tags>
-        <tag>琐记</tag>
         <tag>小细节</tag>
+        <tag>琐记</tag>
       </tags>
   </entry>
   <entry>
