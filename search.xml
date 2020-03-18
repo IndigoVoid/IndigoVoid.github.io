@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Bloch球面</title>
+    <url>/2020/03/18/Bloch%E7%90%83%E9%9D%A2/</url>
+    <content><![CDATA[<p>这是一篇关于Bloch球面的笔记。</p>
+<a id="more"></a>
+<p>与经典比特只有0和1两个状态不同，量子比特可以处于 $|0\rangle$ 和 $|1\rangle$ 的一个线性叠加态上。</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\alpha|0\rangle+\beta|1\rangle</script><p>式中，$\alpha$ 和 $\beta$ 为任意复数，且满足归一化条件 $|\alpha|^2+|\beta|^2=1$。</p>
+<p>也可表示为极坐标形式</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=ae^{i\delta}|0\rangle+be^{i(\delta+\phi)}|1\rangle</script><p>其中 $a,\phi_a,b,\phi_b$ 为实参数。上式可去掉其中的全局相位（global phase）因子 $e^{i\delta}$</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=a|0\rangle+be^{i\phi}|1\rangle</script><p>其中 $a,b,\phi$ 为实参数。上式的系数仍需满足归一化条件。令 $be^{i\phi}=x+iy$ ，其中，x 和 y为实数，则</p>
+<script type="math/tex; mode=display">
+|a|^2+|be^{i\phi}|^2=a^2+|x+iy|^2=a^2+x^2+y^2=1</script><p>取欧式空间中的球坐标</p>
+<script type="math/tex; mode=display">
+x=r\sin\theta'\cos\phi,y=r\sin\theta'\sin\phi,z=r\cos\theta'</script><p>令 $r=1$，有 $a=z$，系统波函数可写为</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=z|0\rangle+(x+iy)|1\rangle\\
+=\cos\theta'|0\rangle+e^{i\phi}\sin\theta'|1\rangle</script><p>使用两个实参数 $\theta’,\phi$就可以确定单位球面上的一个点。</p>
+<p>上式中 $|0\rangle$ 的系数 $\cos \theta’$ 是实数，而 $\cos\theta’$与 $a$ 对应，$a$ 代表的是复数 $\alpha$ 的模长，故 $\cos \theta’$ 应当是非负数，$\sin\theta’$ 同理。故而 $\theta, \phi$ 取值范围为</p>
+<script type="math/tex; mode=display">
+0\leq\theta'\leq\frac\pi 2,0\leq\phi<2\pi</script><p>为了使 Bloch 球面与一般 $\mathbb{R}^3$ 中的球面表示方式一致，取 $\theta=2\theta’$。从而</p>
+<script type="math/tex; mode=display">
+|\psi\rangle=\cos\frac\theta 2|0\rangle+e^{i\phi}\sin\frac\theta2|1\rangle\\
+=
+\left(
+ \begin{matrix}
+   \cos\frac\theta2 \\
+   e^{i\phi}\sin\frac\theta2 \\
+  \end{matrix} 
+\right)</script><p>其中 $0\leq\theta\leq\pi$ 。也即 $|\psi\rangle$ 对应的点是 $\psi(\cos\psi\sin\theta,\sin\psi\sin\theta,\cos\theta)$</p>
+<p>图解：</p>
+<img src="/2020/03/18/Bloch%E7%90%83%E9%9D%A2/800px-Bloch_Sphere.svg.png" class title="原图来自维基">
+<ul>
+<li>Bloch球同一个直径的两个端点对应的态是正交的。</li>
+<li>$\vec{n}$ 所在的直线与球面的交点是 $\sigma_n$ 的本征态，本征值为 $\plusmn$1。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>文献阅读笔记</category>
+        <category>量子信息</category>
+      </categories>
+      <tags>
+        <tag>量子信息，文献阅读笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>养成良好的写作习惯之盘古之白</title>
     <url>/2020/03/17/%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF1/</url>
     <content><![CDATA[<p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为盘古之白。</p>
@@ -46,8 +93,8 @@
         <category>琐记</category>
       </categories>
       <tags>
-        <tag>小细节</tag>
         <tag>琐记</tag>
+        <tag>小细节</tag>
       </tags>
   </entry>
   <entry>
@@ -65,7 +112,7 @@
 =\left|\boldsymbol{A}_{s}\right\rangle (\alpha^2|00\rangle+\beta^2|11\rangle+\alpha\beta|01\rangle+\alpha\beta|10\rangle)</script><p>根据叠加原理和线性算符的定义，我们将得到的结果是</p>
 <script type="math/tex; mode=display">
 \left|\boldsymbol{A}_{0}\right\rangle(\alpha|0\rangle+\beta|1\rangle) \rightarrow\left|\boldsymbol{A}_{s}\right\rangle \alpha^2|00\rangle+\left|\boldsymbol{A}_{s}\right\rangle\beta^2|11\rangle</script><p>当$\alpha\beta\neq0$时，两结果是矛盾的。因而，未知单量子态不可能被克隆。</p>
-<p><div id="refer-anchor-1"></div><br>[1]W. K. Wootters, W. H. Zurek.A single quantum cannot be cloned[J].Nature,1982,28(299):802-803.</p>
+<p><div id="refer-anchor-1"></div><br>[1].W. K. Wootters, W. H. Zurek.A single quantum cannot be cloned[J].Nature,1982,28(299):802-803.</p>
 ]]></content>
       <categories>
         <category>文献阅读笔记</category>
@@ -183,7 +230,7 @@ n_{0} p_{0}=4\left(\frac{k_{0}}{2 \pi \hbar^{2}}\right)^{3}\left(m_{\mathrm{n}}^
     <title>测试</title>
     <url>/2020/01/09/test/</url>
     <content><![CDATA[<p>摘要<br><a id="more"></a></p>
-<h1 id="标题1"><a href="#标题1" class="headerlink" title="标题1"></a>标题1</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>脚注</p>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>脚注</p>
 <p><sup><a href="#fn_脚注" id="reffn_脚注">脚注</a></sup>: </p>
 <blockquote>
 <p>引用</p>
@@ -196,6 +243,8 @@ n_{0} p_{0}=4\left(\frac{k_{0}}{2 \pi \hbar^{2}}\right)^{3}\left(m_{\mathrm{n}}^
 <p>quad空格<code>\quad</code>: $A\quad A$</p>
 <p>两个quad空格<code>\qqaud</code>: $A\qquad A$</p>
 <p>约等于<code>\approx</code>: $\approx$</p>
+<p>大于等于<code>\geq</code>: $\geq$</p>
+<p>小于等于<code>\leq</code>: $\leq$</p>
 <h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><p><code><img src="/2020/01/09/test/0001.jpg" class title="This is an example image"></code></p>
 <img src="/2020/01/09/test/0001.jpg" class title="This is an example image">
 <h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="http://www.baidu.com" target="_blank" rel="noopener" title="链接">链接</a></p>
