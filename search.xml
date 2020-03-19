@@ -38,7 +38,10 @@ x=r\sin\theta'\cos\phi,y=r\sin\theta'\sin\phi,z=r\cos\theta'</script><p>令 $r=1
 <li>Bloch球同一个直径的两个端点对应的态是正交的。</li>
 <li>$\vec{n}$ 所在的直线与球面的交点是 $\sigma_n$ 的本征态，本征值为 $\pm1$ 。</li>
 </ul>
-]]></content>
+<p><hr></p>
+<div>
+[注]: 此篇笔记内容主要参考自维基百科及《量子系统状态与Bloch球的几何关系》（丛爽，冯先勇） 
+</div>]]></content>
       <categories>
         <category>文献阅读笔记</category>
         <category>量子信息</category>
