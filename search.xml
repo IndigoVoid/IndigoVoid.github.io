@@ -36,7 +36,7 @@ x=r\sin\theta'\cos\phi,y=r\sin\theta'\sin\phi,z=r\cos\theta'</script><p>令 $r=1
 <img src="/2020/03/18/Bloch%E7%90%83%E9%9D%A2/800px-Bloch_Sphere.svg.png" class title="原图来自维基">
 <ul>
 <li>Bloch球同一个直径的两个端点对应的态是正交的。</li>
-<li>$\vec{n}$ 所在的直线与球面的交点是 $\sigma_n$ 的本征态，本征值为 $\plusmn1$。</li>
+<li>$\vec{n}$ 所在的直线与球面的交点是 $\sigma_n$ 的本征态，本征值为 $\pm1$ 。</li>
 </ul>
 ]]></content>
       <categories>
@@ -44,7 +44,8 @@ x=r\sin\theta'\cos\phi,y=r\sin\theta'\sin\phi,z=r\cos\theta'</script><p>令 $r=1
         <category>量子信息</category>
       </categories>
       <tags>
-        <tag>量子信息，文献阅读笔记</tag>
+        <tag>量子信息</tag>
+        <tag>文献阅读笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -93,8 +94,8 @@ x=r\sin\theta'\cos\phi,y=r\sin\theta'\sin\phi,z=r\cos\theta'</script><p>令 $r=1
         <category>琐记</category>
       </categories>
       <tags>
-        <tag>小细节</tag>
         <tag>琐记</tag>
+        <tag>小细节</tag>
       </tags>
   </entry>
   <entry>
@@ -229,7 +230,7 @@ n_{0} p_{0}=4\left(\frac{k_{0}}{2 \pi \hbar^{2}}\right)^{3}\left(m_{\mathrm{n}}^
   <entry>
     <title>测试</title>
     <url>/2020/01/09/test/</url>
-    <content><![CDATA[<p>摘要<br><a id="more"></a></p>
+    <content><![CDATA[<p>摘要：一些测试和 markdown 基础语法。<br><a id="more"></a></p>
 <h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>脚注</p>
 <p><sup><a href="#fn_脚注" id="reffn_脚注">脚注</a></sup>: </p>
 <blockquote>
@@ -240,11 +241,9 @@ n_{0} p_{0}=4\left(\frac{k_{0}}{2 \pi \hbar^{2}}\right)^{3}\left(m_{\mathrm{n}}^
 <script type="math/tex; mode=display">
 \sin ^2 x+\cos ^2 x=1</script><p>实数集<code>\mathbb{R}</code>: $\mathbb{R}$  </p>
 <p>占位符</p>
-<p>quad空格<code>\quad</code>: $A\quad A$</p>
-<p>两个quad空格<code>\qqaud</code>: $A\qquad A$</p>
-<p>约等于<code>\approx</code>: $\approx$</p>
-<p>大于等于<code>\geq</code>: $\geq$</p>
-<p>小于等于<code>\leq</code>: $\leq$</p>
+<p>quad空格<code>\quad</code>: $A\quad A$<br>两个quad空格<code>\qqaud</code>: $A\qquad A$</p>
+<p>约等于<code>\approx</code>: $\approx$<br>大于等于<code>\geq</code>: $\geq$<br>小于等于<code>\leq</code>: $\leq$</p>
+<p>正负<code>\pm</code>: $\pm$ (<code>\plusmn</code> mathjax 无法渲染)</p>
 <h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><p><code><img src="/2020/01/09/test/0001.jpg" class title="This is an example image"></code></p>
 <img src="/2020/01/09/test/0001.jpg" class title="This is an example image">
 <h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="http://www.baidu.com" target="_blank" rel="noopener" title="链接">链接</a></p>
