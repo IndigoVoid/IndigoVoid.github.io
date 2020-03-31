@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>养成良好的写作习惯之盘古之白</title>
+    <title>用mathematica作梯度矢量图</title>
+    <url>/2020/03/31/mathematica1/</url>
+    <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
+<a id="more"></a>
+<p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">VectorPlot[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, <span class="number">-3</span>, <span class="number">3</span>&#125;, &#123;y, <span class="number">-3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>运行结果中将无任何图像，如图所示</p>
+<img src="/2020/03/31/mathematica1/p1.png" class title="运行结果">
+<p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
+<img src="/2020/03/31/mathematica1/p2.jpg" class title="尝试结果">
+<p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
+<p>对第一个代码进行追踪</p>
+<img src="/2020/03/31/mathematica1/p3.jpg" class title="追踪结果">
+<p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">VectorPlot[<span class="symbol">Evaluate@</span>Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, <span class="number">-3</span>, <span class="number">3</span>&#125;, &#123;y, <span class="number">-3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>这样一来就得到了所期待的结果（如下图）。</p>
+<img src="/2020/03/31/mathematica1/p4.png" class title="This is an example image">
+<p>mathematica中对Evaluate的介绍</p>
+<blockquote>
+<p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p>
+<p>Details</p>
+<p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p>
+<p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p>
+</blockquote>
+<p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p>
+<img src="/2020/03/31/mathematica1/p5.jpg" class title="Grad属性">
+<p>留个坑，以后再说╥﹏╥…</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>学渣忏悔录</category>
+      </categories>
+      <tags>
+        <tag>mathematica</tag>
+        <tag>坑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>向量</title>
+    <url>/2020/03/31/vector/</url>
+    <content><![CDATA[<p>「学渣忏悔录」这个分类主要用于记录一些自己犯过的错误。</p>
+<p>笑话一则：<br>标量是零阶张量，向量是一阶张量，所以向量是张量的一种；而为什么张量是向量的一种。</p>
+<a id="more"></a>
+<p>第一种说法中，向量又称之为矢量，由参考系变换进行划分。S满足$S’=S$的为标量，满足$V’_i=a_i^jV_j$的是矢量，满足$M’_{ij}=a_i^ka_j^lM_{kl}$的是二阶张量。（$a_i^j$是坐标变换的雅可比行列式）</p>
+<p>第二种说法中，向量为数学定义下的向量空间。数学中满足八条公理即可定义为向量，八条公理如下：</p>
+<ul>
+<li><p>加法结合律 associativity of addition</p>
+<script type="math/tex; mode=display">
+\mathbb{x}+(\mathbb{y}+\mathbb{z})=(\mathbb{x}+\mathbb{y})+\mathbb{z}</script></li>
+<li><p>加法交换律 commutativity of addition</p>
+<script type="math/tex; mode=display">
+\mathbb{x}+\mathbb{y}=\mathbb{y}+\mathbb{x}</script></li>
+<li><p>存在加法的单位元 identity element</p>
+<script type="math/tex; mode=display">
+任意\mathbb{x}\in V，\mathbb{x}+\mathbb{0}=\mathbb{x}</script></li>
+<li><p>存在加法的逆元 inverse element<br>对于每个$x\in V$，存在 $-\mathbb{x}$ 满足 $\mathbb{x}+(-\mathbb{x})=\mathbb{0}$</p>
+</li>
+<li><p>标量乘法结合律 associativity of scalar multiplication</p>
+<script type="math/tex; mode=display">
+a(b\mathbb{x})=ab(\mathbb{x})</script></li>
+<li><p>关于域加法的标量乘法分配律 distributivity of scalar multiplication with respect to field addition</p>
+<script type="math/tex; mode=display">
+(a+b)\mathbb{x}=a\mathbb{x}+b\mathbb{y}</script></li>
+<li><p>关于向量加法的标量乘法分配律 distributivity of scalar multiplication with respect to vector addition</p>
+<script type="math/tex; mode=display">
+a(\mathbb{x}+\mathbb{y})=a\mathbb{x}+b\mathbb{y}</script></li>
+<li><p>存在标量乘法单位元<br>对于所有 $x\in V$，有 $\mathbb{1}\cdot\mathbb{x}=\mathbb{x}$</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>学渣忏悔录</category>
+      </categories>
+      <tags>
+        <tag>物理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>养成良好的写作习惯之「盘古之白」</title>
     <url>/2020/03/17/%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF1/</url>
-    <content><![CDATA[<p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为盘古之白。</p>
+    <content><![CDATA[<p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为「盘古之白」。</p>
 <blockquote>
 <p>有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。<a href="#refer-anchor-1"><sup>1</sup></a></p>
 </blockquote>
@@ -46,8 +124,8 @@
         <category>琐记</category>
       </categories>
       <tags>
-        <tag>琐记</tag>
         <tag>小细节</tag>
+        <tag>琐记</tag>
       </tags>
   </entry>
   <entry>
@@ -59,7 +137,8 @@
 <blockquote>
 <p>引用</p>
 </blockquote>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>行内代码<code>代码</code><br>    代码</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>行内代码<code>代码</code></p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"><span class="keyword">code</span></span><br></pre></td></tr></table></figure>
 <h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><p>$\vec{r}$</p>
 <script type="math/tex; mode=display">
 \sin ^2 x+\cos ^2 x=1</script><p>实数集<code>\mathbb{R}</code>: $\mathbb{R}$  </p>
