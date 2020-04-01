@@ -146,7 +146,7 @@ a(\mathbb{x}+\mathbb{y})=a\mathbb{x}+b\mathbb{y}</script></li>
 <p>quad空格<code>\quad</code>: $A\quad A$<br>两个quad空格<code>\qqaud</code>: $A\qquad A$</p>
 <p>约等于<code>\approx</code>: $\approx$<br>大于等于<code>\geq</code>: $\geq$<br>小于等于<code>\leq</code>: $\leq$</p>
 <p>正负<code>\pm</code>: $\pm$ (<code>\plusmn</code> mathjax 无法渲染)</p>
-<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><p><code><img src="/2020/01/09/test/0001.jpg" class title="This is an example image"></code></p>
+<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">&#123;<span class="symbol">%</span> asset_img <span class="number">0001.</span>jpg This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span> <span class="symbol">%</span>&#125;</span><br></pre></td></tr></table></figure>
 <img src="/2020/01/09/test/0001.jpg" class title="This is an example image">
 <h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="http://www.baidu.com" target="_blank" rel="noopener" title="链接">链接</a></p>
 ]]></content>
