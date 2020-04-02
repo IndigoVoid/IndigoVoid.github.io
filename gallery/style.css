@@ -41,7 +41,7 @@ body {
 		width: 500px;
 		height: 50px;
 		margin-top: 15px;
-		margin-left: 500px;
+		margin-left: 300px;
 }
 
 
@@ -93,7 +93,7 @@ body {
     background: #212121;
     height: 4px;
     width: 140px;
-    position: absolute;
+    /*position: absolute;*/
     right: 0;
     bottom: 0;
     content: "";
@@ -448,12 +448,12 @@ figure.single-portfolio:hover p.icon-links a:first-child {
     color: #ddd;
     font-size: 15px;
     text-transform: uppercase;
-	margin-left: 100px;
-	 padding: 10px 100px;
+	margin-left: 50px;
+	padding: 10px 100px;
 }
 .footer-widget ul {
     list-style: outside none none;
-    margin-left: 100px;
+    margin-left: 50px;
     padding: 10px 100px;
     line-height: 25px;
 }
