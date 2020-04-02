@@ -449,12 +449,12 @@ figure.single-portfolio:hover p.icon-links a:first-child {
     font-size: 15px;
     text-transform: uppercase;
 	margin-left: 50px;
-	padding: 10px 100px;
+	padding: 10px 50px;
 }
 .footer-widget ul {
     list-style: outside none none;
     margin-left: 50px;
-    padding: 10px 100px;
+    padding: 10px 50px;
     line-height: 25px;
 }
 .footer-widget a { color: #aaa }
