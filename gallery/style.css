@@ -41,7 +41,7 @@ body {
 		width:500px;
 		height:50px;
 		margin-top:15px;
-		margin-right:20px;
+		margin-left:20px;
 }
 
 .section-padding { padding: 100px 0 }
@@ -91,7 +91,7 @@ body {
     background: #212121;
     height: 4px;
     width: 140px;
-    position: absolute;
+    /*position: absolute;*/
     right: 0;
     bottom: 0;
     content: "";
@@ -427,8 +427,7 @@ figure.single-portfolio:hover p.icon-links a:first-child {
     font-size: 22px;
     text-transform: uppercase;
 }
-.footer-ct-form input[type="text"],
-.footer-ct-form input[type="email"],
+
 .footer-ct-form textarea {
     background: none repeat scroll 0 0 #212121;
     border: medium none;
