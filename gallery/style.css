@@ -41,11 +41,11 @@ body {
 		width: 500px;
 		height: 50px;
 		margin-top: 15px;
-		margin-left: 200px;
+		margin-left: 500px;
 }
 
 
-.section-padding { padding: 100px 0 }
+.section-padding { padding: 50px 200px }
 #slider,
 .slide-text-table,
 #slider .container,
@@ -397,14 +397,14 @@ figure.single-portfolio:hover p.icon-links a:first-child {
     text-align: center;
 }
 .single-event { margin-bottom: 70px }
-#more-events { padding: 50px 50px }
+#more-events { padding: 50px 500px }
 .single-old-event {
     border-left: 5px solid #212121;
     color: #555555;
     font-size: 14px;
     margin-left: 30px;
-    padding: 5px 20px 5px 20px;
-	margin-bottom: 10px;
+    padding: 5px 50px 5px 20px;
+	margin-bottom: 20px;
 }
 .single-old-event p {
     letter-spacing: 1px;
@@ -449,11 +449,12 @@ figure.single-portfolio:hover p.icon-links a:first-child {
     font-size: 15px;
     text-transform: uppercase;
 	margin-left: 100px;
+	 padding: 10px 200px;
 }
 .footer-widget ul {
     list-style: outside none none;
     margin-left: 100px;
-    padding: 0;
+    padding: 10px 200px;
     line-height: 25px;
 }
 .footer-widget a { color: #aaa }
