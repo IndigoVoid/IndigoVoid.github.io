@@ -35,7 +35,7 @@
 	padding-bottom:10px;
 }
 .note ul li p{
-	font-family: "Calibri" ,Calibri,Calibri,ï¿½ï¿½ï¿½ï¿½;
+	font-family: "Calibri" ,Calibri,Calibri,µÈÏß;
 	font-size:70%;
 }
 
@@ -54,7 +54,7 @@
 	position:relative;
 	top:5px;
   background:#065279;
-  #ï¿½ï¿½ï¿½ï¿½
+  #µåÀ¶
 
 }
 .note ul li:nth-child(4n) a{
@@ -74,7 +74,7 @@
 	position:relative;
 	top:5px;
 	background:#9d2933;
-	#ï¿½ï¿½Ö¬
+	#ëÙÖ¬
 }
 .note ul li:nth-child(5n) a{
 	-webkit-transform:rotate(7deg);
@@ -83,7 +83,7 @@
 	position:relative;
 	top:5px;
 	background:#725e82;
-	#ï¿½ï¿½É«
+	#ÎÚÉ«
 }
 .note ul li a:hover,ul li a:focus{
 	-moz-box-shadow:10px 10px 7px rgba(0,0,0,7);
