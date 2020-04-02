@@ -91,7 +91,7 @@ body {
     margin-top: 40px;
     padding: 5px 60px;
 }
-.tlinks{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
+
 .learn-more:hover {
     background-color: #DF451B;
     border-color: #DF451B;
@@ -349,6 +349,7 @@ figure.single-portfolio:hover p.icon-links a:first-child {
 #testimonials { padding: 70px 0 }
 .single-testimonial i { margin-bottom: 25px }
 .author-name {
+	
     font-style: italic;
     margin-top: 20px;
 }
