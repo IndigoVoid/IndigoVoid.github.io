@@ -402,9 +402,9 @@ figure.single-portfolio:hover p.icon-links a:first-child {
     border-left: 5px solid #212121;
     color: #555555;
     font-size: 14px;
-    margin-left: 30px;
-    padding: 5px 100px 5px 20px;
-	/*margin-bottom: 20px;*/
+    margin-left: 200px;
+    padding: 5px 0;
+	
 }
 .single-old-event p {
     letter-spacing: 1px;
