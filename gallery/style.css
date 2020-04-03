@@ -403,7 +403,7 @@ figure.single-portfolio:hover p.icon-links a:first-child {
     border-left: 5px solid #212121;
     color: #555555;
     font-size: 14px;    
-    padding: 5px ;
+    padding: 20px ;
 	
 }
 .single-old-event p {
@@ -448,11 +448,12 @@ figure.single-portfolio:hover p.icon-links a:first-child {
     color: #ddd;
     font-size: 15px;
     text-transform: uppercase;
+	margin-left: 100px;
 	
 }
 .footer-widget ul {
     list-style: outside none none;
-    margin:0;
+    margin-left: 100px;
     padding: 0;
     line-height: 25px;
 }
