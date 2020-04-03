@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-31T15:04:15.669Z</updated>
+  <updated>2020-04-03T03:19:42.712Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一个脑洞</title>
+    <link href="http://yoursite.com/2020/04/03/%E4%B8%80%E4%B8%AA%E8%84%91%E6%B4%9E/"/>
+    <id>http://yoursite.com/2020/04/03/%E4%B8%80%E4%B8%AA%E8%84%91%E6%B4%9E/</id>
+    <published>2020-04-03T02:50:31.000Z</published>
+    <updated>2020-04-03T03:19:42.712Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><p>看到最近关于一篇日语小说翻译的争执。<a href="#refer-anchor-1"><span>1</span></a>突然想到，可能由于日语语法原因，翻译的日本文学作品语序常常是有些别扭的，并且一些长句由于难以翻译通顺常被打断。</p><p>这让我想到小时候看《萌芽》的刊中刊——惊奇乱讲。其中提到过心理学家弗洛伊德曾得到一个有趣的结论，当一段正常语序的话，被打断，并将打断后的短句重新排列组合成新的一段话，重新组合后的语句将更有感染力。<a href="#refer-anchor-2"><span>2</span></a>例如：她坐在那悲伤的哭了。断句重新排列为：她哭了，坐在那，悲伤地。<a href="#refer-anchor-3"><span>3</span></a></p><p>中文情境下，打破常规语序除了翻译作品外，最常见的就是鲁迅了。<a href="#refer-anchor-4"><span>4</span></a>突然有个脑洞，鲁迅文风犀利直指人心是否归因于独特的语序，而这语序的养成是否是日语的影响。</p><p>当然可能是受弗洛伊德影响或者只是个巧合。</p><p>o(*≧▽≦)ツ┏━┓</p><p><div id="refer-anchor-1"></div><br>[1] 争执具体是什么不重要。</p><p><div id="refer-anchor-2"></div><br>[2] 弗洛伊德是否提出过该观点，以及此结论是否属实，笔者能力所限，无从考证。</p><p><div id="refer-anchor-3"></div><br>[3] 如果读者觉得这个例子并未增强感染力，先不要质疑结论，可能是我太菜举例子的能力也太菜了。＞﹏＜</p><p><div id="refer-anchor-4"></div><br>[4] 又想起会考「将下面的句子排列成一段通顺的话」，而这段话是选自鲁迅先生的作品。( ╯□╰ )</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;看到最近关于一篇日语小说翻译的争执。&lt;a href=&quot;#refer-anchor-1&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/a&gt;突然想到，可能由于日语语法原因，翻译的日本文学作品语序常常是有些别扭的，并且一些长句由于难以翻译通顺常被打断。&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="琐记" scheme="http://yoursite.com/categories/%E7%90%90%E8%AE%B0/"/>
+    
+    
+      <category term="脑洞" scheme="http://yoursite.com/tags/%E8%84%91%E6%B4%9E/"/>
+    
+      <category term="琐记" scheme="http://yoursite.com/tags/%E7%90%90%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>用mathematica作梯度矢量图</title>
     <link href="http://yoursite.com/2020/03/31/mathematica1/"/>
     <id>http://yoursite.com/2020/03/31/mathematica1/</id>
     <published>2020-03-31T14:44:37.000Z</published>
-    <updated>2020-03-31T15:04:15.669Z</updated>
+    <updated>2020-04-03T02:49:33.726Z</updated>
     
     <content type="html"><![CDATA[<p>当用mathematica作梯度矢量图时……</p><a id="more"></a><p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VectorPlot[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, <span class="number">-3</span>, <span class="number">3</span>&#125;, &#123;y, <span class="number">-3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure><p>运行结果中将无任何图像，如图所示</p><img src="/2020/03/31/mathematica1/p1.png" class title="运行结果"><p>为找到问题所在，先将梯度计算出再画图进行尝试</p><img src="/2020/03/31/mathematica1/p2.jpg" class title="尝试结果"><p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p><p>对第一个代码进行追踪</p><img src="/2020/03/31/mathematica1/p3.jpg" class title="追踪结果"><p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VectorPlot[<span class="symbol">Evaluate@</span>Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, <span class="number">-3</span>, <span class="number">3</span>&#125;, &#123;y, <span class="number">-3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure><p>这样一来就得到了所期待的结果（如下图）。</p><img src="/2020/03/31/mathematica1/p4.png" class title="This is an example image"><p>mathematica中对Evaluate的介绍</p><blockquote><p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p><p>Details</p><p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p><p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p></blockquote><p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p><img src="/2020/03/31/mathematica1/p5.jpg" class title="Grad属性"><p>留个坑，以后再说╥﹏╥…</p><p>​    </p>]]></content>
     
@@ -39,6 +68,8 @@
     
       <category term="坑" scheme="http://yoursite.com/tags/%E5%9D%91/"/>
     
+      <category term="学渣忏悔录" scheme="http://yoursite.com/tags/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
+    
   </entry>
   
   <entry>
@@ -46,7 +77,7 @@
     <link href="http://yoursite.com/2020/03/31/vector/"/>
     <id>http://yoursite.com/2020/03/31/vector/</id>
     <published>2020-03-31T12:46:17.000Z</published>
-    <updated>2020-03-31T15:05:06.601Z</updated>
+    <updated>2020-04-03T02:49:12.542Z</updated>
     
     <content type="html"><![CDATA[<p>「学渣忏悔录」这个分类主要用于记录一些自己犯过的错误。</p><p>笑话一则：<br>标量是零阶张量，向量是一阶张量，所以向量是张量的一种；而为什么张量是向量的一种。</p><a id="more"></a><p>第一种说法中，向量又称之为矢量，由参考系变换进行划分。S满足$S’=S$的为标量，满足$V’_i=a_i^jV_j$的是矢量，满足$M’_{ij}=a_i^ka_j^lM_{kl}$的是二阶张量。（$a_i^j$是坐标变换的雅可比行列式）</p><p>第二种说法中，向量为数学定义下的向量空间。数学中满足八条公理即可定义为向量，八条公理如下：</p><ul><li><p>加法结合律 associativity of addition</p><script type="math/tex; mode=display">\mathbb{x}+(\mathbb{y}+\mathbb{z})=(\mathbb{x}+\mathbb{y})+\mathbb{z}</script></li><li><p>加法交换律 commutativity of addition</p><script type="math/tex; mode=display">\mathbb{x}+\mathbb{y}=\mathbb{y}+\mathbb{x}</script></li><li><p>存在加法的单位元 identity element</p><script type="math/tex; mode=display">任意\mathbb{x}\in V，\mathbb{x}+\mathbb{0}=\mathbb{x}</script></li><li><p>存在加法的逆元 inverse element<br>对于每个$x\in V$，存在 $-\mathbb{x}$ 满足 $\mathbb{x}+(-\mathbb{x})=\mathbb{0}$</p></li><li><p>标量乘法结合律 associativity of scalar multiplication</p><script type="math/tex; mode=display">a(b\mathbb{x})=ab(\mathbb{x})</script></li><li><p>关于域加法的标量乘法分配律 distributivity of scalar multiplication with respect to field addition</p><script type="math/tex; mode=display">(a+b)\mathbb{x}=a\mathbb{x}+b\mathbb{y}</script></li><li><p>关于向量加法的标量乘法分配律 distributivity of scalar multiplication with respect to vector addition</p><script type="math/tex; mode=display">a(\mathbb{x}+\mathbb{y})=a\mathbb{x}+b\mathbb{y}</script></li><li><p>存在标量乘法单位元<br>对于所有 $x\in V$，有 $\mathbb{1}\cdot\mathbb{x}=\mathbb{x}$</p></li></ul>]]></content>
     
@@ -60,6 +91,8 @@
     
       <category term="学渣忏悔录" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
     
+    
+      <category term="学渣忏悔录" scheme="http://yoursite.com/tags/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
     
       <category term="物理" scheme="http://yoursite.com/tags/%E7%89%A9%E7%90%86/"/>
     
