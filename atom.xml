@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-22T04:55:16.954Z</updated>
+  <updated>2020-07-26T14:48:56.038Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>旋转矩阵</title>
+    <link href="http://yoursite.com/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/"/>
+    <id>http://yoursite.com/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</id>
+    <published>2020-07-26T14:07:00.000Z</published>
+    <updated>2020-07-26T14:48:56.038Z</updated>
+    
+    <content type="html"><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \\ \sin\varphi &amp; \cos\varphi\\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事）现整理一下其推导。</p><a id="more"></a><p>在线性代数中有定理：</p><blockquote><p>设 $T: \mathbb{R}^n\to\mathbb{R}^m$ 为线性变换，则存在唯一的矩阵 $A$ 使</p><script type="math/tex; mode=display">T(\textbf{x})=A\textbf{x},\ 对\mathbb{R}^n中一切\ \textbf{x}</script><p>$A$ 是 $m\times n$ 矩阵，它的第 j 列是向量 $T(\textbf{e}_j)$，其中 $\textbf{e}_j$ 是单位矩阵 $I_n$ 的第 j 列：</p><script type="math/tex; mode=display">A=[T(x_1\textbf{e}_1)\dots T(x_n\textbf{e}_n)]</script></blockquote><p>证明：</p><p>记 $\textbf{x}=I_n\textbf{x}=[\textbf{e}_1\dots\textbf{e}_n]\textbf{x}=x_1\textbf{e}_1+\dots+x_n\textbf{e}_n$，由于 $T$ 是线性变换，知</p><script type="math/tex; mode=display">\begin{align}T(\textbf{x})&=T(x_1\textbf{e}_1+\dots+x_n\textbf{e}_n)\\&=x_1T(\textbf{e}_1)+\dots+x_nT(\textbf{e}_n)\\&=[T(\textbf{e}_1)\dots T(\textbf{e}_n))]\left[\begin{array}{}  x_1\\ \vdots\\x_n\\ \end{array}\right]\\&=A\textbf{x}\end{align}</script><p>旋转矩阵作用效果为逆时针旋转 $\varphi$，即 $\left[\begin{array}{}  1\\0\\ \end{array}\right]$旋转成$\left[\begin{array}{}  \cos\varphi \\ \sin\varphi  \end{array} \right]$，$\left[\begin{array}{}  0\\1\\ \end{array}\right]$旋转成$\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{array} \right]$，由上述定理，</p><script type="math/tex; mode=display">T(\textbf{e}_1)=\left[\begin{array}{}  \cos\varphi \\ \sin\varphi  \end{array} \right]\\T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{array} \right]</script><p>因而$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \\ \sin\varphi &amp; \cos\varphi\\ \end{array} \right]$。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp;amp; -\sin\varphi \\ \sin\varphi &amp;amp; \cos\varphi\\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事）现整理一下其推导。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学渣忏悔录" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
+    
+    
+      <category term="线性代数" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>网红数学题合集</title>
