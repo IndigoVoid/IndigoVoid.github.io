@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>无标题</title>
+    <url>/2020/08/09/week1/</url>
+    <content><![CDATA[<p>计划准备考研的第一周，什么也没做。希望下周可以有长进。</p>
+]]></content>
+      <categories>
+        <category>true</category>
+      </categories>
+      <tags>
+        <tag>true</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>旋转矩阵</title>
     <url>/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \\ \sin\varphi &amp; \cos\varphi\\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事）现整理一下其推导。</p>
+    <content><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \\ \sin\varphi &amp; \cos\varphi\\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事.jpg）现整理一下其推导。</p>
 <a id="more"></a>
 <p>在线性代数中有定理：</p>
 <blockquote>
@@ -146,8 +158,8 @@ T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{arra
         <category>琐记</category>
       </categories>
       <tags>
-        <tag>小细节</tag>
         <tag>琐记</tag>
+        <tag>小细节</tag>
       </tags>
   </entry>
   <entry>
