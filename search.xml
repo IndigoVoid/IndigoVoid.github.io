@@ -9,7 +9,7 @@
 \begin{align}
 原式&=\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\
 &=r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\
-&=r^{-2}\int \cot tdt\\
+&=r^{-2}\int \cos tdt\\
 &=r^{-2}\sin t+C
 \end{align}</script><script type="math/tex; mode=display">
 \int (x^2+r^2)^{(-\frac{3}{2})}dx=\frac{1}{r^2}\frac{x}{\sqrt{x^2+r^2}}+C</script><p>被这个积分困住很久，主要原因在于忘记了 $\tan^2x+1=sec^2x$，以及第二类换元不熟悉。</p>
