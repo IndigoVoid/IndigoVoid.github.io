@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>量子力学中常用的积分</title>
+    <title>考研日记</title>
+    <url>/2021/01/16/kaoyan/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一道积分算一天——量子力学篇</title>
     <url>/2020/12/03/qmIntegrate/</url>
-    <content><![CDATA[<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
+    <content><![CDATA[<p>没有什么摘要 QAQ</p>
+<a id="more"></a>
+<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
 \begin{equation}
 \int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
 \end{equation}</script><p>任意高斯积分的定积分为</p>
@@ -66,7 +79,7 @@ I&=\int_0^\infty\sin qrdr\\
       </tags>
   </entry>
   <entry>
-    <title>一道积分算一天</title>
+    <title>一道积分算一天——电磁学篇</title>
     <url>/2020/09/23/%E7%A7%AF%E5%88%86/</url>
     <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><script type="math/tex; mode=display">
 \int (x^2+r^2)^{(-\frac{3}{2})}dx</script><p>解：令 $x=r\tan t$，</p>
@@ -121,53 +134,6 @@ I&=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
       </categories>
       <tags>
         <tag>微积分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>考研日记</title>
-    <url>/2020/08/09/kaoyan/</url>
-    <content><![CDATA[<h1 id="第-1-周（08-03-08-09）"><a href="#第-1-周（08-03-08-09）" class="headerlink" title="第 1 周（08/03-08/09）"></a>第 1 周（08/03-08/09）</h1><p>计划准备考研的第一周，什么也没做。希望下周可以有长进。</p>
-<h1 id="第-2-周（08-10-08-16）"><a href="#第-2-周（08-10-08-16）" class="headerlink" title="第 2 周（08/10-08/16）"></a>第 2 周（08/10-08/16）</h1><p>看了点马克思主义哲学，又是浑浑噩噩的一周。</p>
-<h1 id="第-3-周（08-17-08-23）"><a href="#第-3-周（08-17-08-23）" class="headerlink" title="第 3 周（08/17-08/23）"></a>第 3 周（08/17-08/23）</h1><p>第三周过去了，又是一事无成的一周呢！</p>
-<p>我的内心平静而焦虑。</p>
-<h1 id="第-4-周（08-24-08-30）"><a href="#第-4-周（08-24-08-30）" class="headerlink" title="第 4 周（08/24-08/30）"></a>第 4 周（08/24-08/30）</h1><p>八月过去了，又是一事无成的一个月呢！</p>
-<p>我的内心平静而焦虑~</p>
-<h1 id="第-5-周（08-31-09-06）"><a href="#第-5-周（08-31-09-06）" class="headerlink" title="第 5 周（08/31-09/06）"></a>第 5 周（08/31-09/06）</h1><h2 id="09-01"><a href="#09-01" class="headerlink" title="09/01"></a>09/01</h2><p>读西方哲学史，书中提到古印度的哲学，提起“自我是一种恒久的实体”云云，生命和死亡的“圆舞”是人要从中解脱出来的东西。看得我竟然有几分认同。结果后面看到所谓“圆舞”、轮回，强调道德因果性，正是将印度的种姓制度合法化。大惊，突然发现我要是在印度我怕就被洗脑了。</p>
-<p>共产主义好！</p>
-<h2 id="09-04"><a href="#09-04" class="headerlink" title="09/04"></a>09/04</h2><p>时间过得真快，考研时间安排都出来了。决定以后每周给自己安排一个计划。并且加上一些日常计划。</p>
-<div style="width:30%;margin:auto"><img src="/2020/08/09/kaoyan/%E8%80%83%E7%A0%94%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92.jpg" class title="考研时间安排（图片源自中国研究生招生信息网）"></div>
-
-<blockquote>
-<p><strong>日常计划</strong></p>
-<ol>
-<li>50 个单词</li>
-<li>15 道政治选择题</li>
-</ol>
-<p><strong>本周计划</strong></p>
-<ol>
-<li>20篇四级选词填空</li>
-</ol>
-</blockquote>
-<h1 id="第六周（09-07-09-13）"><a href="#第六周（09-07-09-13）" class="headerlink" title="第六周（09/07-09/13）"></a>第六周（09/07-09/13）</h1><blockquote>
-<p><strong>本周计划</strong></p>
-<ol>
-<li>六级核心词汇</li>
-<li>马原强化班课程</li>
-</ol>
-</blockquote>
-<p>生病了，wu~</p>
-<h1 id="第七周"><a href="#第七周" class="headerlink" title="第七周"></a>第七周</h1><blockquote>
-<p><strong>本周计划</strong></p>
-<ol>
-<li>六级</li>
-</ol>
-</blockquote>
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
       </tags>
   </entry>
   <entry>
@@ -323,7 +289,8 @@ T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{arra
   <entry>
     <title>测试</title>
     <url>/2020/01/09/test/</url>
-    <content><![CDATA[<p>摘要：一些测试和 markdown 用法。<br><a id="more"></a></p>
+    <content><![CDATA[<p>摘要：一些测试和 markdown 用法。</p>
+<a id="more"></a>
 <h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>脚注</p>
 <p><sup><a href="#fn_脚注" id="reffn_脚注">脚注</a></sup>: </p>
 <blockquote>
