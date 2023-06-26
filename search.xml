@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>用mathematica作梯度矢量图</title>
+    <url>/2020/03/31/mathematica1/</url>
+    <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
+<!----more---->
+<p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>运行结果中将无任何图像，如图所示</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p1.png" class title="运行结果">
+<p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p2.jpg" class title="尝试结果">
+<p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
+<p>对第一个代码进行追踪</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果">
+<p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>这样一来就得到了所期待的结果（如下图）。</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p4.png" class title="This is an example image">
+<p>mathematica 中对 Evaluate 的介绍</p>
+<blockquote>
+<p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p>
+<p>Details</p>
+<p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p>
+<p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p>
+</blockquote>
+<p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p5.jpg" class title="Grad属性">
+<p>留个坑，以后再说…   ╥﹏╥</p>
+<hr>
+<p>更新</p>
+<p>经过超理论坛官方群群友的指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p>
+<p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p>
+<p>( •̀ ω •́ )y</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>学渣忏悔录</category>
+      </categories>
+      <tags>
+        <tag>mathematica</tag>
+        <tag>坑</tag>
+        <tag>学渣忏悔录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一道积分算一天——量子力学篇</title>
+    <url>/2020/12/03/qmIntegrate/</url>
+    <content><![CDATA[<p>没有什么摘要 QAQ</p>
+<!-----more---->
+<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
+\begin{equation}
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
+\end{equation}</script><p>任意高斯积分的定积分为</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}</script><p>定义函数</p>
+<script type="math/tex; mode=display">
+I(a)=\int_{-a}^{a}e^{-x^2}dx</script><p>高斯积分通过求它的极限得到</p>
+<script type="math/tex; mode=display">
+\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx</script><p>对 $I(a)$ 取平方得到</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+I^2(a)&=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
+&=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
+&=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
+\end{aligned}
+\end{equation}</script><p>该双重积分可被看作是直角坐标系上一个正方形的面积积分 $\int e^{-(x^2+y^2)}d(x,y)$，其顶点为 ${(-a,a),(a,a),(a,-a),(-a,-a)}$。</p>
+<p>这个正方形的内切圆的积分必须小于 $I^2(a)$，外接圆的积分必须大于 $I(a)^2$。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
+<script type="math/tex; mode=display">
+\int_0^{2\pi}\int_0^a re^{-r^2}drd\theta<I^2(a)<\int_0^{2\pi}\int_0^{a\sqrt{2}} re^{-r^2}drd\theta</script><p>得到</p>
+<script type="math/tex; mode=display">
+\pi(1-e^{-a^2})<I^2(a)<\pi(1-e^{-2a^2})</script><p>通过夹逼定理获得高斯积分</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}</script><h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}</script><p>波函数归一化中可能用到。</p>
+<script type="math/tex; mode=display">
+\int_0^\infty x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}</script><p>谐振子中常常用到。</p>
+<script type="math/tex; mode=display">
+\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}</script><h1 id="散射"><a href="#散射" class="headerlink" title="散射"></a>散射</h1><ol>
+<li><script type="math/tex; mode=display">
+I=\int_0^\infty e^{-\mu r}\sin kr dr</script></li>
+</ol>
+<p>由于 $\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}$，代入积分</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I&=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
+&=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty e^{(-ik-\mu)}dr)\\
+&=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
+&=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
+&=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
+&=\frac{k}{k^2+u^2}
+\end{aligned}</script><p>该积分常用于波恩近似。</p>
+<ol>
+<li><script type="math/tex; mode=display">
+I=\int_0^\infty\sin qrdr</script></li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I&=\int_0^\infty\sin qrdr\\
+&=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
+&=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
+&=\frac{1}{q}
+\end{aligned}</script>]]></content>
+      <categories>
+        <category>量子力学</category>
+      </categories>
+      <tags>
+        <tag>量子力学</tag>
+        <tag>积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网红数学题合集</title>
+    <url>/2020/04/28/mathforfun/</url>
+    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
+<!--more--->
+<ul>
+<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
+</ul>
+<img src="/2020/04/28/mathforfun/04/28/mathforfun/001.jpg" class title="题目描述">
+<img src="/2020/04/28/mathforfun/04/28/mathforfun/002.png" class title="解答">
+<ul>
+<li>已知正方形部分区域面积，求阴影部分面积：</li>
+</ul>
+<img src="/2020/04/28/mathforfun/04/28/mathforfun/003.jpg" class title="题目描述">
+<img src="/2020/04/28/mathforfun/04/28/mathforfun/004.jpg" class title="解答">
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>just-for-fun</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2020/01/09/test/</url>
+    <content><![CDATA[<p>摘要：一些测试和 markdown 用法。</p>
+<span id="more"></span>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>脚注</p>
+<p><sup><a href="#fn_脚注" id="reffn_脚注">脚注</a></sup>: </p>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>行内代码<code>代码</code></p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"><span class="keyword">code</span></span><br></pre></td></tr></table></figure>
+<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><p>$\vec{r}$</p>
+<script type="math/tex; mode=display">
+\sin ^2 x+\cos ^2 x=1</script><p>实数集<code>\mathbb&#123;R&#125;</code>: $\mathbb{R}$  </p>
+<p>占位符</p>
+<p>quad空格<code>\quad</code>: $A\quad A$<br>两个quad空格<code>\qqaud</code>: $A\qquad A$</p>
+<p>约等于<code>\approx</code>: $\approx$<br>大于等于<code>\geq</code>: $\geq$<br>小于等于<code>\leq</code>: $\leq$</p>
+<p>正负<code>\pm</code>: $\pm$ (<code>\plusmn</code> mathjax 无法渲染)</p>
+<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><h2 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h2><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">&#123;<span class="symbol">%</span> asset_img <span class="number">0001.</span>jpg This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span> <span class="symbol">%</span>&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2020/01/09/test/01/09/test/0001.jpg" class title="This is an example image">
+<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:70%;margin:auto&quot;</span>&gt;</span></span><span class="template-tag">&#123;% <span class="name">asset_img</span> 0001.jpg This is an example image %&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<div style="width:70%;margin:auto"><img src="/2020/01/09/test/01/09/test/0001.jpg" class title="This is an example image"></div>
+
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="http://www.baidu.com" title="链接">链接</a></p>
+<h1 id="使用内嵌-HTML-标签控制markdown颜色、字体、字号"><a href="#使用内嵌-HTML-标签控制markdown颜色、字体、字号" class="headerlink" title="使用内嵌 HTML 标签控制markdown颜色、字体、字号"></a>使用内嵌 HTML 标签控制markdown颜色、字体、字号</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><h3 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FF5566</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font color="#FF5566">示例文字</font>
+
+<h3 id="文字背景颜色"><a href="#文字背景颜色" class="headerlink" title="文字背景颜色"></a>文字背景颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table><tr><td bgcolor="#003366">示例文字</td></tr></table>
+
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font face="微软雅黑">示例文字</font>
+
+<h2 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">72</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font size="72">示例文字</font>
+
+<h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FFFFFF</span> <span class="attr">size</span>=<span class="string">14</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span></span><br><span class="line">示例文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table><tr><td bgcolor="#003366">
+<font color="#FFFFFF" size="5" face="微软雅黑">
+示例文字
+</font>
+</td></tr></table>]]></content>
+      <categories>
+        <category>琐记</category>
+      </categories>
+      <tags>
+        <tag>琐记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>旋转矩阵</title>
+    <url>/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事.jpg）现整理一下其推导。</p>
+<!--------more------->
+<p>在线性代数中有定理：</p>
+<blockquote>
+<p>设 $T: \mathbb{R}^n\to\mathbb{R}^m$ 为线性变换，则存在唯一的矩阵 $A$ 使</p>
+<script type="math/tex; mode=display">
+T(\textbf{x})=A\textbf{x},\ 对\mathbb{R}^n中一切\ \textbf{x}</script><p>$A$ 是 $m\times n$ 矩阵，它的第 j 列是向量 $T(\textbf{e}_j)$，其中 $\textbf{e}_j$ 是单位矩阵 $I_n$ 的第 j 列：</p>
+<script type="math/tex; mode=display">
+A=[T(x_1\textbf{e}_1)\dots T(x_n\textbf{e}_n)]</script></blockquote>
+<p>证明：</p>
+<p>记 $\textbf{x}=I_n\textbf{x}=[\textbf{e}_1\dots\textbf{e}_n]\textbf{x}=x_1\textbf{e}_1+\dots+x_n\textbf{e}_n$，由于 $T$ 是线性变换，知</p>
+<script type="math/tex; mode=display">
+\begin{align}
+T(\textbf{x})&=T(x_1\textbf{e}_1+\dots+x_n\textbf{e}_n)\\
+&=x_1T(\textbf{e}_1)+\dots+x_nT(\textbf{e}_n)\\
+&=[T(\textbf{e}_1)\dots T(\textbf{e}_n))]\left[\begin{array}{}  x_1\\ \vdots\\x_n\\ \end{array}\right]\\
+&=A\textbf{x}
+\end{align}</script><p>旋转矩阵作用效果为逆时针旋转 $\varphi$，即 $\left[\begin{array}{}  1\0\ \end{array}\right]$旋转成$\left[\begin{array}{}  \cos\varphi \ \sin\varphi  \end{array} \right]$，$\left[\begin{array}{}  0\1\ \end{array}\right]$旋转成$\left[\begin{array}{}   -\sin\varphi  \ \cos\varphi\ \end{array} \right]$，由上述定理，</p>
+<script type="math/tex; mode=display">
+T(\textbf{e}_1)=\left[\begin{array}{}  \cos\varphi \\ \sin\varphi  \end{array} \right]\\
+T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{array} \right]</script><p>因而$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$。</p>
+]]></content>
+      <categories>
+        <category>学渣忏悔录</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>养成良好的写作习惯之「盘古之白」</title>
+    <url>/2020/03/17/%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF1/</url>
+    <content><![CDATA[<p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为「盘古之白」。</p>
+<blockquote>
+<p>有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。<a href="#refer-anchor-1"><sup>1</sup></a></p>
+</blockquote>
+<span id="more"></span>
+<p>对于为何要在中文和西文之间加空格的几种说法。说法之一，中文不要求空格断词，而西文要求，所以这个过渡区域使用两边的需求之和，即使用空格。而中文遇到日文等不使用空格断词的文字时，因为日文不要求空格，中文也不要求空格，所以我们不加空格。说法之二，任何两个字之间都需要空隙。利用手工添加空格的方式，一定程度上，可以起到调整中英文字偶之间空隙的作用。说法之三，英文夹杂汉字时会很自然地在英文词和汉字之间加空格，所以中文夹杂英文词也就应该在英文词和汉字之间加空格。</p>
+<p>具体应该在什么情况下加空格呢？首先我们需要了解什么是全形和半形（也被称之为全角和半角）。全角和半角是计算机中，中、日、韩文的 CJKV 字符的显示格式。西文字符中，每一个字母或符号都是由一字节的空间储存，一个字节由 8 位元组成，共 256 个编码空间。显然，汉语、日语以及韩语文字的数量均大大超过 256 个，故而使用两个字节储存一个字符。在使用等宽字体时，中日韩文字占据的显示宽度时西文字符的两倍，故而，中日韩文字被称为全形字符，拉丁字母以及数字被称为半形字符。</p>
+<ul>
+<li>中英文之间需要增加空格：</li>
+</ul>
+<blockquote>
+<p>西文 typography 里有句话：The space bar is not a design tool.</p>
+</blockquote>
+<p>注：如若是专有名词，例如豆瓣FM，则按照官方所定义的格式书写。由这两个例子可以发现，“豆瓣FM”是一个词，“西文 typography”是两个词，这也是我决定加空格的根本原因。</p>
+<ul>
+<li>中文和数字之间需要增加空格：</li>
+</ul>
+<blockquote>
+<p>今天得到了 10 元压岁钱。</p>
+</blockquote>
+<ul>
+<li>数字和单位之间需要增加空格：</li>
+</ul>
+<blockquote>
+<p>该质点的速度是 10 m/s。</p>
+</blockquote>
+<ul>
+<li>度/百分比与数字之间不需要增加空格：</li>
+</ul>
+<blockquote>
+<p>寒假作业完成了 10%。</p>
+</blockquote>
+<p>最后，这只是一个基于个人偏好的习惯，说不定由于什么原因我又变成不加空格的拥趸者了。</p>
+<blockquote>
+<p>​    中文文本中夹用英文时，应根据所选用的中英文字体、字符间距以及排版的视觉效果决定英文词句与中文文字之间是否留有空格间距。如留空格，应保证体例的统一。</p>
+<p>——中华人民共和国新闻出版行业标准 CY/T 154—2017号《中文出版物夹用英文的编辑规范》第 8.1 节</p>
+</blockquote>
+<p><div id="refer-anchor-1"></div><br>[1].盘古之白的说法和这句话来源于 GitHub 中一个自动添加空格的<a href="https://github.com/vinta/pangu.js" title="链接">小工具</a>。其真实性不详。</p>
+]]></content>
+      <categories>
+        <category>琐记</category>
+      </categories>
+      <tags>
+        <tag>琐记</tag>
+        <tag>小细节</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一道积分算一天——电磁学篇</title>
+    <url>/2020/09/23/%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><script type="math/tex; mode=display">
+\int (x^2+r^2)^{(-\frac{3}{2})}dx</script><p>解：令 $x=r\tan t$，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+原式&=\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\
+&=r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\
+&=r^{-2}\int \cos tdt\\
+&=r^{-2}\sin t+C
+\end{align}</script><script type="math/tex; mode=display">
+\int (x^2+r^2)^{(-\frac{3}{2})}dx=\frac{1}{r^2}\frac{x}{\sqrt{x^2+r^2}}+C</script><p>被这个积分困住很久，主要原因在于忘记了 $\tan^2x+1=sec^2x$，以及第二类换元不熟悉。</p>
+<blockquote>
+<p>第二类换元法</p>
+<p>若含有 $\sqrt{a^2-x^2}$，令 $x=a\sin t, t\in(-\frac{\pi}{2},\frac{\pi}{2})$</p>
+<p>若含有 $\sqrt{a^2+x^2}$，令 $x=a\tan t$</p>
+<p>若含有 $\sqrt{x^2-a^2}$，令 $x=a\sec t$ </p>
+</blockquote>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><script type="math/tex; mode=display">
+\int\sqrt{\frac{x_0x}{x_0-x}}dx</script><p>解：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+原式&=\int \sqrt{\frac{\frac{x}{x_0}x_0}{1-\frac{x}{x_0}}}d \frac{x}{x_0}\\
+
+
+\end{align}</script><p>令 $ \frac{x}{x_0}=a$，现求解积分$I=\int \frac{\sqrt{a}}{\sqrt{1-a}}da$</p>
+<p>令 $a=\sin^2t$，$da=2\sin t\cos tdt$，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+I&=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
+&=2\int \sin^2tdt\\
+&=\int (1-\cos 2t)dt\\
+&=t-\frac{1}{2}\sin 2t+C
+\end{align}</script><script type="math/tex; mode=display">
+\sin 2t=2\sin t\cos t=2\sqrt{a}\sqrt{1-a}</script><script type="math/tex; mode=display">
+原式=\sqrt{x_0}(x_0\arcsin \sqrt{\frac{x}{x_0}}-\sqrt{x}\sqrt{x_0-x})+C</script><p>这个其实还是第二类换元这同一块石头，被坑住是因为看到 $\frac{1}{\sqrt{1-a}}$ 以及答案有 $\arcsin$ ，就想分部积分。</p>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><script type="math/tex; mode=display">
+\int \frac{dz}{\sqrt{z^2+a^2}}</script><p>解：</p>
+<p>令 $z=a \tan t$，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+原式&=\int\frac{1}{a\sqrt{\tan^2 t+1}}d(a\tan t)\\
+&=\int\sec tdt\\
+&=\int \sec t \frac{\sec t+\tan t}{\sec t+\tan t}dt\\
+&=\int\frac{(\sec t\tan t+\sec^2 t)}{\sec t+\tan t}dt\\
+&=\ln (\sec t+\tan t)+C
+\end{align}</script><p>$原积分= \ln(z+\sqrt{z^2+a^2})+C$</p>
+<p>这个是因为不知道 $\sec x$ 如何积分。</p>
+<p>另外在计算三角函数时，除了通过恒等式进行计算，可以直接将对应边长的三角形画出计算三角函数。</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+</search>
