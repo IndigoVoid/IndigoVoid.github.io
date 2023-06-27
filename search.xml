@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>网红数学题合集</title>
+    <url>/2020/04/28/mathforfun/</url>
+    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
+<!--more--->
+<ul>
+<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
+</ul>
+<p><img src="/2020/04/28/mathforfun/001.jpg" alt="题目描述"></p>
+<p><img src="/2020/04/28/mathforfun/002.png" alt="解答"></p>
+<ul>
+<li>已知正方形部分区域面积，求阴影部分面积：</li>
+</ul>
+<p><img src="/2020/04/28/mathforfun/003.jpg" alt="题目描述"></p>
+<p><img src="/2020/04/28/mathforfun/004.jpg" alt="解答"></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>just-for-fun</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用mathematica作梯度矢量图</title>
     <url>/2020/03/31/mathematica1/</url>
     <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
@@ -8,16 +32,16 @@
 <p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
 <p>运行结果中将无任何图像，如图所示</p>
-<img src="/2020/03/31/mathematica1/03/31/mathematica1/p1.png" class title="运行结果">
+<p><img src="/2020/03/31/mathematica1/p1.png" alt="运行结果"></p>
 <p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
-<img src="/2020/03/31/mathematica1/03/31/mathematica1/p2.jpg" class title="尝试结果">
+<p><img src="/2020/03/31/mathematica1/p2.jpg" alt="尝试结果"></p>
 <p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
 <p>对第一个代码进行追踪</p>
-<img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果">
+<p><img src="/2020/03/31/mathematica1/p3.jpg" alt="追踪结果"><br><img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果"></p>
 <p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
 <figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
 <p>这样一来就得到了所期待的结果（如下图）。</p>
-<img src="/2020/03/31/mathematica1/03/31/mathematica1/p4.png" class title="This is an example image">
+<p><img src="/2020/03/31/mathematica1/p4.png" alt="运行结果"></p>
 <p>mathematica 中对 Evaluate 的介绍</p>
 <blockquote>
 <p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p>
@@ -32,7 +56,6 @@
 <p>更新</p>
 <p>经过超理论坛官方群群友的指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p>
 <p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p>
-<p>( •̀ ω •́ )y</p>
 <p>​    </p>
 ]]></content>
       <categories>
@@ -45,27 +68,70 @@
       </tags>
   </entry>
   <entry>
-    <title>网红数学题合集</title>
-    <url>/2020/04/28/mathforfun/</url>
-    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
-<!--more--->
-<ul>
-<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
-</ul>
-<p><img src="/2020/04/28/mathforfun/mathforfun\001.jpg" alt="题目描述"></p>
-<p><img src="/2020/04/28/mathforfun/mathforfun\002.png" alt="解答"></p>
-<ul>
-<li>已知正方形部分区域面积，求阴影部分面积：</li>
-</ul>
-<p><img src="/2020/04/28/mathforfun/mathforfun\003.jpg" alt="题目描述"></p>
-<p><img src="/2020/04/28/mathforfun/mathforfun\004.jpg" alt="解答"></p>
-]]></content>
+    <title>一道积分算一天——量子力学篇</title>
+    <url>/2020/12/03/qmIntegrate/</url>
+    <content><![CDATA[<p>没有什么摘要 QAQ</p>
+<!-----more---->
+<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
+\begin{equation}
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
+\end{equation}</script><p>任意高斯积分的定积分为</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}</script><p>定义函数</p>
+<script type="math/tex; mode=display">
+I(a)=\int_{-a}^{a}e^{-x^2}dx</script><p>高斯积分通过求它的极限得到</p>
+<script type="math/tex; mode=display">
+\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx</script><p>对 $I(a)$ 取平方得到</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+I^2(a)&=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
+&=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
+&=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
+\end{aligned}
+\end{equation}</script><p>该双重积分可被看作是直角坐标系上一个正方形的面积积分 $\int e^{-(x^2+y^2)}d(x,y)$，其顶点为 ${(-a,a),(a,a),(a,-a),(-a,-a)}$。</p>
+<p>这个正方形的内切圆的积分必须小于 $I^2(a)$，外接圆的积分必须大于 $I(a)^2$。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
+<script type="math/tex; mode=display">
+\int_0^{2\pi}\int_0^a re^{-r^2}drd\theta<I^2(a)<\int_0^{2\pi}\int_0^{a\sqrt{2}} re^{-r^2}drd\theta</script><p>得到</p>
+<script type="math/tex; mode=display">
+\pi(1-e^{-a^2})<I^2(a)<\pi(1-e^{-2a^2})</script><p>通过夹逼定理获得高斯积分</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}</script><h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}</script><p>波函数归一化中可能用到。</p>
+<script type="math/tex; mode=display">
+\int_0^\infty x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}</script><p>谐振子中常常用到。</p>
+<script type="math/tex; mode=display">
+\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}</script><h1 id="散射"><a href="#散射" class="headerlink" title="散射"></a>散射</h1><ol>
+<li><script type="math/tex; mode=display">
+I=\int_0^\infty e^{-\mu r}\sin kr dr</script></li>
+</ol>
+<p>由于 $\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}$，代入积分</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I&=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
+&=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty e^{(-ik-\mu)}dr)\\
+&=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
+&=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
+&=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
+&=\frac{k}{k^2+u^2}
+\end{aligned}</script><p>该积分常用于波恩近似。</p>
+<ol>
+<li><script type="math/tex; mode=display">
+I=\int_0^\infty\sin qrdr</script></li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I&=\int_0^\infty\sin qrdr\\
+&=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
+&=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
+&=\frac{1}{q}
+\end{aligned}</script>]]></content>
       <categories>
-        <category>数学</category>
+        <category>量子力学</category>
       </categories>
       <tags>
-        <tag>数学</tag>
-        <tag>just-for-fun</tag>
+        <tag>量子力学</tag>
+        <tag>积分</tag>
       </tags>
   </entry>
   <entry>
@@ -256,73 +322,6 @@ I&=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
       </categories>
       <tags>
         <tag>微积分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一道积分算一天——量子力学篇</title>
-    <url>/2020/12/03/qmIntegrate/</url>
-    <content><![CDATA[<p>没有什么摘要 QAQ</p>
-<!-----more---->
-<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
-\begin{equation}
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
-\end{equation}</script><p>任意高斯积分的定积分为</p>
-<script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}</script><p>定义函数</p>
-<script type="math/tex; mode=display">
-I(a)=\int_{-a}^{a}e^{-x^2}dx</script><p>高斯积分通过求它的极限得到</p>
-<script type="math/tex; mode=display">
-\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx</script><p>对 $I(a)$ 取平方得到</p>
-<script type="math/tex; mode=display">
-\begin{equation}
-\begin{aligned}
-I^2(a)&=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
-&=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
-&=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
-\end{aligned}
-\end{equation}</script><p>该双重积分可被看作是直角坐标系上一个正方形的面积积分 $\int e^{-(x^2+y^2)}d(x,y)$，其顶点为 ${(-a,a),(a,a),(a,-a),(-a,-a)}$。</p>
-<p>这个正方形的内切圆的积分必须小于 $I^2(a)$，外接圆的积分必须大于 $I(a)^2$。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
-<script type="math/tex; mode=display">
-\int_0^{2\pi}\int_0^a re^{-r^2}drd\theta<I^2(a)<\int_0^{2\pi}\int_0^{a\sqrt{2}} re^{-r^2}drd\theta</script><p>得到</p>
-<script type="math/tex; mode=display">
-\pi(1-e^{-a^2})<I^2(a)<\pi(1-e^{-2a^2})</script><p>通过夹逼定理获得高斯积分</p>
-<script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}</script><h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}</script><p>波函数归一化中可能用到。</p>
-<script type="math/tex; mode=display">
-\int_0^\infty x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}</script><p>谐振子中常常用到。</p>
-<script type="math/tex; mode=display">
-\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}</script><h1 id="散射"><a href="#散射" class="headerlink" title="散射"></a>散射</h1><ol>
-<li><script type="math/tex; mode=display">
-I=\int_0^\infty e^{-\mu r}\sin kr dr</script></li>
-</ol>
-<p>由于 $\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}$，代入积分</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-I&=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
-&=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty e^{(-ik-\mu)}dr)\\
-&=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
-&=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
-&=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
-&=\frac{k}{k^2+u^2}
-\end{aligned}</script><p>该积分常用于波恩近似。</p>
-<ol>
-<li><script type="math/tex; mode=display">
-I=\int_0^\infty\sin qrdr</script></li>
-</ol>
-<script type="math/tex; mode=display">
-\begin{aligned}
-I&=\int_0^\infty\sin qrdr\\
-&=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
-&=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
-&=\frac{1}{q}
-\end{aligned}</script>]]></content>
-      <categories>
-        <category>量子力学</category>
-      </categories>
-      <tags>
-        <tag>量子力学</tag>
-        <tag>积分</tag>
       </tags>
   </entry>
 </search>
