@@ -1,47 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>用mathematica作梯度矢量图</title>
-    <url>/2020/03/31/mathematica1/</url>
-    <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
-<!----more---->
-<p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
-<p>运行结果中将无任何图像，如图所示</p>
-<img src="/2020/03/31/mathematica1/03/31/mathematica1/p1.png" class title="运行结果">
-<p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
-<img src="/2020/03/31/mathematica1/03/31/mathematica1/p2.jpg" class title="尝试结果">
-<p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
-<p>对第一个代码进行追踪</p>
-<img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果">
-<p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
-<p>这样一来就得到了所期待的结果（如下图）。</p>
-<img src="/2020/03/31/mathematica1/03/31/mathematica1/p4.png" class title="This is an example image">
-<p>mathematica 中对 Evaluate 的介绍</p>
-<blockquote>
-<p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p>
-<p>Details</p>
-<p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p>
-<p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p>
-</blockquote>
-<p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p>
-<img src="/2020/03/31/mathematica1/03/31/mathematica1/p5.jpg" class title="Grad属性">
-<p>留个坑，以后再说…   ╥﹏╥</p>
-<hr>
-<p>更新</p>
-<p>经过超理论坛官方群群友的指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p>
-<p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p>
-<p>( •̀ ω •́ )y</p>
-<p>​    </p>
+    <title>网红数学题合集</title>
+    <url>/2020/04/28/mathforfun/</url>
+    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
+<!--more--->
+<ul>
+<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
+</ul>
+<img src="/2020/04/28/mathforfun/04/28/mathforfun/001.jpg" class title="题目描述">
+<img src="/2020/04/28/mathforfun/04/28/mathforfun/002.png" class title="解答">
+<ul>
+<li>已知正方形部分区域面积，求阴影部分面积：</li>
+</ul>
+<img src="/2020/04/28/mathforfun/04/28/mathforfun/003.jpg" class title="题目描述">
+<img src="/2020/04/28/mathforfun/04/28/mathforfun/004.jpg" class title="解答">
 ]]></content>
       <categories>
-        <category>学渣忏悔录</category>
+        <category>数学</category>
       </categories>
       <tags>
-        <tag>mathematica</tag>
-        <tag>坑</tag>
-        <tag>学渣忏悔录</tag>
+        <tag>数学</tag>
+        <tag>just-for-fun</tag>
       </tags>
   </entry>
   <entry>
@@ -112,30 +92,6 @@ I&=\int_0^\infty\sin qrdr\\
       </tags>
   </entry>
   <entry>
-    <title>网红数学题合集</title>
-    <url>/2020/04/28/mathforfun/</url>
-    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
-<!--more--->
-<ul>
-<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
-</ul>
-<img src="/2020/04/28/mathforfun/04/28/mathforfun/001.jpg" class title="题目描述">
-<img src="/2020/04/28/mathforfun/04/28/mathforfun/002.png" class title="解答">
-<ul>
-<li>已知正方形部分区域面积，求阴影部分面积：</li>
-</ul>
-<img src="/2020/04/28/mathforfun/04/28/mathforfun/003.jpg" class title="题目描述">
-<img src="/2020/04/28/mathforfun/04/28/mathforfun/004.jpg" class title="解答">
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>数学</tag>
-        <tag>just-for-fun</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>测试</title>
     <url>/2020/01/09/test/</url>
     <content><![CDATA[<p>摘要：一些测试和 markdown 用法。</p>
@@ -186,35 +142,47 @@ I&=\int_0^\infty\sin qrdr\\
       </tags>
   </entry>
   <entry>
-    <title>旋转矩阵</title>
-    <url>/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事.jpg）现整理一下其推导。</p>
-<!--------more------->
-<p>在线性代数中有定理：</p>
+    <title>用mathematica作梯度矢量图</title>
+    <url>/2020/03/31/mathematica1/</url>
+    <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
+<!----more---->
+<p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>运行结果中将无任何图像，如图所示</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p1.png" class title="运行结果">
+<p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p2.jpg" class title="尝试结果">
+<p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
+<p>对第一个代码进行追踪</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果">
+<p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>这样一来就得到了所期待的结果（如下图）。</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p4.png" class title="This is an example image">
+<p>mathematica 中对 Evaluate 的介绍</p>
 <blockquote>
-<p>设 $T: \mathbb{R}^n\to\mathbb{R}^m$ 为线性变换，则存在唯一的矩阵 $A$ 使</p>
-<script type="math/tex; mode=display">
-T(\textbf{x})=A\textbf{x},\ 对\mathbb{R}^n中一切\ \textbf{x}</script><p>$A$ 是 $m\times n$ 矩阵，它的第 j 列是向量 $T(\textbf{e}_j)$，其中 $\textbf{e}_j$ 是单位矩阵 $I_n$ 的第 j 列：</p>
-<script type="math/tex; mode=display">
-A=[T(x_1\textbf{e}_1)\dots T(x_n\textbf{e}_n)]</script></blockquote>
-<p>证明：</p>
-<p>记 $\textbf{x}=I_n\textbf{x}=[\textbf{e}_1\dots\textbf{e}_n]\textbf{x}=x_1\textbf{e}_1+\dots+x_n\textbf{e}_n$，由于 $T$ 是线性变换，知</p>
-<script type="math/tex; mode=display">
-\begin{align}
-T(\textbf{x})&=T(x_1\textbf{e}_1+\dots+x_n\textbf{e}_n)\\
-&=x_1T(\textbf{e}_1)+\dots+x_nT(\textbf{e}_n)\\
-&=[T(\textbf{e}_1)\dots T(\textbf{e}_n))]\left[\begin{array}{}  x_1\\ \vdots\\x_n\\ \end{array}\right]\\
-&=A\textbf{x}
-\end{align}</script><p>旋转矩阵作用效果为逆时针旋转 $\varphi$，即 $\left[\begin{array}{}  1\0\ \end{array}\right]$旋转成$\left[\begin{array}{}  \cos\varphi \ \sin\varphi  \end{array} \right]$，$\left[\begin{array}{}  0\1\ \end{array}\right]$旋转成$\left[\begin{array}{}   -\sin\varphi  \ \cos\varphi\ \end{array} \right]$，由上述定理，</p>
-<script type="math/tex; mode=display">
-T(\textbf{e}_1)=\left[\begin{array}{}  \cos\varphi \\ \sin\varphi  \end{array} \right]\\
-T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{array} \right]</script><p>因而$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$。</p>
+<p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p>
+<p>Details</p>
+<p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p>
+<p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p>
+</blockquote>
+<p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p5.jpg" class title="Grad属性">
+<p>留个坑，以后再说…   ╥﹏╥</p>
+<hr>
+<p>更新</p>
+<p>经过超理论坛官方群群友的指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p>
+<p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p>
+<p>( •̀ ω •́ )y</p>
+<p>​    </p>
 ]]></content>
       <categories>
         <category>学渣忏悔录</category>
       </categories>
       <tags>
-        <tag>线性代数</tag>
+        <tag>mathematica</tag>
+        <tag>坑</tag>
+        <tag>学渣忏悔录</tag>
       </tags>
   </entry>
   <entry>
@@ -265,6 +233,38 @@ T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{arra
       <tags>
         <tag>琐记</tag>
         <tag>小细节</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>旋转矩阵</title>
+    <url>/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事.jpg）现整理一下其推导。</p>
+<!--------more------->
+<p>在线性代数中有定理：</p>
+<blockquote>
+<p>设 $T: \mathbb{R}^n\to\mathbb{R}^m$ 为线性变换，则存在唯一的矩阵 $A$ 使</p>
+<script type="math/tex; mode=display">
+T(\textbf{x})=A\textbf{x},\ 对\mathbb{R}^n中一切\ \textbf{x}</script><p>$A$ 是 $m\times n$ 矩阵，它的第 j 列是向量 $T(\textbf{e}_j)$，其中 $\textbf{e}_j$ 是单位矩阵 $I_n$ 的第 j 列：</p>
+<script type="math/tex; mode=display">
+A=[T(x_1\textbf{e}_1)\dots T(x_n\textbf{e}_n)]</script></blockquote>
+<p>证明：</p>
+<p>记 $\textbf{x}=I_n\textbf{x}=[\textbf{e}_1\dots\textbf{e}_n]\textbf{x}=x_1\textbf{e}_1+\dots+x_n\textbf{e}_n$，由于 $T$ 是线性变换，知</p>
+<script type="math/tex; mode=display">
+\begin{align}
+T(\textbf{x})&=T(x_1\textbf{e}_1+\dots+x_n\textbf{e}_n)\\
+&=x_1T(\textbf{e}_1)+\dots+x_nT(\textbf{e}_n)\\
+&=[T(\textbf{e}_1)\dots T(\textbf{e}_n))]\left[\begin{array}{}  x_1\\ \vdots\\x_n\\ \end{array}\right]\\
+&=A\textbf{x}
+\end{align}</script><p>旋转矩阵作用效果为逆时针旋转 $\varphi$，即 $\left[\begin{array}{}  1\0\ \end{array}\right]$旋转成$\left[\begin{array}{}  \cos\varphi \ \sin\varphi  \end{array} \right]$，$\left[\begin{array}{}  0\1\ \end{array}\right]$旋转成$\left[\begin{array}{}   -\sin\varphi  \ \cos\varphi\ \end{array} \right]$，由上述定理，</p>
+<script type="math/tex; mode=display">
+T(\textbf{e}_1)=\left[\begin{array}{}  \cos\varphi \\ \sin\varphi  \end{array} \right]\\
+T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{array} \right]</script><p>因而$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$。</p>
+]]></content>
+      <categories>
+        <category>学渣忏悔录</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
       </tags>
   </entry>
   <entry>
