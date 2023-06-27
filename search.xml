@@ -1,147 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>网红数学题合集</title>
-    <url>/2020/04/28/mathforfun/</url>
-    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
-<!--more--->
-<ul>
-<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
-</ul>
-<img src="/2020/04/28/mathforfun/04/28/mathforfun/001.jpg" class title="题目描述">
-<img src="/2020/04/28/mathforfun/04/28/mathforfun/002.png" class title="解答">
-<ul>
-<li>已知正方形部分区域面积，求阴影部分面积：</li>
-</ul>
-<img src="/2020/04/28/mathforfun/04/28/mathforfun/003.jpg" class title="题目描述">
-<img src="/2020/04/28/mathforfun/04/28/mathforfun/004.jpg" class title="解答">
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>数学</tag>
-        <tag>just-for-fun</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一道积分算一天——量子力学篇</title>
-    <url>/2020/12/03/qmIntegrate/</url>
-    <content><![CDATA[<p>没有什么摘要 QAQ</p>
-<!-----more---->
-<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
-\begin{equation}
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
-\end{equation}</script><p>任意高斯积分的定积分为</p>
-<script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}</script><p>定义函数</p>
-<script type="math/tex; mode=display">
-I(a)=\int_{-a}^{a}e^{-x^2}dx</script><p>高斯积分通过求它的极限得到</p>
-<script type="math/tex; mode=display">
-\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx</script><p>对 $I(a)$ 取平方得到</p>
-<script type="math/tex; mode=display">
-\begin{equation}
-\begin{aligned}
-I^2(a)&=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
-&=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
-&=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
-\end{aligned}
-\end{equation}</script><p>该双重积分可被看作是直角坐标系上一个正方形的面积积分 $\int e^{-(x^2+y^2)}d(x,y)$，其顶点为 ${(-a,a),(a,a),(a,-a),(-a,-a)}$。</p>
-<p>这个正方形的内切圆的积分必须小于 $I^2(a)$，外接圆的积分必须大于 $I(a)^2$。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
-<script type="math/tex; mode=display">
-\int_0^{2\pi}\int_0^a re^{-r^2}drd\theta<I^2(a)<\int_0^{2\pi}\int_0^{a\sqrt{2}} re^{-r^2}drd\theta</script><p>得到</p>
-<script type="math/tex; mode=display">
-\pi(1-e^{-a^2})<I^2(a)<\pi(1-e^{-2a^2})</script><p>通过夹逼定理获得高斯积分</p>
-<script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}</script><h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}</script><p>波函数归一化中可能用到。</p>
-<script type="math/tex; mode=display">
-\int_0^\infty x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}</script><p>谐振子中常常用到。</p>
-<script type="math/tex; mode=display">
-\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}</script><h1 id="散射"><a href="#散射" class="headerlink" title="散射"></a>散射</h1><ol>
-<li><script type="math/tex; mode=display">
-I=\int_0^\infty e^{-\mu r}\sin kr dr</script></li>
-</ol>
-<p>由于 $\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}$，代入积分</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-I&=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
-&=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty e^{(-ik-\mu)}dr)\\
-&=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
-&=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
-&=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
-&=\frac{k}{k^2+u^2}
-\end{aligned}</script><p>该积分常用于波恩近似。</p>
-<ol>
-<li><script type="math/tex; mode=display">
-I=\int_0^\infty\sin qrdr</script></li>
-</ol>
-<script type="math/tex; mode=display">
-\begin{aligned}
-I&=\int_0^\infty\sin qrdr\\
-&=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
-&=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
-&=\frac{1}{q}
-\end{aligned}</script>]]></content>
-      <categories>
-        <category>量子力学</category>
-      </categories>
-      <tags>
-        <tag>量子力学</tag>
-        <tag>积分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/2020/01/09/test/</url>
-    <content><![CDATA[<p>摘要：一些测试和 markdown 用法。</p>
-<span id="more"></span>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>脚注</p>
-<p><sup><a href="#fn_脚注" id="reffn_脚注">脚注</a></sup>: </p>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>行内代码<code>代码</code></p>
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"><span class="keyword">code</span></span><br></pre></td></tr></table></figure>
-<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><p>$\vec{r}$</p>
-<script type="math/tex; mode=display">
-\sin ^2 x+\cos ^2 x=1</script><p>实数集<code>\mathbb&#123;R&#125;</code>: $\mathbb{R}$  </p>
-<p>占位符</p>
-<p>quad空格<code>\quad</code>: $A\quad A$<br>两个quad空格<code>\qqaud</code>: $A\qquad A$</p>
-<p>约等于<code>\approx</code>: $\approx$<br>大于等于<code>\geq</code>: $\geq$<br>小于等于<code>\leq</code>: $\leq$</p>
-<p>正负<code>\pm</code>: $\pm$ (<code>\plusmn</code> mathjax 无法渲染)</p>
-<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><h2 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h2><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">&#123;<span class="symbol">%</span> asset_img <span class="number">0001.</span>jpg This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span> <span class="symbol">%</span>&#125;</span><br></pre></td></tr></table></figure>
-<img src="/2020/01/09/test/01/09/test/0001.jpg" class title="This is an example image">
-<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:70%;margin:auto&quot;</span>&gt;</span></span><span class="template-tag">&#123;% <span class="name">asset_img</span> 0001.jpg This is an example image %&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<div style="width:70%;margin:auto"><img src="/2020/01/09/test/01/09/test/0001.jpg" class title="This is an example image"></div>
-
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="http://www.baidu.com" title="链接">链接</a></p>
-<h1 id="使用内嵌-HTML-标签控制markdown颜色、字体、字号"><a href="#使用内嵌-HTML-标签控制markdown颜色、字体、字号" class="headerlink" title="使用内嵌 HTML 标签控制markdown颜色、字体、字号"></a>使用内嵌 HTML 标签控制markdown颜色、字体、字号</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><h3 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FF5566</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font color="#FF5566">示例文字</font>
-
-<h3 id="文字背景颜色"><a href="#文字背景颜色" class="headerlink" title="文字背景颜色"></a>文字背景颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<table><tr><td bgcolor="#003366">示例文字</td></tr></table>
-
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font face="微软雅黑">示例文字</font>
-
-<h2 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">72</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font size="72">示例文字</font>
-
-<h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FFFFFF</span> <span class="attr">size</span>=<span class="string">14</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span></span><br><span class="line">示例文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<table><tr><td bgcolor="#003366">
-<font color="#FFFFFF" size="5" face="微软雅黑">
-示例文字
-</font>
-</td></tr></table>]]></content>
-      <categories>
-        <category>琐记</category>
-      </categories>
-      <tags>
-        <tag>琐记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用mathematica作梯度矢量图</title>
     <url>/2020/03/31/mathematica1/</url>
     <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
@@ -183,6 +42,80 @@ I&=\int_0^\infty\sin qrdr\\
         <tag>mathematica</tag>
         <tag>坑</tag>
         <tag>学渣忏悔录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网红数学题合集</title>
+    <url>/2020/04/28/mathforfun/</url>
+    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
+<!--more--->
+<ul>
+<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
+</ul>
+<p><img src="/2020/04/28/mathforfun/mathforfun\001.jpg" alt="题目描述"></p>
+<p><img src="/2020/04/28/mathforfun/mathforfun\002.png" alt="解答"></p>
+<ul>
+<li>已知正方形部分区域面积，求阴影部分面积：</li>
+</ul>
+<p><img src="/2020/04/28/mathforfun/mathforfun\003.jpg" alt="题目描述"></p>
+<p><img src="/2020/04/28/mathforfun/mathforfun\004.jpg" alt="解答"></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>just-for-fun</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2020/01/09/test/</url>
+    <content><![CDATA[<p>摘要：一些测试和 markdown 用法。</p>
+<span id="more"></span>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>脚注</p>
+<p><sup><a href="#fn_脚注" id="reffn_脚注">脚注</a></sup>: </p>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>行内代码<code>代码</code></p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"><span class="keyword">code</span></span><br></pre></td></tr></table></figure>
+<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><p>$\vec{r}$</p>
+<script type="math/tex; mode=display">
+\sin ^2 x+\cos ^2 x=1</script><p>实数集<code>\mathbb&#123;R&#125;</code>: $\mathbb{R}$  </p>
+<p>占位符</p>
+<p>quad空格<code>\quad</code>: $A\quad A$<br>两个quad空格<code>\qqaud</code>: $A\qquad A$</p>
+<p>约等于<code>\approx</code>: $\approx$<br>大于等于<code>\geq</code>: $\geq$<br>小于等于<code>\leq</code>: $\leq$</p>
+<p>正负<code>\pm</code>: $\pm$ (<code>\plusmn</code> mathjax 无法渲染)</p>
+<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><h2 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h2><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">&#123;<span class="symbol">%</span> asset_img <span class="number">0001.</span>jpg This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span> <span class="symbol">%</span>&#125;#失效</span><br><span class="line">![This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span>](./test/<span class="number">0001.</span>jpg)</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/01/09/test/0001.jpg" alt="This is an example image"></p>
+<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:70%;margin:auto&quot;</span>&gt;</span></span><span class="template-tag">&#123;% <span class="name">asset_img</span> 0001.jpg This is an example image %&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<div style="width:70%;margin:auto"><img src="/2020/01/09/test/01/09/test/0001.jpg" class title="This is an example image"></div>
+
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="http://www.baidu.com" title="链接">链接</a></p>
+<h1 id="使用内嵌-HTML-标签控制markdown颜色、字体、字号"><a href="#使用内嵌-HTML-标签控制markdown颜色、字体、字号" class="headerlink" title="使用内嵌 HTML 标签控制markdown颜色、字体、字号"></a>使用内嵌 HTML 标签控制markdown颜色、字体、字号</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><h3 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FF5566</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font color="#FF5566">示例文字</font>
+
+<h3 id="文字背景颜色"><a href="#文字背景颜色" class="headerlink" title="文字背景颜色"></a>文字背景颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table><tr><td bgcolor="#003366">示例文字</td></tr></table>
+
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font face="微软雅黑">示例文字</font>
+
+<h2 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">72</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font size="72">示例文字</font>
+
+<h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FFFFFF</span> <span class="attr">size</span>=<span class="string">14</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span></span><br><span class="line">示例文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table><tr><td bgcolor="#003366">
+<font color="#FFFFFF" size="5" face="微软雅黑">
+示例文字
+</font>
+</td></tr></table>]]></content>
+      <categories>
+        <category>琐记</category>
+      </categories>
+      <tags>
+        <tag>琐记</tag>
       </tags>
   </entry>
   <entry>
@@ -323,6 +256,73 @@ I&=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
       </categories>
       <tags>
         <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一道积分算一天——量子力学篇</title>
+    <url>/2020/12/03/qmIntegrate/</url>
+    <content><![CDATA[<p>没有什么摘要 QAQ</p>
+<!-----more---->
+<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
+\begin{equation}
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
+\end{equation}</script><p>任意高斯积分的定积分为</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}</script><p>定义函数</p>
+<script type="math/tex; mode=display">
+I(a)=\int_{-a}^{a}e^{-x^2}dx</script><p>高斯积分通过求它的极限得到</p>
+<script type="math/tex; mode=display">
+\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx</script><p>对 $I(a)$ 取平方得到</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+I^2(a)&=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
+&=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
+&=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
+\end{aligned}
+\end{equation}</script><p>该双重积分可被看作是直角坐标系上一个正方形的面积积分 $\int e^{-(x^2+y^2)}d(x,y)$，其顶点为 ${(-a,a),(a,a),(a,-a),(-a,-a)}$。</p>
+<p>这个正方形的内切圆的积分必须小于 $I^2(a)$，外接圆的积分必须大于 $I(a)^2$。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
+<script type="math/tex; mode=display">
+\int_0^{2\pi}\int_0^a re^{-r^2}drd\theta<I^2(a)<\int_0^{2\pi}\int_0^{a\sqrt{2}} re^{-r^2}drd\theta</script><p>得到</p>
+<script type="math/tex; mode=display">
+\pi(1-e^{-a^2})<I^2(a)<\pi(1-e^{-2a^2})</script><p>通过夹逼定理获得高斯积分</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}</script><h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}</script><p>波函数归一化中可能用到。</p>
+<script type="math/tex; mode=display">
+\int_0^\infty x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}</script><p>谐振子中常常用到。</p>
+<script type="math/tex; mode=display">
+\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}</script><h1 id="散射"><a href="#散射" class="headerlink" title="散射"></a>散射</h1><ol>
+<li><script type="math/tex; mode=display">
+I=\int_0^\infty e^{-\mu r}\sin kr dr</script></li>
+</ol>
+<p>由于 $\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}$，代入积分</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I&=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
+&=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty e^{(-ik-\mu)}dr)\\
+&=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
+&=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
+&=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
+&=\frac{k}{k^2+u^2}
+\end{aligned}</script><p>该积分常用于波恩近似。</p>
+<ol>
+<li><script type="math/tex; mode=display">
+I=\int_0^\infty\sin qrdr</script></li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I&=\int_0^\infty\sin qrdr\\
+&=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
+&=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
+&=\frac{1}{q}
+\end{aligned}</script>]]></content>
+      <categories>
+        <category>量子力学</category>
+      </categories>
+      <tags>
+        <tag>量子力学</tag>
+        <tag>积分</tag>
       </tags>
   </entry>
 </search>
