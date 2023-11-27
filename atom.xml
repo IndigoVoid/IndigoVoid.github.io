@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-07-17T08:35:50.000Z</updated>
+  <updated>2023-11-16T07:35:37.235Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>概率论发展史</title>
+    <link href="http://yoursite.com/2023/11/16/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%91%E5%B1%95%E5%8F%B2/"/>
+    <id>http://yoursite.com/2023/11/16/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%91%E5%B1%95%E5%8F%B2/</id>
+    <published>2023-11-16T07:33:30.000Z</published>
+    <updated>2023-11-16T07:35:37.235Z</updated>
+    
+    <content type="html"><![CDATA[<p>废稿</p><!----more---->]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;废稿&lt;/p&gt;
+&lt;!----more----&gt;
+</summary>
+      
+    
+    
+    
+    <category term="true" scheme="http://yoursite.com/categories/true/"/>
+    
+    
+    <category term="true" scheme="http://yoursite.com/tags/true/"/>
+    
+  </entry>
   
   <entry>
     <title>一道积分算一天——量子力学篇</title>

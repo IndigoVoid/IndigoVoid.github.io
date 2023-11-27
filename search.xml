@@ -235,6 +235,19 @@ I&=\int_0^\infty\sin qrdr\\
       </tags>
   </entry>
   <entry>
+    <title>概率论发展史</title>
+    <url>/2023/11/16/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%91%E5%B1%95%E5%8F%B2/</url>
+    <content><![CDATA[<p>废稿</p>
+<!----more---->
+]]></content>
+      <categories>
+        <category>true</category>
+      </categories>
+      <tags>
+        <tag>true</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>旋转矩阵</title>
     <url>/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</url>
     <content><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事.jpg）现整理一下其推导。</p>
