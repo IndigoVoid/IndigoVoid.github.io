@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2024-03-27T09:04:20.862Z</updated>
+  <updated>2024-03-27T07:43:05.986Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>理论力学习题第一章</title>
-    <link href="http://yoursite.com/2024/03/27/%E5%88%98%E5%B7%9D%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98/"/>
-    <id>http://yoursite.com/2024/03/27/%E5%88%98%E5%B7%9D%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98/</id>
-    <published>2024-03-27T06:50:10.000Z</published>
-    <updated>2024-03-27T09:04:20.862Z</updated>
-    
-    <content type="html"><![CDATA[<p>助教工作需要做刘川老师《理论力学》的习题, 没有找到相关的习题解答, 突然在想为什么我不自己写一份习题解答呢, 于是开了这个坑. </p><span id="more"></span><ol><li><p>曲柄连杆构件</p><blockquote><p> 汽车发动机中的曲柄连杆构件 (如图1.3所示) 由两个杆构成, 是带动汽车的重要构件. 与发动机直接相连的杆 $OA$ (长度为$l_1$) 可以绕原点 $O$ 自由地转动. 另一个杆 $AB$ (长度为 $l_2$) 的一端与第一个杆在点 $A$ 连接，另一端 $B$ 则可以沿水平方向 (x轴) 运动. 当然, 为了保证整个系统可以工作, 我们要求 $l_2&gt;21_1$, 忽略所有连杆的质量并假定所有构件之间都没有摩擦. 设在点 $B$ 处的水平方向的力 $P$ 与点 $A$ 处垂直方向的力 $Q$ 恰好使系统达到平衡. 选择点 $A$ 与原点 $O$ 之间的夹角 $\theta$ 为广义坐标.<br>(a) 写出点 $A$ 的坐标 $(x_A,y_A)$ 以及点 $B$ 的坐标 $x_B$ (显然 $y_B=0$), 用广义坐标 $\theta$ 以及题目给出的各个长度表达.<br>(b) 利用虚功原理 (1.10) 求比值Q/P.</p></blockquote> <div align="center"><img src="/2024/03/27/%E5%88%98%E5%B7%9D%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%B9%A0%E9%A2%98/题1示意图1.jpg" style="zoom:50%;"></div><p> 虚功原理 (1.10) : </p><script type="math/tex; mode=display"> \begin{equation}   \sum_i F^a_i \cdot \delta x_i=0. \end{equation}</script></li></ol><p>​    (a) 点 $A$ 的坐标</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}x_A&=l_1\cos\theta,\\y_A&=l_1\sin\theta.\\\end{aligned}\end{equation}</script><p>​        点 $B$​ 的坐标</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}x_B&=l_1\cos\theta+\sqrt{l_2^2-l_1^2\sin^2\theta},\\y_B&=0.\\\end{aligned}\end{equation}</script><p>​    (b) 虚位移用广义坐标的变分表示 (1.12) 为 $\delta x_i=\frac{\partial x_i}{\partial q_i}\delta q_j$.</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}-Q\delta (l_1\sin\theta)-P\delta \left(l_1\cos\theta+\sqrt{l_2^2-l_1^2\sin^2\theta}\right)&=0,\\Ql_1\cos\theta\delta \theta-Pl_1\sin\theta  \delta \theta+P\frac{-2l_1^2\sin\theta\cos\theta}{2\sqrt{l_2^2-l_1^2\sin^2\theta}}\delta \theta&=0,\\\frac{Q}{P}=\tan\theta+\frac{l_1\sin\theta}{\sqrt{l_2^2-l_1^2\sin^2\theta}}.\end{aligned}\end{equation}</script><ol><li><p>虚功原理</p><blockquote><p>考虑一个弹性介质构成的绳圈，其自然长度为 $0$, 弹性系数为 $k$. 绳圈的质量分布均匀, 单位长度的质量记为 $\sigma$. 现在考虑重力场中一个实心光滑的半径为 $R$ 的球面. 假定 $2πR\geq 0$. 将弹性绳圈套在该光滑球面的正上方并由绳圈重力使其下滑以达到平衡. 假定平衡位置与球心连线和向上方向的夹角为 $\theta$. 利用第 3 节中的虚功原理 (1.10) 求出平衡时的 $\theta$. </p></blockquote></li></ol><p>​    记绳套伸长量 $x$, 高度 $h$.</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}x&=2\pi R \sin \theta -l_0,\\h&=R\cos\theta.\end{aligned}\end{equation}</script><p>​    由虚功原理 $m g \delta h+k x \delta x =0$, </p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}-\sigma g l_0 R \sin \theta \delta \theta+k\left(2 \pi R \sin \theta-l_0\right) 2 \pi R \cos \theta \delta \theta&=0,\\-\sigma g l_0 R \sin \theta+2 \pi^2 R^2 k \sin 2 \theta-2 \pi k R l_0 \cos \theta&=0.\end{aligned}\end{equation}</script>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;助教工作需要做刘川老师《理论力学》的习题, 没有找到相关的习题解答, 突然在想为什么我不自己写一份习题解答呢, 于是开了这个坑. &lt;/p&gt;</summary>
-    
-    
-    
-    <category term="习题" scheme="http://yoursite.com/categories/%E4%B9%A0%E9%A2%98/"/>
-    
-    
-    <category term="理论力学" scheme="http://yoursite.com/tags/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/"/>
-    
-  </entry>
   
   <entry>
     <title>概率论发展史与物理</title>
