@@ -191,38 +191,6 @@ I&=\int_0^\infty\sin qrdr\\
       </tags>
   </entry>
   <entry>
-    <title>旋转矩阵</title>
-    <url>/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</url>
-    <content><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事.jpg）现整理一下其推导。</p>
-<span id="more"></span>
-<p>在线性代数中有定理：</p>
-<blockquote>
-<p>设 $T: \mathbb{R}^n\to\mathbb{R}^m$ 为线性变换，则存在唯一的矩阵 $A$ 使</p>
-<script type="math/tex; mode=display">
-T(\textbf{x})=A\textbf{x},\ 对\mathbb{R}^n中一切\ \textbf{x}</script><p>$A$ 是 $m\times n$ 矩阵，它的第 j 列是向量 $T(\textbf{e}_j)$，其中 $\textbf{e}_j$ 是单位矩阵 $I_n$ 的第 j 列：</p>
-<script type="math/tex; mode=display">
-A=[T(x_1\textbf{e}_1)\dots T(x_n\textbf{e}_n)]</script></blockquote>
-<p>证明：</p>
-<p>记 $\textbf{x}=I_n\textbf{x}=[\textbf{e}_1\dots\textbf{e}_n]\textbf{x}=x_1\textbf{e}_1+\dots+x_n\textbf{e}_n$，由于 $T$ 是线性变换，知</p>
-<script type="math/tex; mode=display">
-\begin{align}
-T(\textbf{x})&=T(x_1\textbf{e}_1+\dots+x_n\textbf{e}_n)\\
-&=x_1T(\textbf{e}_1)+\dots+x_nT(\textbf{e}_n)\\
-&=[T(\textbf{e}_1)\dots T(\textbf{e}_n))]\left[\begin{array}{}  x_1\\ \vdots\\x_n\\ \end{array}\right]\\
-&=A\textbf{x}
-\end{align}</script><p>旋转矩阵作用效果为逆时针旋转 $\varphi$，即 $\left[\begin{array}{}  1\0\ \end{array}\right]$旋转成$\left[\begin{array}{}  \cos\varphi \ \sin\varphi  \end{array} \right]$，$\left[\begin{array}{}  0\1\ \end{array}\right]$旋转成$\left[\begin{array}{}   -\sin\varphi  \ \cos\varphi\ \end{array} \right]$，由上述定理，</p>
-<script type="math/tex; mode=display">
-T(\textbf{e}_1)=\left[\begin{array}{}  \cos\varphi \\ \sin\varphi  \end{array} \right]\\
-T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{array} \right]</script><p>因而$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$。</p>
-]]></content>
-      <categories>
-        <category>学渣忏悔录</category>
-      </categories>
-      <tags>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>养成良好的写作习惯之「盘古之白」</title>
     <url>/2020/03/17/%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF1/</url>
     <content><![CDATA[<p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为「盘古之白」。</p>
@@ -275,6 +243,38 @@ T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{arra
       <tags>
         <tag>琐记</tag>
         <tag>小细节</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>旋转矩阵</title>
+    <url>/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</url>
+    <content><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事.jpg）现整理一下其推导。</p>
+<span id="more"></span>
+<p>在线性代数中有定理：</p>
+<blockquote>
+<p>设 $T: \mathbb{R}^n\to\mathbb{R}^m$ 为线性变换，则存在唯一的矩阵 $A$ 使</p>
+<script type="math/tex; mode=display">
+T(\textbf{x})=A\textbf{x},\ 对\mathbb{R}^n中一切\ \textbf{x}</script><p>$A$ 是 $m\times n$ 矩阵，它的第 j 列是向量 $T(\textbf{e}_j)$，其中 $\textbf{e}_j$ 是单位矩阵 $I_n$ 的第 j 列：</p>
+<script type="math/tex; mode=display">
+A=[T(x_1\textbf{e}_1)\dots T(x_n\textbf{e}_n)]</script></blockquote>
+<p>证明：</p>
+<p>记 $\textbf{x}=I_n\textbf{x}=[\textbf{e}_1\dots\textbf{e}_n]\textbf{x}=x_1\textbf{e}_1+\dots+x_n\textbf{e}_n$，由于 $T$ 是线性变换，知</p>
+<script type="math/tex; mode=display">
+\begin{align}
+T(\textbf{x})&=T(x_1\textbf{e}_1+\dots+x_n\textbf{e}_n)\\
+&=x_1T(\textbf{e}_1)+\dots+x_nT(\textbf{e}_n)\\
+&=[T(\textbf{e}_1)\dots T(\textbf{e}_n))]\left[\begin{array}{}  x_1\\ \vdots\\x_n\\ \end{array}\right]\\
+&=A\textbf{x}
+\end{align}</script><p>旋转矩阵作用效果为逆时针旋转 $\varphi$，即 $\left[\begin{array}{}  1\0\ \end{array}\right]$旋转成$\left[\begin{array}{}  \cos\varphi \ \sin\varphi  \end{array} \right]$，$\left[\begin{array}{}  0\1\ \end{array}\right]$旋转成$\left[\begin{array}{}   -\sin\varphi  \ \cos\varphi\ \end{array} \right]$，由上述定理，</p>
+<script type="math/tex; mode=display">
+T(\textbf{e}_1)=\left[\begin{array}{}  \cos\varphi \\ \sin\varphi  \end{array} \right]\\
+T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{array} \right]</script><p>因而$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \ \sin\varphi &amp; \cos\varphi\ \end{array} \right]$。</p>
+]]></content>
+      <categories>
+        <category>学渣忏悔录</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
       </tags>
   </entry>
   <entry>
