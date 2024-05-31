@@ -1,97 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>一道积分算一天——量子力学篇</title>
-    <url>/2020/12/03/qmIntegrate/</url>
-    <content><![CDATA[<p>没有什么摘要 QAQ</p>
-<span id="more"></span>
-<h1 id="高斯积分">高斯积分</h1>
-<h2 id="推导">推导</h2>
-<p><span class="math display">\[
-\begin{equation}
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
-\end{equation}
-\]</span></p>
-<p>任意高斯积分的定积分为 <span class="math display">\[
-\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}
-\]</span> 定义函数 <span class="math display">\[
-I(a)=\int_{-a}^{a}e^{-x^2}dx
-\]</span> 高斯积分通过求它的极限得到 <span class="math display">\[
-\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx
-\]</span> 对 <span class="math inline">\(I(a)\)</span> 取平方得到 <span class="math display">\[
-\begin{equation}
-\begin{aligned}
-I^2(a)&amp;=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
-&amp;=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
-&amp;=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
-\end{aligned}
-\end{equation}
-\]</span> 该双重积分可被看作是直角坐标系上一个正方形的面积积分 <span class="math inline">\(\int e^{-(x^2+y^2)}d(x,y)\)</span>，其顶点为 <span class="math inline">\({(-a,a),(a,a),(a,-a),(-a,-a)}\)</span>。</p>
-<p>这个正方形的内切圆的积分必须小于 <span class="math inline">\(I^2(a)\)</span>，外接圆的积分必须大于 <span class="math inline">\(I(a)^2\)</span>。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
-<p><span class="math display">\[
-\int_0^{2\pi}\int_0^a
-re^{-r^2}drd\theta&lt;I^2(a)&lt;\int_0^{2\pi}\int_0^{a\sqrt{2}}
-re^{-r^2}drd\theta
-\]</span></p>
-<p>得到 <span class="math display">\[
-\pi(1-e^{-a^2})&lt;I^2(a)&lt;\pi(1-e^{-2a^2})
-\]</span> 通过夹逼定理获得高斯积分 <span class="math display">\[
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
-\]</span></p>
-<h2 id="推广">推广</h2>
-<p><span class="math display">\[
-\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}
-\]</span></p>
-<p>波函数归一化中可能用到。</p>
-<p><span class="math display">\[
-\int_0^\infty
-x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}
-\]</span></p>
-<p>谐振子中常常用到。</p>
-<p><span class="math display">\[
-\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}
-\]</span></p>
-<h1 id="散射">散射</h1>
-<ol type="1">
-<li><span class="math display">\[
-I=\int_0^\infty e^{-\mu r}\sin kr dr
-\]</span></li>
-</ol>
-<p>由于 <span class="math inline">\(\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}\)</span>，代入积分
-<span class="math display">\[
-\begin{aligned}
-I&amp;=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
-&amp;=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty
-e^{(-ik-\mu)}dr)\\
-&amp;=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
-&amp;=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
-&amp;=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
-&amp;=\frac{k}{k^2+u^2}
-\end{aligned}
-\]</span> 该积分常用于波恩近似。</p>
-<ol start="2" type="1">
-<li><span class="math display">\[
-I=\int_0^\infty\sin qrdr
-\]</span></li>
-</ol>
-<p><span class="math display">\[
-\begin{aligned}
-I&amp;=\int_0^\infty\sin qrdr\\
-&amp;=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
-&amp;=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
-&amp;=\frac{1}{q}
-\end{aligned}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>量子力学</category>
-      </categories>
-      <tags>
-        <tag>量子力学</tag>
-        <tag>积分</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用mathematica作梯度矢量图</title>
     <url>/2020/03/31/mathematica1/</url>
     <content><![CDATA[<p>当用mathematica作梯度矢量图时......</p>
@@ -152,6 +61,42 @@ otherwise be held.</p>
         <tag>mathematica</tag>
         <tag>坑</tag>
         <tag>学渣忏悔录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网红数学题合集</title>
+    <url>/2020/04/28/mathforfun/</url>
+    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
+<span id="more"></span>
+<ul>
+<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
+</ul>
+<figure>
+<img src="/2020/04/28/mathforfun/001.jpg" alt="题目描述">
+<figcaption aria-hidden="true">题目描述</figcaption>
+</figure>
+<figure>
+<img src="/2020/04/28/mathforfun/002.png" alt="解答">
+<figcaption aria-hidden="true">解答</figcaption>
+</figure>
+<ul>
+<li>已知正方形部分区域面积，求阴影部分面积：</li>
+</ul>
+<figure>
+<img src="/2020/04/28/mathforfun/003.jpg" alt="题目描述">
+<figcaption aria-hidden="true">题目描述</figcaption>
+</figure>
+<figure>
+<img src="/2020/04/28/mathforfun/004.jpg" alt="解答">
+<figcaption aria-hidden="true">解答</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>just-for-fun</tag>
       </tags>
   </entry>
   <entry>
@@ -244,42 +189,6 @@ A\)</span> 两个quad空格<code>\qqaud</code>: <span class="math inline">\(A\qq
       </tags>
   </entry>
   <entry>
-    <title>网红数学题合集</title>
-    <url>/2020/04/28/mathforfun/</url>
-    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
-<span id="more"></span>
-<ul>
-<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
-</ul>
-<figure>
-<img src="/2020/04/28/mathforfun/001.jpg" alt="题目描述">
-<figcaption aria-hidden="true">题目描述</figcaption>
-</figure>
-<figure>
-<img src="/2020/04/28/mathforfun/002.png" alt="解答">
-<figcaption aria-hidden="true">解答</figcaption>
-</figure>
-<ul>
-<li>已知正方形部分区域面积，求阴影部分面积：</li>
-</ul>
-<figure>
-<img src="/2020/04/28/mathforfun/003.jpg" alt="题目描述">
-<figcaption aria-hidden="true">题目描述</figcaption>
-</figure>
-<figure>
-<img src="/2020/04/28/mathforfun/004.jpg" alt="解答">
-<figcaption aria-hidden="true">解答</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>数学</tag>
-        <tag>just-for-fun</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>养成良好的写作习惯之「盘古之白」</title>
     <url>/2020/03/17/%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF1/</url>
     <content><![CDATA[<p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为「盘古之白」。</p>
@@ -349,22 +258,6 @@ typography”是两个词，这也是我决定加空格的根本原因。</p>
   </entry>
   <entry>
     <title>旋转矩阵</title>
-    <url>/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/</url>
-    <content><![CDATA[<p>多年以前在 <a href="https://indigovoid.github.io/2020/07/26/旋转矩阵/#more">旋转矩阵 |
-indigovoid</a> 中验证了二维旋转矩阵的作用.
-现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵.</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>理论力学</category>
-      </categories>
-      <tags>
-        <tag>理论力学</tag>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>旋转矩阵</title>
     <url>/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</url>
     <content><![CDATA[<p>经常用到旋转矩阵<span class="math inline">\(A=\left[\begin{array}{}  \cos\varphi &amp;
 -\sin\varphi \\ \sin\varphi &amp; \cos\varphi\\ \end{array}
@@ -409,6 +302,97 @@ T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\
       </categories>
       <tags>
         <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一道积分算一天——量子力学篇</title>
+    <url>/2020/12/03/qmIntegrate/</url>
+    <content><![CDATA[<p>没有什么摘要 QAQ</p>
+<span id="more"></span>
+<h1 id="高斯积分">高斯积分</h1>
+<h2 id="推导">推导</h2>
+<p><span class="math display">\[
+\begin{equation}
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
+\end{equation}
+\]</span></p>
+<p>任意高斯积分的定积分为 <span class="math display">\[
+\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}
+\]</span> 定义函数 <span class="math display">\[
+I(a)=\int_{-a}^{a}e^{-x^2}dx
+\]</span> 高斯积分通过求它的极限得到 <span class="math display">\[
+\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx
+\]</span> 对 <span class="math inline">\(I(a)\)</span> 取平方得到 <span class="math display">\[
+\begin{equation}
+\begin{aligned}
+I^2(a)&amp;=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
+&amp;=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
+&amp;=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
+\end{aligned}
+\end{equation}
+\]</span> 该双重积分可被看作是直角坐标系上一个正方形的面积积分 <span class="math inline">\(\int e^{-(x^2+y^2)}d(x,y)\)</span>，其顶点为 <span class="math inline">\({(-a,a),(a,a),(a,-a),(-a,-a)}\)</span>。</p>
+<p>这个正方形的内切圆的积分必须小于 <span class="math inline">\(I^2(a)\)</span>，外接圆的积分必须大于 <span class="math inline">\(I(a)^2\)</span>。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
+<p><span class="math display">\[
+\int_0^{2\pi}\int_0^a
+re^{-r^2}drd\theta&lt;I^2(a)&lt;\int_0^{2\pi}\int_0^{a\sqrt{2}}
+re^{-r^2}drd\theta
+\]</span></p>
+<p>得到 <span class="math display">\[
+\pi(1-e^{-a^2})&lt;I^2(a)&lt;\pi(1-e^{-2a^2})
+\]</span> 通过夹逼定理获得高斯积分 <span class="math display">\[
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
+\]</span></p>
+<h2 id="推广">推广</h2>
+<p><span class="math display">\[
+\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}
+\]</span></p>
+<p>波函数归一化中可能用到。</p>
+<p><span class="math display">\[
+\int_0^\infty
+x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}
+\]</span></p>
+<p>谐振子中常常用到。</p>
+<p><span class="math display">\[
+\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}
+\]</span></p>
+<h1 id="散射">散射</h1>
+<ol type="1">
+<li><span class="math display">\[
+I=\int_0^\infty e^{-\mu r}\sin kr dr
+\]</span></li>
+</ol>
+<p>由于 <span class="math inline">\(\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}\)</span>，代入积分
+<span class="math display">\[
+\begin{aligned}
+I&amp;=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
+&amp;=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty
+e^{(-ik-\mu)}dr)\\
+&amp;=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
+&amp;=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
+&amp;=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
+&amp;=\frac{k}{k^2+u^2}
+\end{aligned}
+\]</span> 该积分常用于波恩近似。</p>
+<ol start="2" type="1">
+<li><span class="math display">\[
+I=\int_0^\infty\sin qrdr
+\]</span></li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+I&amp;=\int_0^\infty\sin qrdr\\
+&amp;=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
+&amp;=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
+&amp;=\frac{1}{q}
+\end{aligned}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>量子力学</category>
+      </categories>
+      <tags>
+        <tag>量子力学</tag>
+        <tag>积分</tag>
       </tags>
   </entry>
   <entry>
@@ -578,6 +562,35 @@ I&amp;=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
       </categories>
       <tags>
         <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>旋转矩阵</title>
+    <url>/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/</url>
+    <content><![CDATA[<p>多年以前在 <a href="https://indigovoid.github.io/2020/07/26/旋转矩阵/#more">旋转矩阵 |
+indigovoid</a> 中验证了二维旋转矩阵的作用.
+现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵.</p>
+<span id="more"></span>
+<p>TEST PHYSICS <span class="math display">\[
+\pdv{H}{t}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\pdv{H}{t}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+F=ma
+\end{equation}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>理论力学</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+        <tag>理论力学</tag>
       </tags>
   </entry>
 </search>

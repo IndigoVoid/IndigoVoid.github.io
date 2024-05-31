@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2024-05-31T09:17:40.526Z</updated>
+  <updated>2024-05-31T11:13:53.272Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/"/>
     <id>http://yoursite.com/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/</id>
     <published>2024-05-31T09:04:29.000Z</published>
-    <updated>2024-05-31T09:17:40.526Z</updated>
+    <updated>2024-05-31T11:13:53.272Z</updated>
     
-    <content type="html"><![CDATA[<p>多年以前在 <a href="https://indigovoid.github.io/2020/07/26/旋转矩阵/#more">旋转矩阵 |indigovoid</a> 中验证了二维旋转矩阵的作用.现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵.</p><span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<p>多年以前在 <a href="https://indigovoid.github.io/2020/07/26/旋转矩阵/#more">旋转矩阵 |indigovoid</a> 中验证了二维旋转矩阵的作用.现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵.</p><span id="more"></span><p>TEST PHYSICS <span class="math display">\[\pdv{H}{t}\]</span></p><p><span class="math display">\[\begin{equation}\pdv{H}{t}\end{equation}\]</span></p><p><span class="math display">\[\begin{equation}F=ma\end{equation}\]</span></p>]]></content>
     
     
     <summary type="html">&lt;p&gt;多年以前在 &lt;a href=&quot;https://indigovoid.github.io/2020/07/26/旋转矩阵/#more&quot;&gt;旋转矩阵 |
@@ -35,9 +35,9 @@ indigovoid&lt;/a&gt; 中验证了二维旋转矩阵的作用.
     <category term="理论力学" scheme="http://yoursite.com/categories/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/"/>
     
     
-    <category term="理论力学" scheme="http://yoursite.com/tags/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/"/>
-    
     <category term="线性代数" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+    <category term="理论力学" scheme="http://yoursite.com/tags/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/"/>
     
   </entry>
   
