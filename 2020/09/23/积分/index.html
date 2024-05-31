@@ -79,12 +79,12 @@
 
 
 
-<meta name="description" content="1 \[ \int (x^2+r^2)^{(-\frac{3}{2})}dx \] 解：令 \(x&#x3D;r\tan t\)， \[ \begin{align} 原式&amp;&#x3D;\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\ &amp;&#x3D;r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\ &amp;&#x3D;r^{-2}\int \cos">
+<meta name="description" content="1 \int (x^2+r^2)^{(-\frac{3}{2})}dx解：令 $x&#x3D;r\tan t$，  \begin{align} 原式&amp;&#x3D;\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\ &amp;&#x3D;r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\ &amp;&#x3D;r^{-2}\int \cos tdt\\ &amp;&#x3D;r^{-2}\sin t+C \end{ali">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一道积分算一天——电磁学篇">
 <meta property="og:url" content="http://yoursite.com/2020/09/23/%E7%A7%AF%E5%88%86/index.html">
 <meta property="og:site_name" content="indigovoid">
-<meta property="og:description" content="1 \[ \int (x^2+r^2)^{(-\frac{3}{2})}dx \] 解：令 \(x&#x3D;r\tan t\)， \[ \begin{align} 原式&amp;&#x3D;\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\ &amp;&#x3D;r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\ &amp;&#x3D;r^{-2}\int \cos">
+<meta property="og:description" content="1 \int (x^2+r^2)^{(-\frac{3}{2})}dx解：令 $x&#x3D;r\tan t$，  \begin{align} 原式&amp;&#x3D;\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\ &amp;&#x3D;r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\ &amp;&#x3D;r^{-2}\int \cos tdt\\ &amp;&#x3D;r^{-2}\sin t+C \end{ali">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-09-23T14:02:02.000Z">
 <meta property="article:modified_time" content="2021-01-16T12:07:18.000Z">
@@ -387,71 +387,52 @@
       
 
       
-        <h1 id="section">1</h1>
-<p><span class="math display">\[
-\int (x^2+r^2)^{(-\frac{3}{2})}dx
-\]</span></p>
-<p>解：令 <span class="math inline">\(x=r\tan t\)</span>， <span class="math display">\[
+        <h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><script type="math/tex; mode=display">
+\int (x^2+r^2)^{(-\frac{3}{2})}dx</script><p>解：令 $x=r\tan t$，</p>
+<script type="math/tex; mode=display">
 \begin{align}
-原式&amp;=\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\
-&amp;=r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\
-&amp;=r^{-2}\int \cos tdt\\
-&amp;=r^{-2}\sin t+C
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\int
-(x^2+r^2)^{(-\frac{3}{2})}dx=\frac{1}{r^2}\frac{x}{\sqrt{x^2+r^2}}+C
-\]</span></p>
-<p>被这个积分困住很久，主要原因在于忘记了 <span class="math inline">\(\tan^2x+1=sec^2x\)</span>，以及第二类换元不熟悉。</p>
+原式&=\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\
+&=r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\
+&=r^{-2}\int \cos tdt\\
+&=r^{-2}\sin t+C
+\end{align}</script><script type="math/tex; mode=display">
+\int (x^2+r^2)^{(-\frac{3}{2})}dx=\frac{1}{r^2}\frac{x}{\sqrt{x^2+r^2}}+C</script><p>被这个积分困住很久，主要原因在于忘记了 $\tan^2x+1=sec^2x$，以及第二类换元不熟悉。</p>
 <blockquote>
 <p>第二类换元法</p>
-<p>若含有 <span class="math inline">\(\sqrt{a^2-x^2}\)</span>，令 <span class="math inline">\(x=a\sin t,
-t\in(-\frac{\pi}{2},\frac{\pi}{2})\)</span></p>
-<p>若含有 <span class="math inline">\(\sqrt{a^2+x^2}\)</span>，令 <span class="math inline">\(x=a\tan t\)</span></p>
-<p>若含有 <span class="math inline">\(\sqrt{x^2-a^2}\)</span>，令 <span class="math inline">\(x=a\sec t\)</span></p>
+<p>若含有 $\sqrt{a^2-x^2}$，令 $x=a\sin t, t\in(-\frac{\pi}{2},\frac{\pi}{2})$</p>
+<p>若含有 $\sqrt{a^2+x^2}$，令 $x=a\tan t$</p>
+<p>若含有 $\sqrt{x^2-a^2}$，令 $x=a\sec t$ </p>
 </blockquote>
-<h1 id="section-1">2</h1>
-<p><span class="math display">\[
-\int\sqrt{\frac{x_0x}{x_0-x}}dx
-\]</span> 解： $$ <span class="math display">\[\begin{align}
-原式&amp;=\int \sqrt{\frac{\frac{x}{x_0}x_0}{1-\frac{x}{x_0}}}d
-\frac{x}{x_0}\\
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><script type="math/tex; mode=display">
+\int\sqrt{\frac{x_0x}{x_0-x}}dx</script><p>解：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+原式&=\int \sqrt{\frac{\frac{x}{x_0}x_0}{1-\frac{x}{x_0}}}d \frac{x}{x_0}\\
 
 
-\end{align}\]</span> $$ 令 $ =a<span class="math inline">\(，现求解积分\)</span>I=da$</p>
-<p>令 <span class="math inline">\(a=\sin^2t\)</span>，<span class="math inline">\(da=2\sin t\cos tdt\)</span>， <span class="math display">\[
+\end{align}</script><p>令 $ \frac{x}{x_0}=a$，现求解积分$I=\int \frac{\sqrt{a}}{\sqrt{1-a}}da$</p>
+<p>令 $a=\sin^2t$，$da=2\sin t\cos tdt$，</p>
+<script type="math/tex; mode=display">
 \begin{align}
-I&amp;=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
-&amp;=2\int \sin^2tdt\\
-&amp;=\int (1-\cos 2t)dt\\
-&amp;=t-\frac{1}{2}\sin 2t+C
-\end{align}
-\]</span></p>
-<p><span class="math display">\[
-\sin 2t=2\sin t\cos t=2\sqrt{a}\sqrt{1-a}
-\]</span></p>
-<p><span class="math display">\[
-原式=\sqrt{x_0}(x_0\arcsin \sqrt{\frac{x}{x_0}}-\sqrt{x}\sqrt{x_0-x})+C
-\]</span></p>
-<p>这个其实还是第二类换元这同一块石头，被坑住是因为看到 <span class="math inline">\(\frac{1}{\sqrt{1-a}}\)</span> 以及答案有 <span class="math inline">\(\arcsin\)</span> ，就想分部积分。</p>
-<h1 id="section-2">3</h1>
-<p><span class="math display">\[
-\int \frac{dz}{\sqrt{z^2+a^2}}
-\]</span></p>
-<p>解：</p>
-<p>令 <span class="math inline">\(z=a \tan t\)</span>， <span class="math display">\[
+I&=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
+&=2\int \sin^2tdt\\
+&=\int (1-\cos 2t)dt\\
+&=t-\frac{1}{2}\sin 2t+C
+\end{align}</script><script type="math/tex; mode=display">
+\sin 2t=2\sin t\cos t=2\sqrt{a}\sqrt{1-a}</script><script type="math/tex; mode=display">
+原式=\sqrt{x_0}(x_0\arcsin \sqrt{\frac{x}{x_0}}-\sqrt{x}\sqrt{x_0-x})+C</script><p>这个其实还是第二类换元这同一块石头，被坑住是因为看到 $\frac{1}{\sqrt{1-a}}$ 以及答案有 $\arcsin$ ，就想分部积分。</p>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><script type="math/tex; mode=display">
+\int \frac{dz}{\sqrt{z^2+a^2}}</script><p>解：</p>
+<p>令 $z=a \tan t$，</p>
+<script type="math/tex; mode=display">
 \begin{align}
-原式&amp;=\int\frac{1}{a\sqrt{\tan^2 t+1}}d(a\tan t)\\
-&amp;=\int\sec tdt\\
-&amp;=\int \sec t \frac{\sec t+\tan t}{\sec t+\tan t}dt\\
-&amp;=\int\frac{(\sec t\tan t+\sec^2 t)}{\sec t+\tan t}dt\\
-&amp;=\ln (\sec t+\tan t)+C
-\end{align}
-\]</span> <span class="math inline">\(原积分=
-\ln(z+\sqrt{z^2+a^2})+C\)</span></p>
-<p>这个是因为不知道 <span class="math inline">\(\sec x\)</span>
-如何积分。</p>
+原式&=\int\frac{1}{a\sqrt{\tan^2 t+1}}d(a\tan t)\\
+&=\int\sec tdt\\
+&=\int \sec t \frac{\sec t+\tan t}{\sec t+\tan t}dt\\
+&=\int\frac{(\sec t\tan t+\sec^2 t)}{\sec t+\tan t}dt\\
+&=\ln (\sec t+\tan t)+C
+\end{align}</script><p>$原积分= \ln(z+\sqrt{z^2+a^2})+C$</p>
+<p>这个是因为不知道 $\sec x$ 如何积分。</p>
 <p>另外在计算三角函数时，除了通过恒等式进行计算，可以直接将对应边长的三角形画出计算三角函数。</p>
 
       
@@ -682,7 +663,7 @@ I&amp;=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#section-1"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#section-2"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li></ol></div>
             
 
           </div>
