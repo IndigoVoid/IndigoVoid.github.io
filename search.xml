@@ -38,6 +38,60 @@
       </tags>
   </entry>
   <entry>
+    <title>用mathematica作梯度矢量图</title>
+    <url>/2020/03/31/mathematica1/</url>
+    <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
+<span id="more"></span>
+<p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>运行结果中将无任何图像，如图所示</p>
+<p><img src="/2020/03/31/mathematica1/p1.png" alt="运行结果"></p>
+<p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
+<p><img src="/2020/03/31/mathematica1/p2.jpg" alt="尝试结果"></p>
+<p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
+<p>对第一个代码进行追踪</p>
+<p><img src="/2020/03/31/mathematica1/p3.jpg" alt="追踪结果"><br><img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果"></p>
+<p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>这样一来就得到了所期待的结果（如下图）。</p>
+<p><img src="/2020/03/31/mathematica1/p4.png" alt="运行结果"></p>
+<p>mathematica 中对 Evaluate 的介绍</p>
+<blockquote>
+<p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p>
+<p>Details</p>
+<p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p>
+<p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p>
+</blockquote>
+<p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p>
+<p><img src="/2020/03/31/mathematica1/p5.jpg" alt="Grad 属性"></p>
+<p>留个坑，以后再说…   ╥﹏╥</p>
+<hr>
+<p>更新</p>
+<p>经过他人指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p>
+<p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p>
+<p>​    </p>
+]]></content>
+      <categories>
+        <category>学渣忏悔录</category>
+      </categories>
+      <tags>
+        <tag>mathematica</tag>
+        <tag>坑</tag>
+        <tag>学渣忏悔录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性代数误区--矩阵的逆</title>
+    <url>/2024/07/25/linear-algebra-2/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>学渣忏悔录</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>网红数学题合集</title>
     <url>/2020/04/28/mathforfun/</url>
     <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
@@ -129,46 +183,58 @@ I&=\int_0^\infty\sin qrdr\\
       </tags>
   </entry>
   <entry>
-    <title>用mathematica作梯度矢量图</title>
-    <url>/2020/03/31/mathematica1/</url>
-    <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
-<span id="more"></span>
-<p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
-<p>运行结果中将无任何图像，如图所示</p>
-<p><img src="/2020/03/31/mathematica1/p1.png" alt="运行结果"></p>
-<p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
-<p><img src="/2020/03/31/mathematica1/p2.jpg" alt="尝试结果"></p>
-<p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
-<p>对第一个代码进行追踪</p>
-<p><img src="/2020/03/31/mathematica1/p3.jpg" alt="追踪结果"><br><img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果"></p>
-<p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
-<p>这样一来就得到了所期待的结果（如下图）。</p>
-<p><img src="/2020/03/31/mathematica1/p4.png" alt="运行结果"></p>
-<p>mathematica 中对 Evaluate 的介绍</p>
+    <title>养成良好的写作习惯之「盘古之白」</title>
+    <url>/2020/03/17/%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF1/</url>
+    <content><![CDATA[<p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为「盘古之白」。</p>
 <blockquote>
-<p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p>
-<p>Details</p>
-<p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p>
-<p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p>
+<p>有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。<a href="#refer-anchor-1"><sup>1</sup></a></p>
 </blockquote>
-<p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p>
-<p><img src="/2020/03/31/mathematica1/p5.jpg" alt="Grad 属性"></p>
-<p>留个坑，以后再说…   ╥﹏╥</p>
-<hr>
-<p>更新</p>
-<p>经过他人指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p>
-<p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p>
-<p>​    </p>
+<span id="more"></span>
+<p>对于为何要在中文和西文之间加空格的几种说法。</p>
+<ol>
+<li>中文不要求空格断词，而西文要求，所以这个过渡区域使用两边的需求之和，即使用空格。而中文遇到日文等不使用空格断词的文字时，因为日文不要求空格，中文也不要求空格，所以我们不加空格。</li>
+<li>任何两个字之间都需要空隙。利用手工添加空格的方式，一定程度上，可以起到调整中英文字偶之间空隙的作用。</li>
+<li>英文夹杂汉字时会很自然地在英文词和汉字之间加空格，所以中文夹杂英文词也就应该在英文词和汉字之间加空格。</li>
+</ol>
+<p>具体应该在什么情况下加空格呢？首先我们需要了解什么是全形和半形（也被称之为全角和半角）。全角和半角是计算机中，中、日、韩文的 CJKV 字符的显示格式。西文字符中，每一个字母或符号都是由一字节的空间储存，一个字节由 8 位元组成，共 256 个编码空间。显然，汉语、日语以及韩语文字的数量均大大超过 256 个，故而使用两个字节储存一个字符。在使用等宽字体时，中日韩文字占据的显示宽度时西文字符的两倍，故而，中日韩文字被称为全形字符，拉丁字母以及数字被称为半形字符。</p>
+<ul>
+<li>中英文之间需要增加空格：</li>
+</ul>
+<blockquote>
+<p>西文 typography 里有句话：The space bar is not a design tool.</p>
+</blockquote>
+<p>注：如若是专有名词，例如豆瓣FM，则按照官方所定义的格式书写。由这两个例子可以发现，“豆瓣FM”是一个词，“西文 typography”是两个词，这也是我决定加空格的根本原因。</p>
+<ul>
+<li>中文和数字之间需要增加空格：</li>
+</ul>
+<blockquote>
+<p>今天得到了 10 元压岁钱。</p>
+</blockquote>
+<ul>
+<li>数字和单位之间需要增加空格：</li>
+</ul>
+<blockquote>
+<p>该质点的速度是 10 m/s。</p>
+</blockquote>
+<ul>
+<li>度/百分比与数字之间不需要增加空格：</li>
+</ul>
+<blockquote>
+<p>寒假作业完成了 10%。</p>
+</blockquote>
+<p>当然，这只是一个基于个人偏好的习惯，并不是必须的。</p>
+<blockquote>
+<p>​    中文文本中夹用英文时，应根据所选用的中英文字体、字符间距以及排版的视觉效果决定英文词句与中文文字之间是否留有空格间距。如留空格，应保证体例的统一。</p>
+<p>——中华人民共和国新闻出版行业标准 CY/T 154—2017号《中文出版物夹用英文的编辑规范》第 8.1 节</p>
+</blockquote>
+<p><div id="refer-anchor-1"></div><br>[1].盘古之白的说法和这句话来源于 GitHub 中一个自动添加空格的<a href="https://github.com/vinta/pangu.js" title="链接">小工具</a>。其真实性不详。</p>
 ]]></content>
       <categories>
-        <category>学渣忏悔录</category>
+        <category>琐记</category>
       </categories>
       <tags>
-        <tag>mathematica</tag>
-        <tag>坑</tag>
-        <tag>学渣忏悔录</tag>
+        <tag>小细节</tag>
+        <tag>琐记</tag>
       </tags>
   </entry>
   <entry>
@@ -225,61 +291,6 @@ I&=\int_0^\infty\sin qrdr\\
       </categories>
       <tags>
         <tag>琐记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>养成良好的写作习惯之「盘古之白」</title>
-    <url>/2020/03/17/%E5%86%99%E4%BD%9C%E4%B9%A0%E6%83%AF1/</url>
-    <content><![CDATA[<p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为「盘古之白」。</p>
-<blockquote>
-<p>有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。<a href="#refer-anchor-1"><sup>1</sup></a></p>
-</blockquote>
-<span id="more"></span>
-<p>对于为何要在中文和西文之间加空格的几种说法。</p>
-<ol>
-<li>中文不要求空格断词，而西文要求，所以这个过渡区域使用两边的需求之和，即使用空格。而中文遇到日文等不使用空格断词的文字时，因为日文不要求空格，中文也不要求空格，所以我们不加空格。</li>
-<li>任何两个字之间都需要空隙。利用手工添加空格的方式，一定程度上，可以起到调整中英文字偶之间空隙的作用。</li>
-<li>英文夹杂汉字时会很自然地在英文词和汉字之间加空格，所以中文夹杂英文词也就应该在英文词和汉字之间加空格。</li>
-</ol>
-<p>具体应该在什么情况下加空格呢？首先我们需要了解什么是全形和半形（也被称之为全角和半角）。全角和半角是计算机中，中、日、韩文的 CJKV 字符的显示格式。西文字符中，每一个字母或符号都是由一字节的空间储存，一个字节由 8 位元组成，共 256 个编码空间。显然，汉语、日语以及韩语文字的数量均大大超过 256 个，故而使用两个字节储存一个字符。在使用等宽字体时，中日韩文字占据的显示宽度时西文字符的两倍，故而，中日韩文字被称为全形字符，拉丁字母以及数字被称为半形字符。</p>
-<ul>
-<li>中英文之间需要增加空格：</li>
-</ul>
-<blockquote>
-<p>西文 typography 里有句话：The space bar is not a design tool.</p>
-</blockquote>
-<p>注：如若是专有名词，例如豆瓣FM，则按照官方所定义的格式书写。由这两个例子可以发现，“豆瓣FM”是一个词，“西文 typography”是两个词，这也是我决定加空格的根本原因。</p>
-<ul>
-<li>中文和数字之间需要增加空格：</li>
-</ul>
-<blockquote>
-<p>今天得到了 10 元压岁钱。</p>
-</blockquote>
-<ul>
-<li>数字和单位之间需要增加空格：</li>
-</ul>
-<blockquote>
-<p>该质点的速度是 10 m/s。</p>
-</blockquote>
-<ul>
-<li>度/百分比与数字之间不需要增加空格：</li>
-</ul>
-<blockquote>
-<p>寒假作业完成了 10%。</p>
-</blockquote>
-<p>当然，这只是一个基于个人偏好的习惯，并不是必须的。</p>
-<blockquote>
-<p>​    中文文本中夹用英文时，应根据所选用的中英文字体、字符间距以及排版的视觉效果决定英文词句与中文文字之间是否留有空格间距。如留空格，应保证体例的统一。</p>
-<p>——中华人民共和国新闻出版行业标准 CY/T 154—2017号《中文出版物夹用英文的编辑规范》第 8.1 节</p>
-</blockquote>
-<p><div id="refer-anchor-1"></div><br>[1].盘古之白的说法和这句话来源于 GitHub 中一个自动添加空格的<a href="https://github.com/vinta/pangu.js" title="链接">小工具</a>。其真实性不详。</p>
-]]></content>
-      <categories>
-        <category>琐记</category>
-      </categories>
-      <tags>
-        <tag>琐记</tag>
-        <tag>小细节</tag>
       </tags>
   </entry>
   <entry>

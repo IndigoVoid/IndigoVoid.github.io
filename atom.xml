@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2024-07-25T11:28:18.393Z</updated>
+  <updated>2024-07-25T11:34:44.574Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线性代数误区--矩阵的逆</title>
+    <link href="http://yoursite.com/2024/07/25/linear-algebra-2/"/>
+    <id>http://yoursite.com/2024/07/25/linear-algebra-2/</id>
+    <published>2024-07-25T11:33:53.000Z</published>
+    <updated>2024-07-25T11:34:44.574Z</updated>
+    
+    
+    
+    
+    <category term="学渣忏悔录" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
+    
+    
+    <category term="线性代数" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>线性代数误区--迹的轮换性质</title>
@@ -218,9 +235,9 @@
     <category term="琐记" scheme="http://yoursite.com/categories/%E7%90%90%E8%AE%B0/"/>
     
     
-    <category term="琐记" scheme="http://yoursite.com/tags/%E7%90%90%E8%AE%B0/"/>
-    
     <category term="小细节" scheme="http://yoursite.com/tags/%E5%B0%8F%E7%BB%86%E8%8A%82/"/>
+    
+    <category term="琐记" scheme="http://yoursite.com/tags/%E7%90%90%E8%AE%B0/"/>
     
   </entry>
   

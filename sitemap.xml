@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2024/07/25/linear-algebra-2/</loc>
+    
+    <lastmod>2024-07-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2024/07/25/linear-algebra-1/</loc>
     
     <lastmod>2024-07-25</lastmod>
@@ -135,6 +144,27 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/mathematica/</loc>
+    <lastmod>2024-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E5%9D%91/</loc>
+    <lastmod>2024-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/</loc>
+    <lastmod>2024-07-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2024-07-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -163,21 +193,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/mathematica/</loc>
-    <lastmod>2024-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E5%9D%91/</loc>
-    <lastmod>2024-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/</loc>
+    <loc>http://yoursite.com/tags/%E5%B0%8F%E7%BB%86%E8%8A%82/</loc>
     <lastmod>2024-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -185,13 +201,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/%E7%90%90%E8%AE%B0/</loc>
-    <lastmod>2024-07-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E5%B0%8F%E7%BB%86%E8%8A%82/</loc>
     <lastmod>2024-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
