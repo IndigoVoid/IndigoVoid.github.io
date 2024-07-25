@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2024-05-31T11:30:40.507Z</updated>
+  <updated>2024-07-25T11:28:18.393Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>线性代数误区--迹的轮换性质</title>
+    <link href="http://yoursite.com/2024/07/25/linear-algebra-1/"/>
+    <id>http://yoursite.com/2024/07/25/linear-algebra-1/</id>
+    <published>2024-07-25T11:12:58.000Z</published>
+    <updated>2024-07-25T11:28:18.393Z</updated>
+    
+    <content type="html"><![CDATA[<p>对于迹的轮换性质的描述时常是, 当矩阵为方阵时, 满足迹的轮换性质. </p><span id="more"></span><p>那么当矩阵不是方阵时, 是否满足迹的轮换性质? 之前被老板问了这个问题, 果然答错了:sob:.​</p><p>要使之能轮换, 必须轮换前后都满足矩阵乘法. 设 $A$ 是一个 $m\times n$ 矩阵, $B$ 是个 $n\times m$ 矩阵, 则</p><script type="math/tex; mode=display">\begin{equation}\tr(AB)=\tr(BA).\end{equation}</script><p> 证明如下—</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}\tr(A B) &=\tr\left(\left(\sum_{k=1}^{n} a_{i k} b_{k j}\right)\right) \\&=\sum_{i=1}^{m} \sum_{k=1}^{n} a_{i k} b_{k i} \\&=\sum_{k=1}^{n} \sum_{i=1}^{m} b_{k i} a_{i k} \\&=\sum_{i=1}^{n} \sum_{k=1}^{m} b_{i k} a_{k i} \\&=\tr\left(\left(\sum_{k=1}^{m} b_{i k} a_{k j}\right)\right) \\&=\tr(B A),\end{aligned}\end{equation}</script><p>故而该性质并不要求 $A, B$ 为方阵. 同样, 循环改变乘积中矩阵相乘的顺序, 而最终的结果不变. 该性质中的矩阵, 也并不必须是方阵. 也即, </p><script type="math/tex; mode=display">\begin{equation}\tr(ABC)=\tr(CAB)=\tr(BCA).\end{equation}</script><p>根据两个矩阵交换的性质, 先假设 $A$ 是一个 $m\times n$ 矩阵, $B$ 是个 $n\times l$ 矩阵, 则 $AB$ 是一个 $m \times l$ 的矩阵, 因此 $C$ 是 $l\times m$ 的矩阵, 才能满足 $CA$ 有意义. 此时 $AB,BC,CA$ 已经满足乘法. $AB$ 是 $m\times l$ 矩阵, 因此 $\tr(ABC)=\tr(CAB)$ 已满足. $BC$ 是 $n\times m$ 矩阵, 因此 $\tr(ABC)=\tr(BCA)$ 已满足. $CA$ 是 $l\times n$ 矩阵, 因此 $\tr(CAB)=\tr(BCA)$ 已满足. 因此三矩阵的轮换成立只需要求 $A$ 是 $m\times n$ 矩阵, $B$ 是 $n\times l$ 矩阵, $C$ 是 $l\times m$ 矩阵. 使得轮换成立的关键是所有的矩阵乘法有意义, 对于一系列矩阵 $A_1,\,A_2\dots A_n$, 要使初始排列的所有乘法有意义, 其矩阵维数分别为 $m_1\times m_2,\,m_2\times m_3,\dots,m_n\times m_{n+1}$, 要使轮换后的乘法有意义还需要求 $m_{n+1}=m_1$. </p><p>并不需要所有矩阵是方阵. </p><p>:smile_cat:</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;对于迹的轮换性质的描述时常是, 当矩阵为方阵时, 满足迹的轮换性质. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="学渣忏悔录" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
+    
+    
+    <category term="线性代数" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>旋转矩阵</title>
     <link href="http://yoursite.com/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/"/>
     <id>http://yoursite.com/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/</id>
     <published>2024-05-31T09:04:29.000Z</published>
-    <updated>2024-05-31T11:30:40.507Z</updated>
+    <updated>2024-05-31T12:14:57.435Z</updated>
     
-    <content type="html"><![CDATA[<p>多年以前在 <a href="https://indigovoid.github.io/2020/07/26/旋转矩阵/#more">旋转矩阵 | indigovoid</a> 中验证了二维旋转矩阵的作用. 现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵. </p><span id="more"></span><p>TEST PHYSICS</p><script type="math/tex; mode=display">\pdv{H}{t}</script><script type="math/tex; mode=display">\begin{equation}\pdv{H}{t}\end{equation}</script><script type="math/tex; mode=display">\begin{equation}F=ma\end{equation}</script>]]></content>
+    <content type="html"><![CDATA[<p>多年以前在 <a href="https://indigovoid.github.io/2020/07/26/旋转矩阵/#more">旋转矩阵 | indigovoid</a> 中验证了二维旋转矩阵的作用. 现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵. </p><span id="more"></span><h1 id="二维旋转矩阵"><a href="#二维旋转矩阵" class="headerlink" title="二维旋转矩阵"></a>二维旋转矩阵</h1><p>一维中没有旋转的概念, 到了二维中, 就可以绕一固定的点进行旋转. </p><p>[插入图片]</p><p>[图片 a 将线段旋转, 图片 b 在坐标系中将线段旋转]</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}x=r\cos\phi,\quad y=r\sin\phi.\end{aligned}\end{equation}</script><p>矩阵形式</p><p>旋转矩阵</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}A=\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}.\end{aligned}\end{equation}</script><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.youtube.com/watch?v=8XRvpDhTJpw">EM 10004 Video NA RunEscape GunShot TsktpkV15 Nor Q F NA EN PC A bluedemo (youtube.com)</a></li><li><a href="https://mathworld.wolfram.com/RotationMatrix.html">Rotation Matrix — from Wolfram MathWorld</a></li></ul><script type="math/tex; mode=display">\begin{equation}\begin{aligned}\end{aligned}\end{equation}</script><h1 id="其他空间变换"><a href="#其他空间变换" class="headerlink" title="其他空间变换"></a>其他空间变换</h1><p><strong>转换矩阵（Translation Matrix）</strong></p><p><strong>绽放矩阵（Scale Matrix）</strong></p><h2 id="Ref-1"><a href="#Ref-1" class="headerlink" title="Ref"></a>Ref</h2><ul><li><p><a href="http://www.codinglabs.net/article_world_view_projection_matrix.aspx">Coding Labs :: World, View and Projection Transformation Matrices</a></p></li><li><p><a href="https://www.cnblogs.com/caoyiting/articles/16932790.html">旋转矩阵（Rotation Matrix）的推导及其应用 - 麦伦克 - 博客园 (cnblogs.com)</a></p></li></ul>]]></content>
     
     
     <summary type="html">&lt;p&gt;多年以前在 &lt;a href=&quot;https://indigovoid.github.io/2020/07/26/旋转矩阵/#more&quot;&gt;旋转矩阵 | indigovoid&lt;/a&gt; 中验证了二维旋转矩阵的作用. 现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵. &lt;/p&gt;</summary>
