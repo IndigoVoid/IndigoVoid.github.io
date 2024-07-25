@@ -9,7 +9,7 @@
 <p>要使之能轮换, 必须轮换前后都满足矩阵乘法. 设 $A$ 是一个 $m\times n$ 矩阵, $B$ 是个 $n\times m$ 矩阵, 则</p>
 <script type="math/tex; mode=display">
 \begin{equation}
-\tr(AB)=\tr(BA).
+\Tr(AB)=\Tr(BA).
 \end{equation}</script><p> 证明如下—</p>
 <script type="math/tex; mode=display">
 \begin{equation}
@@ -46,6 +46,30 @@
       </categories>
       <tags>
         <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网红数学题合集</title>
+    <url>/2020/04/28/mathforfun/</url>
+    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
+<span id="more"></span>
+<ul>
+<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
+</ul>
+<p><img src="/2020/04/28/mathforfun/001.jpg" alt="题目描述"></p>
+<p><img src="/2020/04/28/mathforfun/002.png" alt="解答"></p>
+<ul>
+<li>已知正方形部分区域面积，求阴影部分面积：</li>
+</ul>
+<p><img src="/2020/04/28/mathforfun/003.jpg" alt="题目描述"></p>
+<p><img src="/2020/04/28/mathforfun/004.jpg" alt="解答"></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>just-for-fun</tag>
       </tags>
   </entry>
   <entry>
@@ -89,30 +113,6 @@
         <tag>mathematica</tag>
         <tag>坑</tag>
         <tag>学渣忏悔录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网红数学题合集</title>
-    <url>/2020/04/28/mathforfun/</url>
-    <content><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p>
-<span id="more"></span>
-<ul>
-<li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li>
-</ul>
-<p><img src="/2020/04/28/mathforfun/001.jpg" alt="题目描述"></p>
-<p><img src="/2020/04/28/mathforfun/002.png" alt="解答"></p>
-<ul>
-<li>已知正方形部分区域面积，求阴影部分面积：</li>
-</ul>
-<p><img src="/2020/04/28/mathforfun/003.jpg" alt="题目描述"></p>
-<p><img src="/2020/04/28/mathforfun/004.jpg" alt="解答"></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>数学</tag>
-        <tag>just-for-fun</tag>
       </tags>
   </entry>
   <entry>
@@ -169,122 +169,6 @@
       </categories>
       <tags>
         <tag>琐记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一道积分算一天——量子力学篇</title>
-    <url>/2020/12/03/qmIntegrate/</url>
-    <content><![CDATA[<p>没有什么摘要 QAQ</p>
-<span id="more"></span>
-<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
-\begin{equation}
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
-\end{equation}</script><p>任意高斯积分的定积分为</p>
-<script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}</script><p>定义函数</p>
-<script type="math/tex; mode=display">
-I(a)=\int_{-a}^{a}e^{-x^2}dx</script><p>高斯积分通过求它的极限得到</p>
-<script type="math/tex; mode=display">
-\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx</script><p>对 $I(a)$ 取平方得到</p>
-<script type="math/tex; mode=display">
-\begin{equation}
-\begin{aligned}
-I^2(a)&=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
-&=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
-&=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
-\end{aligned}
-\end{equation}</script><p>该双重积分可被看作是直角坐标系上一个正方形的面积积分 $\int e^{-(x^2+y^2)}d(x,y)$，其顶点为 ${(-a,a),(a,a),(a,-a),(-a,-a)}$。</p>
-<p>这个正方形的内切圆的积分必须小于 $I^2(a)$，外接圆的积分必须大于 $I(a)^2$。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
-<script type="math/tex; mode=display">
-\int_0^{2\pi}\int_0^a re^{-r^2}drd\theta<I^2(a)<\int_0^{2\pi}\int_0^{a\sqrt{2}} re^{-r^2}drd\theta</script><p>得到</p>
-<script type="math/tex; mode=display">
-\pi(1-e^{-a^2})<I^2(a)<\pi(1-e^{-2a^2})</script><p>通过夹逼定理获得高斯积分</p>
-<script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}</script><h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}</script><p>波函数归一化中可能用到。</p>
-<script type="math/tex; mode=display">
-\int_0^\infty x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}</script><p>谐振子中常常用到。</p>
-<script type="math/tex; mode=display">
-\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}</script><h1 id="散射"><a href="#散射" class="headerlink" title="散射"></a>散射</h1><ol>
-<li><script type="math/tex; mode=display">
-I=\int_0^\infty e^{-\mu r}\sin kr dr</script></li>
-</ol>
-<p>由于 $\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}$，代入积分</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-I&=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
-&=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty e^{(-ik-\mu)}dr)\\
-&=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
-&=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
-&=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
-&=\frac{k}{k^2+u^2}
-\end{aligned}</script><p>该积分常用于波恩近似。</p>
-<ol>
-<li><script type="math/tex; mode=display">
-I=\int_0^\infty\sin qrdr</script></li>
-</ol>
-<script type="math/tex; mode=display">
-\begin{aligned}
-I&=\int_0^\infty\sin qrdr\\
-&=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
-&=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
-&=\frac{1}{q}
-\end{aligned}</script>]]></content>
-      <categories>
-        <category>量子力学</category>
-      </categories>
-      <tags>
-        <tag>量子力学</tag>
-        <tag>积分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>旋转矩阵</title>
-    <url>/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/</url>
-    <content><![CDATA[<p>多年以前在 <a href="https://indigovoid.github.io/2020/07/26/旋转矩阵/#more">旋转矩阵 | indigovoid</a> 中验证了二维旋转矩阵的作用. 现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵. </p>
-<span id="more"></span>
-<h1 id="二维旋转矩阵"><a href="#二维旋转矩阵" class="headerlink" title="二维旋转矩阵"></a>二维旋转矩阵</h1><p>一维中没有旋转的概念, 到了二维中, 就可以绕一固定的点进行旋转. </p>
-<p>[插入图片]</p>
-<p>[图片 a 将线段旋转, 图片 b 在坐标系中将线段旋转]</p>
-<script type="math/tex; mode=display">
-\begin{equation}
-\begin{aligned}
-x=r\cos\phi,\quad y=r\sin\phi.
-\end{aligned}
-\end{equation}</script><p>矩阵形式</p>
-<p>旋转矩阵</p>
-<script type="math/tex; mode=display">
-\begin{equation}
-\begin{aligned}
-A=
-\begin{pmatrix}
-\cos\theta&-\sin\theta\\
-\sin\theta&\cos\theta
-\end{pmatrix}.
-\end{aligned}
-\end{equation}</script><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul>
-<li><a href="https://www.youtube.com/watch?v=8XRvpDhTJpw">EM 10004 Video NA RunEscape GunShot TsktpkV15 Nor Q F NA EN PC A bluedemo (youtube.com)</a></li>
-<li><a href="https://mathworld.wolfram.com/RotationMatrix.html">Rotation Matrix — from Wolfram MathWorld</a></li>
-</ul>
-<script type="math/tex; mode=display">
-\begin{equation}
-\begin{aligned}
-\end{aligned}
-\end{equation}</script><h1 id="其他空间变换"><a href="#其他空间变换" class="headerlink" title="其他空间变换"></a>其他空间变换</h1><p><strong>转换矩阵（Translation Matrix）</strong></p>
-<p><strong>绽放矩阵（Scale Matrix）</strong></p>
-<h2 id="Ref-1"><a href="#Ref-1" class="headerlink" title="Ref"></a>Ref</h2><ul>
-<li><p><a href="http://www.codinglabs.net/article_world_view_projection_matrix.aspx">Coding Labs :: World, View and Projection Transformation Matrices</a></p>
-</li>
-<li><p><a href="https://www.cnblogs.com/caoyiting/articles/16932790.html">旋转矩阵（Rotation Matrix）的推导及其应用 - 麦伦克 - 博客园 (cnblogs.com)</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>理论力学</category>
-      </categories>
-      <tags>
-        <tag>线性代数</tag>
-        <tag>理论力学</tag>
       </tags>
   </entry>
   <entry>
@@ -375,6 +259,92 @@ T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{arra
       </tags>
   </entry>
   <entry>
+    <title>旋转矩阵</title>
+    <url>/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/</url>
+    <content><![CDATA[<p>多年以前在 <a href="https://indigovoid.github.io/2020/07/26/旋转矩阵/#more">旋转矩阵 | indigovoid</a> 中验证了二维旋转矩阵的作用. 现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵. </p>
+<span id="more"></span>
+<h1 id="二维旋转矩阵"><a href="#二维旋转矩阵" class="headerlink" title="二维旋转矩阵"></a>二维旋转矩阵</h1><p>一维中没有旋转的概念, 到了二维中, 就可以绕一固定的点进行旋转. </p>
+<p>[插入图片]</p>
+<p>[图片 a 将线段旋转, 图片 b 在坐标系中将线段旋转]</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+x=r\cos\phi,\quad y=r\sin\phi.
+\end{aligned}
+\end{equation}</script><p>矩阵形式</p>
+<p>旋转矩阵</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+A=
+\begin{pmatrix}
+\cos\theta&-\sin\theta\\
+\sin\theta&\cos\theta
+\end{pmatrix}.
+\end{aligned}
+\end{equation}</script><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul>
+<li><a href="https://www.youtube.com/watch?v=8XRvpDhTJpw">EM 10004 Video NA RunEscape GunShot TsktpkV15 Nor Q F NA EN PC A bluedemo (youtube.com)</a></li>
+<li><a href="https://mathworld.wolfram.com/RotationMatrix.html">Rotation Matrix — from Wolfram MathWorld</a></li>
+</ul>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+\end{aligned}
+\end{equation}</script><h1 id="其他空间变换"><a href="#其他空间变换" class="headerlink" title="其他空间变换"></a>其他空间变换</h1><p><strong>转换矩阵（Translation Matrix）</strong></p>
+<p><strong>绽放矩阵（Scale Matrix）</strong></p>
+<h2 id="Ref-1"><a href="#Ref-1" class="headerlink" title="Ref"></a>Ref</h2><ul>
+<li><p><a href="http://www.codinglabs.net/article_world_view_projection_matrix.aspx">Coding Labs :: World, View and Projection Transformation Matrices</a></p>
+</li>
+<li><p><a href="https://www.cnblogs.com/caoyiting/articles/16932790.html">旋转矩阵（Rotation Matrix）的推导及其应用 - 麦伦克 - 博客园 (cnblogs.com)</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>理论力学</category>
+      </categories>
+      <tags>
+        <tag>线性代数</tag>
+        <tag>理论力学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>概率论与物理 1 ——概率论发展史</title>
+    <url>/2024/05/10/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%91%E5%B1%95%E5%8F%B2/</url>
+    <content><![CDATA[<p>​    这是一篇起源于糊弄文献综述时产生的废稿, 梳理概率论与数理统计的发展历史, 介绍发展过程中好玩的小问题, 标记一下物理中可能涉及的概率问题, 计划后续整理物理中具体的概率相关的话题. </p>
+<span id="more"></span>
+<blockquote>
+<p>概率预测未来</p>
+<p>统计研究现实</p>
+</blockquote>
+<p>​    概率问题早期被讨论是出现在赌博中, 最为著名的是 17 世纪三粒骰子最容易出现的总点数是 9 还是 10 的问题. 当时赌博的人根据他们的经验, 感到出现 10 的情况更多, 而当时人们的认知里, 总点数为 9 的数字组合为 6 种: $(1,2,6)$,  $(1,3,5)$,  $(1,4,4)$,  $(2,2,5)$,  $(2,3,4)$,  $(3,3,3)$. 总点数为 10 的数字组合也为 6 种:  $(1,3,6)$,  $(1,4,5)$,  $(2,2,6)$,  $(2,3,5)$,  $(2,4,4)$, $(3,3,4)$. 意大利科学 Galileo $\cdot$ Galilei 注意到人们认知中的分析没有将三个骰子区分开, 用现在的数学语言说即是组合数, Galileo 认为应当将它们区分开, 即排列数. 比如 $(1,2,6)$ 对应的排列有 $A_3^3=3!=6$ 种. 这样分析总点数为 9 有 25 种排列方式, 总点数为 10 有 27 种排列方式. </p>
+<p>​    概率论通常被认为起源于 17 世纪法国数学家 Blaise Pascal 和 Pierre de Fermat 的通信中. 当时一位法国贵族 De Mere 对赌博很感兴趣, 他对赌博中的一些问题感到困惑, 向 Pascal 请教, 具体问题是, A 和 B 两人赌博, 先赢 3 局为胜利, 但是在 A 赢了 2 局, B 赢了 1 局, 但是赌博意外终止, 那么应当如何分配两人预押的赌金才算公平.  假设两人赢得每局的概率都是 $1/2$. A 若赢得第 4 局, 他直接获胜. 若 A 输了第 4 局但是赢了第 5 局, 这件事发生的概率是 $1/4$. 因此 A 获胜的概率是 $3/4$, B 获胜的概率是 $1/4$. 因此奖金应按照 3:1 分配. 这个问题的分析中已经涉及到了概率的加法定理和乘法定理.  更进一步地, Pascal 提出了 Pascal 三角形解决 A 之后 $r$ 胜, B 之后 $s$ 胜的情况如何分配赌金. </p>
+<p>​    随后荷兰科学 Christian Huygens 学习了 Pascal 与 Fermat 关于概率论的工作, 发表了 ⌈论赌博中的计算⌋, 被认为是概率论诞生的标志, 这一时期, 数学期望等概念已经出现, 概率被解释为事件在重复独立实验中发生的频率, 这一观点现在被称为频率学派 (Frequentist), 概率论在频率学派的方向上发展. </p>
+<p>​    17世纪末和18世纪初, 瑞士数学家 Jacob Bernoulli 对概率论进行了深入的研究, 撰写了 ⌈猜测的艺术⌋, 在这本书中提出了大数定律. 同时另一位法国数学家 De Moivre 在 ⌈机会学说⌋ 中提出了统计的独立性, 19 世纪, 英国数学家 Thomas Bayes 18 世纪的工作受到关注, 法国数学家 Pierre-Simon Laplace 撰写了 ⌈概率论的解析理论⌋ 其中提出了一些概率论的概念, 包括贝叶斯定理, 贝叶斯学派 (Bayesian) 开始萌芽. 贝叶斯学派与前文中提到的频率学派被称之为概率论中的两大学派. 与频率学派不同, 贝叶斯学派将概率解释为关于不确定性的量度. </p>
+<p>​    19 世纪时，概率论的主流仍然是频率学派，这得益于德国数学家 Carl Friedrich Gauss、 法国数学家 Siméon Denis Poisson 和俄罗斯数学家 Andrey Markov 等人的研究. Gauss 在误差分析和正态分布的研究中为概率论的发展做出了重要贡献.  Poisson 的贡献体现在泊松分布和泊松过程的研究上. Markov 提出了 Markov 链, 开拓了随机过程的研究. </p>
+<p>​    19 世纪也有一些与贝叶斯学派相关联的理论在发展, 比如 Augustin-Louis Cauchy 提出的柯西分布. 柯西分布在统计学中经常被用作先验分布, 先验分布是一个贝叶斯学派的概念. 贝叶斯学派强调利用先验概率来描述基于经验、知识或者数据对事件的先前认识, 通过贝叶斯定理, 观测数据可以用来更新先验概率, 得到后验概率, 从而对事件的概率进行修正. 主观贝叶斯主义强调概率是一种主观度量, 反映了个体的信念, 这与频率学派的客观性观点形成了对比. </p>
+<p>​    20 世纪初, R. A. Fisher 提出了参数估计的概念, 并且指出参数估计应该使观测数据的似然函数最大化, 于是提出了最大似然估计的方法, 用于估计概率分布的参数. Fisher 引入了一致性, 有效性, 充分性的概念评价估计的好坏. </p>
+<p>​    20 世纪 30 年代, 俄罗斯数学家 Andrey Kolmogorov 发表了 ⌈概率论基础⌋, 提出了概率论的公理化框架. </p>
+<p>​    20 世纪 40 年代, Claude Shannon 提出了信息论的基本概念, 将概率论引入了信息论的领域. </p>
+<p>​    20 世纪 50 年代，John Tukey 和 James Wilkinson 提出了著名的蒙特卡洛方法, 利用随机抽样来解决数值计算问题. </p>
+<p>​    Bradley Efron 和 Charles Stein 等统计学家在 20 世纪 60 年代至 70 年代提出 Bootstrap 方法和 Stein 估计. Judea Pearl 在 20 世纪 80 年代至 90 年代提出了因果推断, 将概率论和因果关系相结合, 推动了因果推断领域的发展. </p>
+<p>​    20 世纪 90 年代,  Fisher 的学生 C. R. Rao 证明了 Cramér–Rao 不等式. </p>
+<p>​    …</p>
+<p>Ref </p>
+<ol>
+<li><p>牛顿科学世界-图解统计与概率</p>
+</li>
+<li><p><a href="http://www.tup.tsinghua.edu.cn/upload/books/yz/058550-01.pdf">058550-01.pdf (tsinghua.edu.cn)</a> 可能是《高等概率论基础及极限理论》</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>发展史</category>
+      </categories>
+      <tags>
+        <tag>概率论与数理统计</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一道积分算一天——电磁学篇</title>
     <url>/2020/09/23/%E7%A7%AF%E5%88%86/</url>
     <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><script type="math/tex; mode=display">
@@ -433,40 +403,70 @@ I&=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
       </tags>
   </entry>
   <entry>
-    <title>概率论与物理 1 ——概率论发展史</title>
-    <url>/2024/05/10/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%8F%91%E5%B1%95%E5%8F%B2/</url>
-    <content><![CDATA[<p>​    这是一篇起源于糊弄文献综述时产生的废稿, 梳理概率论与数理统计的发展历史, 介绍发展过程中好玩的小问题, 标记一下物理中可能涉及的概率问题, 计划后续整理物理中具体的概率相关的话题. </p>
+    <title>一道积分算一天——量子力学篇</title>
+    <url>/2020/12/03/qmIntegrate/</url>
+    <content><![CDATA[<p>没有什么摘要 QAQ</p>
 <span id="more"></span>
-<blockquote>
-<p>概率预测未来</p>
-<p>统计研究现实</p>
-</blockquote>
-<p>​    概率问题早期被讨论是出现在赌博中, 最为著名的是 17 世纪三粒骰子最容易出现的总点数是 9 还是 10 的问题. 当时赌博的人根据他们的经验, 感到出现 10 的情况更多, 而当时人们的认知里, 总点数为 9 的数字组合为 6 种: $(1,2,6)$,  $(1,3,5)$,  $(1,4,4)$,  $(2,2,5)$,  $(2,3,4)$,  $(3,3,3)$. 总点数为 10 的数字组合也为 6 种:  $(1,3,6)$,  $(1,4,5)$,  $(2,2,6)$,  $(2,3,5)$,  $(2,4,4)$, $(3,3,4)$. 意大利科学 Galileo $\cdot$ Galilei 注意到人们认知中的分析没有将三个骰子区分开, 用现在的数学语言说即是组合数, Galileo 认为应当将它们区分开, 即排列数. 比如 $(1,2,6)$ 对应的排列有 $A_3^3=3!=6$ 种. 这样分析总点数为 9 有 25 种排列方式, 总点数为 10 有 27 种排列方式. </p>
-<p>​    概率论通常被认为起源于 17 世纪法国数学家 Blaise Pascal 和 Pierre de Fermat 的通信中. 当时一位法国贵族 De Mere 对赌博很感兴趣, 他对赌博中的一些问题感到困惑, 向 Pascal 请教, 具体问题是, A 和 B 两人赌博, 先赢 3 局为胜利, 但是在 A 赢了 2 局, B 赢了 1 局, 但是赌博意外终止, 那么应当如何分配两人预押的赌金才算公平.  假设两人赢得每局的概率都是 $1/2$. A 若赢得第 4 局, 他直接获胜. 若 A 输了第 4 局但是赢了第 5 局, 这件事发生的概率是 $1/4$. 因此 A 获胜的概率是 $3/4$, B 获胜的概率是 $1/4$. 因此奖金应按照 3:1 分配. 这个问题的分析中已经涉及到了概率的加法定理和乘法定理.  更进一步地, Pascal 提出了 Pascal 三角形解决 A 之后 $r$ 胜, B 之后 $s$ 胜的情况如何分配赌金. </p>
-<p>​    随后荷兰科学 Christian Huygens 学习了 Pascal 与 Fermat 关于概率论的工作, 发表了 ⌈论赌博中的计算⌋, 被认为是概率论诞生的标志, 这一时期, 数学期望等概念已经出现, 概率被解释为事件在重复独立实验中发生的频率, 这一观点现在被称为频率学派 (Frequentist), 概率论在频率学派的方向上发展. </p>
-<p>​    17世纪末和18世纪初, 瑞士数学家 Jacob Bernoulli 对概率论进行了深入的研究, 撰写了 ⌈猜测的艺术⌋, 在这本书中提出了大数定律. 同时另一位法国数学家 De Moivre 在 ⌈机会学说⌋ 中提出了统计的独立性, 19 世纪, 英国数学家 Thomas Bayes 18 世纪的工作受到关注, 法国数学家 Pierre-Simon Laplace 撰写了 ⌈概率论的解析理论⌋ 其中提出了一些概率论的概念, 包括贝叶斯定理, 贝叶斯学派 (Bayesian) 开始萌芽. 贝叶斯学派与前文中提到的频率学派被称之为概率论中的两大学派. 与频率学派不同, 贝叶斯学派将概率解释为关于不确定性的量度. </p>
-<p>​    19 世纪时，概率论的主流仍然是频率学派，这得益于德国数学家 Carl Friedrich Gauss、 法国数学家 Siméon Denis Poisson 和俄罗斯数学家 Andrey Markov 等人的研究. Gauss 在误差分析和正态分布的研究中为概率论的发展做出了重要贡献.  Poisson 的贡献体现在泊松分布和泊松过程的研究上. Markov 提出了 Markov 链, 开拓了随机过程的研究. </p>
-<p>​    19 世纪也有一些与贝叶斯学派相关联的理论在发展, 比如 Augustin-Louis Cauchy 提出的柯西分布. 柯西分布在统计学中经常被用作先验分布, 先验分布是一个贝叶斯学派的概念. 贝叶斯学派强调利用先验概率来描述基于经验、知识或者数据对事件的先前认识, 通过贝叶斯定理, 观测数据可以用来更新先验概率, 得到后验概率, 从而对事件的概率进行修正. 主观贝叶斯主义强调概率是一种主观度量, 反映了个体的信念, 这与频率学派的客观性观点形成了对比. </p>
-<p>​    20 世纪初, R. A. Fisher 提出了参数估计的概念, 并且指出参数估计应该使观测数据的似然函数最大化, 于是提出了最大似然估计的方法, 用于估计概率分布的参数. Fisher 引入了一致性, 有效性, 充分性的概念评价估计的好坏. </p>
-<p>​    20 世纪 30 年代, 俄罗斯数学家 Andrey Kolmogorov 发表了 ⌈概率论基础⌋, 提出了概率论的公理化框架. </p>
-<p>​    20 世纪 40 年代, Claude Shannon 提出了信息论的基本概念, 将概率论引入了信息论的领域. </p>
-<p>​    20 世纪 50 年代，John Tukey 和 James Wilkinson 提出了著名的蒙特卡洛方法, 利用随机抽样来解决数值计算问题. </p>
-<p>​    Bradley Efron 和 Charles Stein 等统计学家在 20 世纪 60 年代至 70 年代提出 Bootstrap 方法和 Stein 估计. Judea Pearl 在 20 世纪 80 年代至 90 年代提出了因果推断, 将概率论和因果关系相结合, 推动了因果推断领域的发展. </p>
-<p>​    20 世纪 90 年代,  Fisher 的学生 C. R. Rao 证明了 Cramér–Rao 不等式. </p>
-<p>​    …</p>
-<p>Ref </p>
-<ol>
-<li><p>牛顿科学世界-图解统计与概率</p>
-</li>
-<li><p><a href="http://www.tup.tsinghua.edu.cn/upload/books/yz/058550-01.pdf">058550-01.pdf (tsinghua.edu.cn)</a> 可能是《高等概率论基础及极限理论》</p>
-</li>
+<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
+\begin{equation}
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
+\end{equation}</script><p>任意高斯积分的定积分为</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}</script><p>定义函数</p>
+<script type="math/tex; mode=display">
+I(a)=\int_{-a}^{a}e^{-x^2}dx</script><p>高斯积分通过求它的极限得到</p>
+<script type="math/tex; mode=display">
+\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx</script><p>对 $I(a)$ 取平方得到</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+I^2(a)&=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
+&=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
+&=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
+\end{aligned}
+\end{equation}</script><p>该双重积分可被看作是直角坐标系上一个正方形的面积积分 $\int e^{-(x^2+y^2)}d(x,y)$，其顶点为 ${(-a,a),(a,a),(a,-a),(-a,-a)}$。</p>
+<p>这个正方形的内切圆的积分必须小于 $I^2(a)$，外接圆的积分必须大于 $I(a)^2$。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
+<script type="math/tex; mode=display">
+\int_0^{2\pi}\int_0^a re^{-r^2}drd\theta<I^2(a)<\int_0^{2\pi}\int_0^{a\sqrt{2}} re^{-r^2}drd\theta</script><p>得到</p>
+<script type="math/tex; mode=display">
+\pi(1-e^{-a^2})<I^2(a)<\pi(1-e^{-2a^2})</script><p>通过夹逼定理获得高斯积分</p>
+<script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}</script><h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><script type="math/tex; mode=display">
+\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}</script><p>波函数归一化中可能用到。</p>
+<script type="math/tex; mode=display">
+\int_0^\infty x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}</script><p>谐振子中常常用到。</p>
+<script type="math/tex; mode=display">
+\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}</script><h1 id="散射"><a href="#散射" class="headerlink" title="散射"></a>散射</h1><ol>
+<li><script type="math/tex; mode=display">
+I=\int_0^\infty e^{-\mu r}\sin kr dr</script></li>
 </ol>
-]]></content>
+<p>由于 $\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}$，代入积分</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I&=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
+&=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty e^{(-ik-\mu)}dr)\\
+&=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
+&=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
+&=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
+&=\frac{k}{k^2+u^2}
+\end{aligned}</script><p>该积分常用于波恩近似。</p>
+<ol>
+<li><script type="math/tex; mode=display">
+I=\int_0^\infty\sin qrdr</script></li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{aligned}
+I&=\int_0^\infty\sin qrdr\\
+&=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
+&=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
+&=\frac{1}{q}
+\end{aligned}</script>]]></content>
       <categories>
-        <category>发展史</category>
+        <category>量子力学</category>
       </categories>
       <tags>
-        <tag>概率论与数理统计</tag>
+        <tag>量子力学</tag>
+        <tag>积分</tag>
       </tags>
   </entry>
 </search>
