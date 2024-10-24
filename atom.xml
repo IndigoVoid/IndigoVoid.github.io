@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2024-07-25T11:34:44.574Z</updated>
+  <updated>2024-05-10T10:00:10.264Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,67 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>线性代数误区--矩阵的逆</title>
-    <link href="http://yoursite.com/2024/07/25/linear-algebra-2/"/>
-    <id>http://yoursite.com/2024/07/25/linear-algebra-2/</id>
-    <published>2024-07-25T11:33:53.000Z</published>
-    <updated>2024-07-25T11:34:44.574Z</updated>
-    
-    
-    
-    
-    <category term="学渣忏悔录" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
-    
-    
-    <category term="线性代数" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线性代数误区--迹的轮换性质</title>
-    <link href="http://yoursite.com/2024/07/25/linear-algebra-1/"/>
-    <id>http://yoursite.com/2024/07/25/linear-algebra-1/</id>
-    <published>2024-07-25T11:12:58.000Z</published>
-    <updated>2024-07-25T12:17:17.134Z</updated>
-    
-    <content type="html"><![CDATA[<p>对于迹的轮换性质的描述时常是, 当矩阵为方阵时, 满足迹的轮换性质. </p><span id="more"></span><p>那么当矩阵不是方阵时, 是否满足迹的轮换性质? 之前被老板问了这个问题, 果然答错了:sob:.​</p><p>要使之能轮换, 必须轮换前后都满足矩阵乘法. 设 $A$ 是一个 $m\times n$ 矩阵, $B$ 是个 $n\times m$ 矩阵, 则</p><script type="math/tex; mode=display">\begin{equation}\mathrm{tr}(AB)=\mathrm{tr}(BA).\end{equation}</script><p> 证明如下—</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}\mathrm{tr}(A B) &=\mathrm{tr}\left(\left(\sum_{k=1}^{n} a_{i k} b_{k j}\right)\right) \\&=\sum_{i=1}^{m} \sum_{k=1}^{n} a_{i k} b_{k i} \\&=\sum_{k=1}^{n} \sum_{i=1}^{m} b_{k i} a_{i k} \\&=\sum_{i=1}^{n} \sum_{k=1}^{m} b_{i k} a_{k i} \\&=\mathrm{tr}\left(\left(\sum_{k=1}^{m} b_{i k} a_{k j}\right)\right) \\&=\mathrm{tr}(B A),\end{aligned}\end{equation}</script><p>故而该性质并不要求 $A, B$ 为方阵. 同样, 循环改变乘积中矩阵相乘的顺序, 而最终的结果不变. 该性质中的矩阵, 也并不必须是方阵. 也即, </p><script type="math/tex; mode=display">\begin{equation}\mathrm{tr}(ABC)=\mathrm{tr}(CAB)=\mathrm{tr}(BCA).\end{equation}</script><p>根据两个矩阵交换的性质, 先假设 $A$ 是一个 $m\times n$ 矩阵, $B$ 是个 $n\times l$ 矩阵, 则 $AB$ 是一个 $m \times l$ 的矩阵, 因此 $C$ 是 $l\times m$ 的矩阵, 才能满足 $CA$ 有意义. 此时 $AB,BC,CA$ 已经满足乘法. $AB$ 是 $m\times l$ 矩阵, 因此 $\mathrm{tr}(ABC)=\mathrm{tr}(CAB)$ 已满足. $BC$ 是 $n\times m$ 矩阵, 因此 $\mathrm{tr}(ABC)=\mathrm{tr}(BCA)$ 已满足. $CA$ 是 $l\times n$ 矩阵, 因此 $\mathrm{tr}(CAB)=\mathrm{tr}(BCA)$ 已满足. 因此三矩阵的轮换成立只需要求 $A$ 是 $m\times n$ 矩阵, $B$ 是 $n\times l$ 矩阵, $C$ 是 $l\times m$ 矩阵. 使得轮换成立的关键是所有的矩阵乘法有意义, 对于一系列矩阵 $A_1,\,A_2\dots A_n$, 要使初始排列的所有乘法有意义, 其矩阵维数分别为 $m_1\times m_2,\,m_2\times m_3,\dots,m_n\times m_{n+1}$, 要使轮换后的乘法有意义还需要求 $m_{n+1}=m_1$. </p><p>并不需要所有矩阵是方阵. </p><p>:smile_cat:</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;对于迹的轮换性质的描述时常是, 当矩阵为方阵时, 满足迹的轮换性质. &lt;/p&gt;</summary>
-    
-    
-    
-    <category term="学渣忏悔录" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
-    
-    
-    <category term="线性代数" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>旋转矩阵</title>
-    <link href="http://yoursite.com/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/"/>
-    <id>http://yoursite.com/2024/05/31/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5-1/</id>
-    <published>2024-05-31T09:04:29.000Z</published>
-    <updated>2024-05-31T12:14:57.435Z</updated>
-    
-    <content type="html"><![CDATA[<p>多年以前在 <a href="https://indigovoid.github.io/2020/07/26/旋转矩阵/#more">旋转矩阵 | indigovoid</a> 中验证了二维旋转矩阵的作用. 现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵. </p><span id="more"></span><h1 id="二维旋转矩阵"><a href="#二维旋转矩阵" class="headerlink" title="二维旋转矩阵"></a>二维旋转矩阵</h1><p>一维中没有旋转的概念, 到了二维中, 就可以绕一固定的点进行旋转. </p><p>[插入图片]</p><p>[图片 a 将线段旋转, 图片 b 在坐标系中将线段旋转]</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}x=r\cos\phi,\quad y=r\sin\phi.\end{aligned}\end{equation}</script><p>矩阵形式</p><p>旋转矩阵</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}A=\begin{pmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{pmatrix}.\end{aligned}\end{equation}</script><h2 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h2><ul><li><a href="https://www.youtube.com/watch?v=8XRvpDhTJpw">EM 10004 Video NA RunEscape GunShot TsktpkV15 Nor Q F NA EN PC A bluedemo (youtube.com)</a></li><li><a href="https://mathworld.wolfram.com/RotationMatrix.html">Rotation Matrix — from Wolfram MathWorld</a></li></ul><script type="math/tex; mode=display">\begin{equation}\begin{aligned}\end{aligned}\end{equation}</script><h1 id="其他空间变换"><a href="#其他空间变换" class="headerlink" title="其他空间变换"></a>其他空间变换</h1><p><strong>转换矩阵（Translation Matrix）</strong></p><p><strong>绽放矩阵（Scale Matrix）</strong></p><h2 id="Ref-1"><a href="#Ref-1" class="headerlink" title="Ref"></a>Ref</h2><ul><li><p><a href="http://www.codinglabs.net/article_world_view_projection_matrix.aspx">Coding Labs :: World, View and Projection Transformation Matrices</a></p></li><li><p><a href="https://www.cnblogs.com/caoyiting/articles/16932790.html">旋转矩阵（Rotation Matrix）的推导及其应用 - 麦伦克 - 博客园 (cnblogs.com)</a></p></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;多年以前在 &lt;a href=&quot;https://indigovoid.github.io/2020/07/26/旋转矩阵/#more&quot;&gt;旋转矩阵 | indigovoid&lt;/a&gt; 中验证了二维旋转矩阵的作用. 现从先有期待的作用效果再导出二维旋转矩阵的形式, 并介绍三维旋转矩阵. &lt;/p&gt;</summary>
-    
-    
-    
-    <category term="理论力学" scheme="http://yoursite.com/categories/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/"/>
-    
-    
-    <category term="线性代数" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
-    
-    <category term="理论力学" scheme="http://yoursite.com/tags/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/"/>
-    
-  </entry>
   
   <entry>
     <title>概率论与物理 1 ——概率论发展史</title>
@@ -147,55 +86,11 @@
   </entry>
   
   <entry>
-    <title>旋转矩阵</title>
-    <link href="http://yoursite.com/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/"/>
-    <id>http://yoursite.com/2020/07/26/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/</id>
-    <published>2020-07-26T14:07:00.000Z</published>
-    <updated>2024-05-31T09:13:04.805Z</updated>
-    
-    <content type="html"><![CDATA[<p>经常用到旋转矩阵$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \\ \sin\varphi &amp; \cos\varphi\\ \end{array} \right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事.jpg）现整理一下其推导。</p><span id="more"></span><p>在线性代数中有定理：</p><blockquote><p>设 $T: \mathbb{R}^n\to\mathbb{R}^m$ 为线性变换，则存在唯一的矩阵 $A$ 使</p><script type="math/tex; mode=display">T(\textbf{x})=A\textbf{x},\ 对\mathbb{R}^n中一切\ \textbf{x}</script><p>$A$ 是 $m\times n$ 矩阵，它的第 j 列是向量 $T(\textbf{e}_j)$，其中 $\textbf{e}_j$ 是单位矩阵 $I_n$ 的第 j 列：</p><script type="math/tex; mode=display">A=[T(x_1\textbf{e}_1)\dots T(x_n\textbf{e}_n)]</script></blockquote><p>证明：</p><p>记 $\textbf{x}=I_n\textbf{x}=[\textbf{e}_1\dots\textbf{e}_n]\textbf{x}=x_1\textbf{e}_1+\dots+x_n\textbf{e}_n$，由于 $T$ 是线性变换，知</p><script type="math/tex; mode=display">\begin{align}T(\textbf{x})&=T(x_1\textbf{e}_1+\dots+x_n\textbf{e}_n)\\&=x_1T(\textbf{e}_1)+\dots+x_nT(\textbf{e}_n)\\&=[T(\textbf{e}_1)\dots T(\textbf{e}_n))]\left[\begin{array}{}  x_1\\ \vdots\\x_n\\ \end{array}\right]\\&=A\textbf{x}\end{align}</script><p>旋转矩阵作用效果为逆时针旋转 $\varphi$，即 $\begin{bmatrix}1\\0\end{bmatrix}$ 旋转成$\begin{bmatrix}\cos\varphi\\ \sin\varphi\end{bmatrix}$，即 $\begin{bmatrix}0\\1\end{bmatrix}$ 旋转成$\begin{bmatrix}-\sin\varphi \\ \cos\varphi\end{bmatrix}$，由上述定理，</p><script type="math/tex; mode=display">T(\textbf{e}_1)=\left[\begin{array}{}  \cos\varphi \\ \sin\varphi  \end{array} \right]\\T(\textbf{e}_2)=\left[\begin{array}{}   -\sin\varphi  \\ \cos\varphi\\ \end{array} \right]</script><p>因而$A=\left[\begin{array}{}  \cos\varphi &amp; -\sin\varphi \\ \sin\varphi &amp; \cos\varphi\\ \end{array} \right]$。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;经常用到旋转矩阵$A=&#92;left[&#92;begin{array}{}  &#92;cos&#92;varphi &amp;amp; -&#92;sin&#92;varphi &#92;&#92; &#92;sin&#92;varphi &amp;amp; &#92;cos&#92;varphi&#92;&#92; &#92;end{array} &#92;right]$，最近发现该推导竟然在线性代数第一章出现过我居然忘记了，（突然意识到自己很菜这件事.jpg）现整理一下其推导。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="学渣忏悔录" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
-    
-    
-    <category term="线性代数" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网红数学题合集</title>
-    <link href="http://yoursite.com/2020/04/28/mathforfun/"/>
-    <id>http://yoursite.com/2020/04/28/mathforfun/</id>
-    <published>2020-04-28T08:49:01.000Z</published>
-    <updated>2024-03-27T07:15:46.820Z</updated>
-    
-    <content type="html"><![CDATA[<p>这是一个「常被转发的趣味数学题」的合集。</p><span id="more"></span><ul><li>4只小鸭子在一个圆形的大水池中，分别随机的出现圆圈中任意一点。4只鸭子在同一半圆内的概率是多少？</li></ul><p><img src="/2020/04/28/mathforfun/001.jpg" alt="题目描述"></p><p><img src="/2020/04/28/mathforfun/002.png" alt="解答"></p><ul><li>已知正方形部分区域面积，求阴影部分面积：</li></ul><p><img src="/2020/04/28/mathforfun/003.jpg" alt="题目描述"></p><p><img src="/2020/04/28/mathforfun/004.jpg" alt="解答"></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;这是一个「常被转发的趣味数学题」的合集。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数学" scheme="http://yoursite.com/categories/%E6%95%B0%E5%AD%A6/"/>
-    
-    
-    <category term="数学" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-    <category term="just-for-fun" scheme="http://yoursite.com/tags/just-for-fun/"/>
-    
-  </entry>
-  
-  <entry>
     <title>用mathematica作梯度矢量图</title>
     <link href="http://yoursite.com/2020/03/31/mathematica1/"/>
     <id>http://yoursite.com/2020/03/31/mathematica1/</id>
     <published>2020-03-31T14:44:37.000Z</published>
-    <updated>2024-03-27T07:15:54.235Z</updated>
+    <updated>2024-09-12T04:32:35.850Z</updated>
     
     <content type="html"><![CDATA[<p>当用mathematica作梯度矢量图时……</p><span id="more"></span><p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure><p>运行结果中将无任何图像，如图所示</p><p><img src="/2020/03/31/mathematica1/p1.png" alt="运行结果"></p><p>为找到问题所在，先将梯度计算出再画图进行尝试</p><p><img src="/2020/03/31/mathematica1/p2.jpg" alt="尝试结果"></p><p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p><p>对第一个代码进行追踪</p><p><img src="/2020/03/31/mathematica1/p3.jpg" alt="追踪结果"><br><img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果"></p><p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure><p>这样一来就得到了所期待的结果（如下图）。</p><p><img src="/2020/03/31/mathematica1/p4.png" alt="运行结果"></p><p>mathematica 中对 Evaluate 的介绍</p><blockquote><p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p><p>Details</p><p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p><p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p></blockquote><p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p><p><img src="/2020/03/31/mathematica1/p5.jpg" alt="Grad 属性"></p><p>留个坑，以后再说…   ╥﹏╥</p><hr><p>更新</p><p>经过他人指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p><p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p><p>​    </p>]]></content>
     
@@ -204,7 +99,7 @@
     
     
     
-    <category term="学渣忏悔录" scheme="http://yoursite.com/categories/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
+    <category term="忏悔录" scheme="http://yoursite.com/categories/%E5%BF%8F%E6%82%94%E5%BD%95/"/>
     
     
     <category term="mathematica" scheme="http://yoursite.com/tags/mathematica/"/>
