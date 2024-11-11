@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2024-03-27T07:16:30.859Z</updated>
+  <updated>2024-11-11T10:56:05.991Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>线性代数误区</title>
+    <link href="http://yoursite.com/2024/11/06/LAMisunderstanding/"/>
+    <id>http://yoursite.com/2024/11/06/LAMisunderstanding/</id>
+    <published>2024-11-06T10:49:49.000Z</published>
+    <updated>2024-11-11T10:56:05.991Z</updated>
+    
+    <content type="html"><![CDATA[<p>两个遇到的关于线性代数常见的误区. 一个关于矩阵的迹, 一个关于矩阵的逆.</p><span id="more"></span><h2 id="误区-1-迹的轮换性质"><a href="#误区-1-迹的轮换性质" class="headerlink" title="误区 1. 迹的轮换性质"></a>误区 1. 迹的轮换性质</h2><p>很多地方可能会写, 若 $A,B$ 是方阵, 则 $\mathrm{tr}(AB)=\mathrm{tr}(BA)$. 很容易给大家一个印象就是 $\mathrm{tr}(AB)=\mathrm{tr}(BA)$ 只在 $A,B$ 为方阵时成立. 事实并非如此. </p><p>设 $A$ 是 $p\times q$ 矩阵，$B$ 是 $q\times p$ 矩阵, </p><script type="math/tex; mode=display">\begin{equation}    \begin{aligned}    \mathrm{tr}(A B) &=\mathrm{tr} \left(\left(\sum_{k=1}^{q} a_{i k} b_{k j}\right)\right) \\            &=\sum_{i=1}^{p} \sum_{k=1}^{q} a_{i k} b_{k i}             =\sum_{k=1}^{q} \sum_{i=1}^{p} b_{k i} a_{i k}             =\sum_{i=1}^{q} \sum_{k=1}^{p} b_{i k} a_{k i} \\            &=\mathrm{tr} \left(\left(\sum_{k=1}^{p} b_{i k} a_{k j}\right)\right) \\            &=\mathrm{tr} (B A).    \end{aligned}\end{equation}</script><p>因此此条性质 $A$, $B$ 只需满足矩阵乘法即可. 类似地, 在满足矩阵乘法的前提下,  $\mathrm{tr}(ABC)=\mathrm{tr}(BCA)=\mathrm{tr}(CAB)$.</p><h2 id="误区-2-矩阵的逆"><a href="#误区-2-矩阵的逆" class="headerlink" title="误区 2. 矩阵的逆"></a>误区 2. 矩阵的逆</h2><p>很多地方直接说对方阵介绍逆的概念, 而没有提为什么逆一定是方阵的概念. 这样很容易忘记形如 $A^{-1}$ 的式子隐含了 $A$ 是方阵的条件.</p><p>假设 $m\times n$ 矩阵 $A$ 是可逆矩阵, 存在 $n\times m$ 矩阵 $C$ 和 $D$ 使 $CA=I_n$ 且 $AD=I_m$. </p><p>由于 $CA=I_n$, 因此 $CA\vec x=I_n \vec x$, 方程 $A\vec x=\vec 0$ 只有平凡解, $m\geq n$.</p><p>由于 $AD=I_m$, 取 $\vec{b}$ 是 $\mathbb{R}^m$ 中任意向量, $AD\vec b=I_m\vec b$, 即 $A(D\vec b)=\vec b$, 因此 $\vec x=D\vec b$ 满足 $A \vec{x}=\vec{b}$, 即 $A \vec{x}=\vec{b}$ 有解, $A$ 在每一行都有一个主元位置, $m\leq n$.</p><p>因此 $m=n$.</p><p>顺便 $DAC=DI=D=IC=C$, 因此 $C=D$.</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;两个遇到的关于线性代数常见的误区. 一个关于矩阵的迹, 一个关于矩阵的逆.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="忏悔录" scheme="http://yoursite.com/categories/%E5%BF%8F%E6%82%94%E5%BD%95/"/>
+    
+    
+    <category term="线性代数" scheme="http://yoursite.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>一道积分算一天——量子力学篇</title>
@@ -69,7 +90,7 @@
     <link href="http://yoursite.com/2020/03/31/mathematica1/"/>
     <id>http://yoursite.com/2020/03/31/mathematica1/</id>
     <published>2020-03-31T14:44:37.000Z</published>
-    <updated>2024-09-12T04:32:35.850Z</updated>
+    <updated>2024-11-11T10:49:19.967Z</updated>
     
     <content type="html"><![CDATA[<p>当用mathematica作梯度矢量图时……</p><span id="more"></span><p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure><p>运行结果中将无任何图像，如图所示</p><p><img src="/2020/03/31/mathematica1/p1.png" alt="运行结果"></p><p>为找到问题所在，先将梯度计算出再画图进行尝试</p><p><img src="/2020/03/31/mathematica1/p2.jpg" alt="尝试结果"></p><p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p><p>对第一个代码进行追踪</p><p><img src="/2020/03/31/mathematica1/p3.jpg" alt="追踪结果"><br><img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果"></p><p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure><p>这样一来就得到了所期待的结果（如下图）。</p><p><img src="/2020/03/31/mathematica1/p4.png" alt="运行结果"></p><p>mathematica 中对 Evaluate 的介绍</p><blockquote><p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p><p>Details</p><p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p><p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p></blockquote><p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p><p><img src="/2020/03/31/mathematica1/p5.jpg" alt="Grad 属性"></p><p>留个坑，以后再说…   ╥﹏╥</p><hr><p>更新</p><p>经过他人指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p><p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p><p>​    </p>]]></content>
     
@@ -85,7 +106,7 @@
     
     <category term="坑" scheme="http://yoursite.com/tags/%E5%9D%91/"/>
     
-    <category term="学渣忏悔录" scheme="http://yoursite.com/tags/%E5%AD%A6%E6%B8%A3%E5%BF%8F%E6%82%94%E5%BD%95/"/>
+    <category term="忏悔录" scheme="http://yoursite.com/tags/%E5%BF%8F%E6%82%94%E5%BD%95/"/>
     
   </entry>
   
