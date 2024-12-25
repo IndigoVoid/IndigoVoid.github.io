@@ -402,17 +402,22 @@
       
         <p>当用mathematica作梯度矢量图时……</p>
 <span id="more"></span>
-<p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
+
+<p>首先假设一函数为 $f(x)&#x3D;x^2+y^2$，在mathematica中使用如下代码</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+
 <p>运行结果中将无任何图像，如图所示</p>
 <p><img src="/2020/03/31/mathematica1/p1.png" alt="运行结果"></p>
 <p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
 <p><img src="/2020/03/31/mathematica1/p2.jpg" alt="尝试结果"></p>
 <p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
 <p>对第一个代码进行追踪</p>
-<p><img src="/2020/03/31/mathematica1/p3.jpg" alt="追踪结果"><br><img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果"></p>
+<p><img src="/2020/03/31/mathematica1/p3.jpg" alt="追踪结果"></p>
+<img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果">
+
 <p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+
 <p>这样一来就得到了所期待的结果（如下图）。</p>
 <p><img src="/2020/03/31/mathematica1/p4.png" alt="运行结果"></p>
 <p>mathematica 中对 Evaluate 的介绍</p>
@@ -429,7 +434,7 @@
 <p>更新</p>
 <p>经过他人指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p>
 <p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p>
-<p>​    </p>
+<p>​	</p>
 
       
     </div>

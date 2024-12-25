@@ -394,60 +394,22 @@
       
         <p>没有什么摘要 QAQ</p>
 <span id="more"></span>
-<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><script type="math/tex; mode=display">
-\begin{equation}
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}
-\end{equation}</script><p>任意高斯积分的定积分为</p>
-<script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx=\sqrt{\frac{\pi}{a}}</script><p>定义函数</p>
-<script type="math/tex; mode=display">
-I(a)=\int_{-a}^{a}e^{-x^2}dx</script><p>高斯积分通过求它的极限得到</p>
-<script type="math/tex; mode=display">
-\lim_{a\to\infty}I(a)=\int_{-\infty}^{+\infty}e^{-x^2}dx</script><p>对 $I(a)$ 取平方得到</p>
-<script type="math/tex; mode=display">
-\begin{equation}
-\begin{aligned}
-I^2(a)&=(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\\
-&=\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\\
-&=\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy
-\end{aligned}
-\end{equation}</script><p>该双重积分可被看作是直角坐标系上一个正方形的面积积分 $\int e^{-(x^2+y^2)}d(x,y)$，其顶点为 ${(-a,a),(a,a),(a,-a),(-a,-a)}$。</p>
+
+<h1 id="高斯积分"><a href="#高斯积分" class="headerlink" title="高斯积分"></a>高斯积分</h1><h2 id="推导"><a href="#推导" class="headerlink" title="推导"></a>推导</h2><p>$$<br>\begin{equation}<br>\int_{-\infty}^{\infty}e^{-x^2}dx&#x3D;\sqrt{\pi}<br>\end{equation}<br>$$</p>
+<p>任意高斯积分的定积分为<br>$$<br>\int_{-\infty}^{\infty}e^{-a(x+b)^2}dx&#x3D;\sqrt{\frac{\pi}{a}}<br>$$<br>定义函数<br>$$<br>I(a)&#x3D;\int_{-a}^{a}e^{-x^2}dx<br>$$<br>高斯积分通过求它的极限得到<br>$$<br>\lim_{a\to\infty}I(a)&#x3D;\int_{-\infty}^{+\infty}e^{-x^2}dx<br>$$<br>对 $I(a)$ 取平方得到<br>$$<br>\begin{equation}<br>\begin{aligned}<br>I^2(a)&amp;&#x3D;(\int_{-a}^{a}e^{-x^2}dx)\cdot(\int_{-a}^ae^{-y^2}dy)\<br>&amp;&#x3D;\int_{-a}^{a}(\int_{-a}^{a}e^{-y^2}dy)e^{-x^2}dx\<br>&amp;&#x3D;\int_{-a}^{a}\int_{-a}^{a}e^{-(x^2+y^2)}dxdy<br>\end{aligned}<br>\end{equation}<br>$$<br>该双重积分可被看作是直角坐标系上一个正方形的面积积分 $\int e^{-(x^2+y^2)}d(x,y)$，其顶点为 ${(-a,a),(a,a),(a,-a),(-a,-a)}$。</p>
 <p>这个正方形的内切圆的积分必须小于 $I^2(a)$，外接圆的积分必须大于 $I(a)^2$。通过直角坐标系转化到极坐标系可计算出这两个圆面的积分。</p>
-<script type="math/tex; mode=display">
-\int_0^{2\pi}\int_0^a re^{-r^2}drd\theta<I^2(a)<\int_0^{2\pi}\int_0^{a\sqrt{2}} re^{-r^2}drd\theta</script><p>得到</p>
-<script type="math/tex; mode=display">
-\pi(1-e^{-a^2})<I^2(a)<\pi(1-e^{-2a^2})</script><p>通过夹逼定理获得高斯积分</p>
-<script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}</script><h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><script type="math/tex; mode=display">
-\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx=\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}</script><p>波函数归一化中可能用到。</p>
-<script type="math/tex; mode=display">
-\int_0^\infty x^{2n}e^{-\frac{x^2}{a^2}}dx=\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}</script><p>谐振子中常常用到。</p>
-<script type="math/tex; mode=display">
-\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx=\frac{n!}{2}a^{2n+2}</script><h1 id="散射"><a href="#散射" class="headerlink" title="散射"></a>散射</h1><ol>
-<li><script type="math/tex; mode=display">
-I=\int_0^\infty e^{-\mu r}\sin kr dr</script></li>
-</ol>
-<p>由于 $\sin(kr)=\frac{e^{ikr}-e^{-ikr}}{2i}$，代入积分</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
-I&=\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\\
-&=\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty e^{(-ik-\mu)}dr)\\
-&=\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\\
-&=\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\\
-&=\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\\
-&=\frac{k}{k^2+u^2}
-\end{aligned}</script><p>该积分常用于波恩近似。</p>
-<ol>
-<li><script type="math/tex; mode=display">
-I=\int_0^\infty\sin qrdr</script></li>
-</ol>
-<script type="math/tex; mode=display">
-\begin{aligned}
-I&=\int_0^\infty\sin qrdr\\
-&=\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\\
-&=\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\\
-&=\frac{1}{q}
-\end{aligned}</script>
+<p>$$<br>\int_0^{2\pi}\int_0^a re^{-r^2}drd\theta&lt;I^2(a)&lt;\int_0^{2\pi}\int_0^{a\sqrt{2}} re^{-r^2}drd\theta<br>$$</p>
+<p>得到<br>$$<br>\pi(1-e^{-a^2})&lt;I^2(a)&lt;\pi(1-e^{-2a^2})<br>$$<br>通过夹逼定理获得高斯积分<br>$$<br>\int_{-\infty}^{\infty}e^{-x^2}dx&#x3D;\sqrt{\pi}<br>$$</p>
+<h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><p>$$<br>\int_{-\infty}^{\infty}e^{-ax^2+bx+c}dx&#x3D;\sqrt{\frac{\pi}{a}}e^{\frac{b^2}{4a}+c}<br>$$</p>
+<p>波函数归一化中可能用到。</p>
+<p>$$<br>\int_0^\infty x^{2n}e^{-\frac{x^2}{a^2}}dx&#x3D;\sqrt{\pi}\frac{a^{2n+1}(2n-1)!!}{2^{n+1}}<br>$$</p>
+<p>谐振子中常常用到。</p>
+<p>$$<br>\int_0^\infty x^{2n+1}e^{-\frac{x^2}{a^2}}dx&#x3D;\frac{n!}{2}a^{2n+2}<br>$$</p>
+<h1 id="散射"><a href="#散射" class="headerlink" title="散射"></a>散射</h1><p>1.<br>$$<br>I&#x3D;\int_0^\infty e^{-\mu r}\sin kr dr<br>$$</p>
+<p>由于 $\sin(kr)&#x3D;\frac{e^{ikr}-e^{-ikr}}{2i}$，代入积分<br>$$<br>\begin{aligned}<br>I&amp;&#x3D;\int_0^\infty e^{-\mu r} \frac{e^{ikr}-e^{-ikr}}{2i} dr\<br>&amp;&#x3D;\frac{1}{2i}(\int_0^\infty e^{(ik-\mu)r}dr-\int_0^\infty e^{(-ik-\mu)}dr)\<br>&amp;&#x3D;\frac{1}{2i}\left[\frac{e^{(ik-\mu)r}}{ik-\mu}+\frac{e^{(-ik-u)r}}{ik+u}\right]_0^\infty\<br>&amp;&#x3D;\frac{1}{2i(-k^2-u^2)}\left[e^{(ik-\mu)r}(ik+\mu)+e^{(-ik-\mu)r}(ik-\mu)\right]_0^\infty\<br>&amp;&#x3D;\frac{1}{-2i(k^2+u^2)}(-(ik+\mu)-(ik-u)))\<br>&amp;&#x3D;\frac{k}{k^2+u^2}<br>\end{aligned}<br>$$<br>该积分常用于波恩近似。</p>
+<p>2.<br>$$<br>I&#x3D;\int_0^\infty\sin qrdr<br>$$</p>
+<p>$$<br>\begin{aligned}<br>I&amp;&#x3D;\int_0^\infty\sin qrdr\<br>&amp;&#x3D;\lim_{\beta\to 0}e^{-\beta r}\sin qr dr\<br>&amp;&#x3D;\lim_{\beta\to 0}\frac{q}{\beta^2+q^2}\<br>&amp;&#x3D;\frac{1}{q}<br>\end{aligned}<br>$$</p>
+
       
     </div>
     
