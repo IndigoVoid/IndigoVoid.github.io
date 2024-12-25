@@ -33,105 +33,6 @@
       </tags>
   </entry>
   <entry>
-    <title>用mathematica作梯度矢量图</title>
-    <url>/2020/03/31/mathematica1/</url>
-    <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
-<span id="more"></span>
-<p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
-<p>运行结果中将无任何图像，如图所示</p>
-<p><img src="/2020/03/31/mathematica1/p1.png" alt="运行结果"></p>
-<p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
-<p><img src="/2020/03/31/mathematica1/p2.jpg" alt="尝试结果"></p>
-<p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
-<p>对第一个代码进行追踪</p>
-<p><img src="/2020/03/31/mathematica1/p3.jpg" alt="追踪结果"><br><img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果"></p>
-<p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
-<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
-<p>这样一来就得到了所期待的结果（如下图）。</p>
-<p><img src="/2020/03/31/mathematica1/p4.png" alt="运行结果"></p>
-<p>mathematica 中对 Evaluate 的介绍</p>
-<blockquote>
-<p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p>
-<p>Details</p>
-<p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p>
-<p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p>
-</blockquote>
-<p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p>
-<p><img src="/2020/03/31/mathematica1/p5.jpg" alt="Grad 属性"></p>
-<p>留个坑，以后再说…   ╥﹏╥</p>
-<hr>
-<p>更新</p>
-<p>经过他人指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p>
-<p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p>
-<p>​    </p>
-]]></content>
-      <categories>
-        <category>忏悔录</category>
-      </categories>
-      <tags>
-        <tag>mathematica</tag>
-        <tag>坑</tag>
-        <tag>忏悔录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/2020/01/09/test/</url>
-    <content><![CDATA[<p>摘要：一些测试和 markdown 用法。</p>
-<span id="more"></span>
-<h1 id="2024-03-27-更新"><a href="#2024-03-27-更新" class="headerlink" title="2024.03.27 更新"></a>2024.03.27 更新</h1><p>几日不见, 这玩意儿变严格了. </p>
-<p>从前突出一个懒散和随性采用</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!------------ more -----------&gt;</span></span><br></pre></td></tr></table></figure>
-<p>写摘要, 如今这种写法在 <code>hexo s</code> 中失效了, 需采用严格的</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
-<p>默认的不支持直接使用 physics 包. 使用 <code>\require&#123;physics&#125;</code> 也没什么用 :skull: . </p>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>脚注</p>
-<p><sup><a href="#fn_脚注" id="reffn_脚注">脚注</a></sup>: </p>
-<blockquote>
-<p>引用</p>
-</blockquote>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>行内代码<code>代码</code></p>
-<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"><span class="keyword">code</span></span><br></pre></td></tr></table></figure>
-<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><p>$\vec{r}$</p>
-<script type="math/tex; mode=display">
-\sin ^2 x+\cos ^2 x=1</script><p>实数集<code>\mathbb&#123;R&#125;</code>: $\mathbb{R}$  </p>
-<p>占位符</p>
-<p>quad空格<code>\quad</code>: $A\quad A$<br>两个quad空格<code>\qqaud</code>: $A\qquad A$</p>
-<p>约等于<code>\approx</code>: $\approx$<br>大于等于<code>\geq</code>: $\geq$<br>小于等于<code>\leq</code>: $\leq$</p>
-<p>正负<code>\pm</code>: $\pm$ (<code>\plusmn</code> mathjax 无法渲染)</p>
-<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><h2 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h2><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">&#123;<span class="symbol">%</span> asset_img <span class="number">0001.</span>jpg This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span> <span class="symbol">%</span>&#125;#失效</span><br><span class="line">![This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span>](./test/<span class="number">0001.</span>jpg)</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/01/09/test/0001.jpg" alt="This is an example image"></p>
-<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:70%;margin:auto&quot;</span>&gt;</span></span><span class="template-tag">&#123;% <span class="name">asset_img</span> 0001.jpg This is an example image %&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<div style="width:70%;margin:auto"><img src="/2020/01/09/test/01/09/test/0001.jpg" class title="This is an example image"></div>
-
-<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="http://www.baidu.com" title="链接">链接</a></p>
-<h1 id="使用内嵌-HTML-标签控制markdown颜色、字体、字号"><a href="#使用内嵌-HTML-标签控制markdown颜色、字体、字号" class="headerlink" title="使用内嵌 HTML 标签控制markdown颜色、字体、字号"></a>使用内嵌 HTML 标签控制markdown颜色、字体、字号</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><h3 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FF5566</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font color="#FF5566">示例文字</font>
-
-<h3 id="文字背景颜色"><a href="#文字背景颜色" class="headerlink" title="文字背景颜色"></a>文字背景颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<table><tr><td bgcolor="#003366">示例文字</td></tr></table>
-
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font face="微软雅黑">示例文字</font>
-
-<h2 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">72</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<font size="72">示例文字</font>
-
-<h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FFFFFF</span> <span class="attr">size</span>=<span class="string">14</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span></span><br><span class="line">示例文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<table><tr><td bgcolor="#003366">
-<font color="#FFFFFF" size="5" face="微软雅黑">
-示例文字
-</font>
-</td></tr></table>]]></content>
-      <categories>
-        <category>琐记</category>
-      </categories>
-      <tags>
-        <tag>琐记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一道积分算一天——量子力学篇</title>
     <url>/2020/12/03/qmIntegrate/</url>
     <content><![CDATA[<p>没有什么摘要 QAQ</p>
@@ -199,58 +100,107 @@ I&=\int_0^\infty\sin qrdr\\
       </tags>
   </entry>
   <entry>
-    <title>一道积分算一天——电磁学篇</title>
-    <url>/2020/09/23/%E7%A7%AF%E5%88%86/</url>
-    <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><script type="math/tex; mode=display">
-\int (x^2+r^2)^{(-\frac{3}{2})}dx</script><p>解：令 $x=r\tan t$，</p>
-<script type="math/tex; mode=display">
-\begin{align}
-原式&=\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\
-&=r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\
-&=r^{-2}\int \cos tdt\\
-&=r^{-2}\sin t+C
-\end{align}</script><script type="math/tex; mode=display">
-\int (x^2+r^2)^{(-\frac{3}{2})}dx=\frac{1}{r^2}\frac{x}{\sqrt{x^2+r^2}}+C</script><p>被这个积分困住很久，主要原因在于忘记了 $\tan^2x+1=sec^2x$，以及第二类换元不熟悉。</p>
+    <title>用mathematica作梯度矢量图</title>
+    <url>/2020/03/31/mathematica1/</url>
+    <content><![CDATA[<p>当用mathematica作梯度矢量图时……</p>
+<span id="more"></span>
+<p>首先假设一函数为 $f(x)=x^2+y^2$，在mathematica中使用如下代码</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>运行结果中将无任何图像，如图所示</p>
+<p><img src="/2020/03/31/mathematica1/p1.png" alt="运行结果"></p>
+<p>为找到问题所在，先将梯度计算出再画图进行尝试</p>
+<p><img src="/2020/03/31/mathematica1/p2.jpg" alt="尝试结果"></p>
+<p>由此可见VectorPlot并无异常，可能是Grad得到的结果不是我们期待的${2x,2y}$。</p>
+<p>对第一个代码进行追踪</p>
+<p><img src="/2020/03/31/mathematica1/p3.jpg" alt="追踪结果"><br><img src="/2020/03/31/mathematica1/03/31/mathematica1/p3.jpg" class title="追踪结果"></p>
+<p>可见其结果并不是我们所期待的那样。为解决此问题对Grad使用Evaluate</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">VectorPlot</span>[Evaluate@Grad[x^<span class="number">2</span> + y^<span class="number">2</span>, &#123;x, y&#125;], &#123;x, -<span class="number">3</span>, <span class="number">3</span>&#125;, &#123;y, -<span class="number">3</span>, <span class="number">3</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>这样一来就得到了所期待的结果（如下图）。</p>
+<p><img src="/2020/03/31/mathematica1/p4.png" alt="运行结果"></p>
+<p>mathematica 中对 Evaluate 的介绍</p>
 <blockquote>
-<p>第二类换元法</p>
-<p>若含有 $\sqrt{a^2-x^2}$，令 $x=a\sin t, t\in(-\frac{\pi}{2},\frac{\pi}{2})$</p>
-<p>若含有 $\sqrt{a^2+x^2}$，令 $x=a\tan t$</p>
-<p>若含有 $\sqrt{x^2-a^2}$，令 $x=a\sec t$ </p>
+<p>Evaluate[expr]<br>causes expr to be evaluated even if it appears as the argument of a function whose attributes specify that it should be held unevaluated. </p>
+<p>Details</p>
+<p>You can use Evaluate to override <strong>HoldFirst</strong> etc. attributes of built-in functions. </p>
+<p>Evaluate only overrides <strong>HoldFirst</strong> etc. attributes when it appears directly as the head of the function argument that would otherwise be held. </p>
 </blockquote>
-<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><script type="math/tex; mode=display">
-\int\sqrt{\frac{x_0x}{x_0-x}}dx</script><p>解：</p>
-<script type="math/tex; mode=display">
-\begin{align}
-原式&=\int \sqrt{\frac{\frac{x}{x_0}x_0}{1-\frac{x}{x_0}}}d \frac{x}{x_0}\\
-
-
-\end{align}</script><p>令 $ \frac{x}{x_0}=a$，现求解积分$I=\int \frac{\sqrt{a}}{\sqrt{1-a}}da$</p>
-<p>令 $a=\sin^2t$，$da=2\sin t\cos tdt$，</p>
-<script type="math/tex; mode=display">
-\begin{align}
-I&=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
-&=2\int \sin^2tdt\\
-&=\int (1-\cos 2t)dt\\
-&=t-\frac{1}{2}\sin 2t+C
-\end{align}</script><script type="math/tex; mode=display">
-\sin 2t=2\sin t\cos t=2\sqrt{a}\sqrt{1-a}</script><script type="math/tex; mode=display">
-原式=\sqrt{x_0}(x_0\arcsin \sqrt{\frac{x}{x_0}}-\sqrt{x}\sqrt{x_0-x})+C</script><p>这个其实还是第二类换元这同一块石头，被坑住是因为看到 $\frac{1}{\sqrt{1-a}}$ 以及答案有 $\arcsin$ ，就想分部积分。</p>
-<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><script type="math/tex; mode=display">
-\int \frac{dz}{\sqrt{z^2+a^2}}</script><p>解：</p>
-<p>令 $z=a \tan t$，</p>
-<script type="math/tex; mode=display">
-\begin{align}
-原式&=\int\frac{1}{a\sqrt{\tan^2 t+1}}d(a\tan t)\\
-&=\int\sec tdt\\
-&=\int \sec t \frac{\sec t+\tan t}{\sec t+\tan t}dt\\
-&=\int\frac{(\sec t\tan t+\sec^2 t)}{\sec t+\tan t}dt\\
-&=\ln (\sec t+\tan t)+C
-\end{align}</script><p>$原积分= \ln(z+\sqrt{z^2+a^2})+C$</p>
-<p>这个是因为不知道 $\sec x$ 如何积分。</p>
-<p>另外在计算三角函数时，除了通过恒等式进行计算，可以直接将对应边长的三角形画出计算三角函数。</p>
+<p>其实还是没有理解为什么 Grad 需要 Evaluate 对其进行计算ψ(._. )&gt;，为什么 Grad 在 Vector 内就没有计算到 ${x^2+y^2}$，不过查了一下Grad的属性</p>
+<p><img src="/2020/03/31/mathematica1/p5.jpg" alt="Grad 属性"></p>
+<p>留个坑，以后再说…   ╥﹏╥</p>
+<hr>
+<p>更新</p>
+<p>经过他人指点，这是由于它先计算了函数的值，从而对一个常数函数微分，所以只有 0 这一个值。</p>
+<p>如此计算的原因是，Plot 系列函数的 HoldAll 属性控制了在最后一步才代入计算。因而需要用 Evaluate 来控制计算顺序。</p>
+<p>​    </p>
 ]]></content>
+      <categories>
+        <category>忏悔录</category>
+      </categories>
       <tags>
-        <tag>微积分</tag>
+        <tag>mathematica</tag>
+        <tag>坑</tag>
+        <tag>忏悔录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/2020/01/09/test/</url>
+    <content><![CDATA[<script type="math/tex; mode=display">
+\require{physics}
+\newcommand{\a}{\hat{a}}</script><p>摘要：一些测试和 markdown 用法.</p>
+<span id="more"></span>
+<h1 id="2024-12-25-更新"><a href="#2024-12-25-更新" class="headerlink" title="2024.12.25 更新"></a>2024.12.25 更新</h1><p>测试一下 mathjax 支持是否残缺.</p>
+<p><code>\newcommand</code>: $\a$ （生效</p>
+<p><code>\require&#123;physics&#125;</code>: $\dv{f}{x}$ （不支持</p>
+<h1 id="2024-03-27-更新"><a href="#2024-03-27-更新" class="headerlink" title="2024.03.27 更新"></a>2024.03.27 更新</h1><p>几日不见, 这玩意儿变严格了. </p>
+<p>从前突出一个懒散和随性采用</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!------------ more -----------&gt;</span></span><br></pre></td></tr></table></figure>
+<p>写摘要, 如今这种写法在 <code>hexo s</code> 中失效了, 需采用严格的</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- more --&gt;</span></span><br></pre></td></tr></table></figure>
+<p>默认的不支持直接使用 physics 包. 使用 <code>\require&#123;physics&#125;</code> 也没什么用 :skull: . </p>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><h2 id="h2"><a href="#h2" class="headerlink" title="h2"></a>h2</h2><h3 id="h3"><a href="#h3" class="headerlink" title="h3"></a>h3</h3><h4 id="h4"><a href="#h4" class="headerlink" title="h4"></a>h4</h4><h5 id="h5"><a href="#h5" class="headerlink" title="h5"></a>h5</h5><h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>脚注</p>
+<p><sup><a href="#fn_脚注" id="reffn_脚注">脚注</a></sup>: </p>
+<blockquote>
+<p>引用</p>
+</blockquote>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>行内代码<code>代码</code></p>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"><span class="keyword">code</span></span><br></pre></td></tr></table></figure>
+<h1 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h1><p>$\vec{r}$</p>
+<script type="math/tex; mode=display">
+\sin ^2 x+\cos ^2 x=1</script><p>实数集<code>\mathbb&#123;R&#125;</code>: $\mathbb{R}$  </p>
+<p>占位符</p>
+<p>quad空格<code>\quad</code>: $A\quad A$<br>两个quad空格<code>\qqaud</code>: $A\qquad A$</p>
+<p>约等于<code>\approx</code>: $\approx$<br>大于等于<code>\geq</code>: $\geq$<br>小于等于<code>\leq</code>: $\leq$</p>
+<p>正负<code>\pm</code>: $\pm$ (<code>\plusmn</code> mathjax 无法渲染)</p>
+<h1 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h1><h2 id="一般情况"><a href="#一般情况" class="headerlink" title="一般情况"></a>一般情况</h2><figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">&#123;<span class="symbol">%</span> asset_img <span class="number">0001.</span>jpg This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span> <span class="symbol">%</span>&#125;#失效</span><br><span class="line">![This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span>](./test/<span class="number">0001.</span>jpg)</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/01/09/test/0001.jpg" alt="This is an example image"></p>
+<h2 id="自定义"><a href="#自定义" class="headerlink" title="自定义"></a>自定义</h2><figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;width:70%;margin:auto&quot;</span>&gt;</span></span><span class="template-tag">&#123;% <span class="name">asset_img</span> 0001.jpg This is an example image %&#125;</span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<div style="width:70%;margin:auto"><img src="/2020/01/09/test/01/09/test/0001.jpg" class title="This is an example image"></div>
+
+<h1 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h1><p><a href="http://www.baidu.com" title="链接">链接</a></p>
+<h1 id="使用内嵌-HTML-标签控制markdown颜色、字体、字号"><a href="#使用内嵌-HTML-标签控制markdown颜色、字体、字号" class="headerlink" title="使用内嵌 HTML 标签控制markdown颜色、字体、字号"></a>使用内嵌 HTML 标签控制markdown颜色、字体、字号</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><h3 id="字体颜色"><a href="#字体颜色" class="headerlink" title="字体颜色"></a>字体颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FF5566</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font color="#FF5566">示例文字</font>
+
+<h3 id="文字背景颜色"><a href="#文字背景颜色" class="headerlink" title="文字背景颜色"></a>文字背景颜色</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table><tr><td bgcolor="#003366">示例文字</td></tr></table>
+
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font face="微软雅黑">示例文字</font>
+
+<h2 id="字号"><a href="#字号" class="headerlink" title="字号"></a>字号</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span>=<span class="string">72</span>&gt;</span>示例文字<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<font size="72">示例文字</font>
+
+<h2 id="综合"><a href="#综合" class="headerlink" title="综合"></a>综合</h2><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">bgcolor</span>=<span class="string">#003366</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">#FFFFFF</span> <span class="attr">size</span>=<span class="string">14</span> <span class="attr">face</span>=<span class="string">&quot;微软雅黑&quot;</span>&gt;</span></span><br><span class="line">示例文字</span><br><span class="line"><span class="tag">&lt;/<span class="name">font</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table><tr><td bgcolor="#003366">
+<font color="#FFFFFF" size="5" face="微软雅黑">
+示例文字
+</font>
+</td></tr></table>]]></content>
+      <categories>
+        <category>琐记</category>
+      </categories>
+      <tags>
+        <tag>琐记</tag>
       </tags>
   </entry>
   <entry>
@@ -306,6 +256,61 @@ I&=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
       <tags>
         <tag>琐记</tag>
         <tag>小细节</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一道积分算一天——电磁学篇</title>
+    <url>/2020/09/23/%E7%A7%AF%E5%88%86/</url>
+    <content><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><script type="math/tex; mode=display">
+\int (x^2+r^2)^{(-\frac{3}{2})}dx</script><p>解：令 $x=r\tan t$，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+原式&=\int \frac{1}{r^3\sec ^3t}d(r\tan t)\\
+&=r^{-2}\int \frac{1}{\sec^3 t}d\tan t\\
+&=r^{-2}\int \cos tdt\\
+&=r^{-2}\sin t+C
+\end{align}</script><script type="math/tex; mode=display">
+\int (x^2+r^2)^{(-\frac{3}{2})}dx=\frac{1}{r^2}\frac{x}{\sqrt{x^2+r^2}}+C</script><p>被这个积分困住很久，主要原因在于忘记了 $\tan^2x+1=sec^2x$，以及第二类换元不熟悉。</p>
+<blockquote>
+<p>第二类换元法</p>
+<p>若含有 $\sqrt{a^2-x^2}$，令 $x=a\sin t, t\in(-\frac{\pi}{2},\frac{\pi}{2})$</p>
+<p>若含有 $\sqrt{a^2+x^2}$，令 $x=a\tan t$</p>
+<p>若含有 $\sqrt{x^2-a^2}$，令 $x=a\sec t$ </p>
+</blockquote>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a>2</h1><script type="math/tex; mode=display">
+\int\sqrt{\frac{x_0x}{x_0-x}}dx</script><p>解：</p>
+<script type="math/tex; mode=display">
+\begin{align}
+原式&=\int \sqrt{\frac{\frac{x}{x_0}x_0}{1-\frac{x}{x_0}}}d \frac{x}{x_0}\\
+
+
+\end{align}</script><p>令 $ \frac{x}{x_0}=a$，现求解积分$I=\int \frac{\sqrt{a}}{\sqrt{1-a}}da$</p>
+<p>令 $a=\sin^2t$，$da=2\sin t\cos tdt$，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+I&=\int\frac{\sin t}{\cos t}\cdot 2\sin t\cos tdt\\
+&=2\int \sin^2tdt\\
+&=\int (1-\cos 2t)dt\\
+&=t-\frac{1}{2}\sin 2t+C
+\end{align}</script><script type="math/tex; mode=display">
+\sin 2t=2\sin t\cos t=2\sqrt{a}\sqrt{1-a}</script><script type="math/tex; mode=display">
+原式=\sqrt{x_0}(x_0\arcsin \sqrt{\frac{x}{x_0}}-\sqrt{x}\sqrt{x_0-x})+C</script><p>这个其实还是第二类换元这同一块石头，被坑住是因为看到 $\frac{1}{\sqrt{1-a}}$ 以及答案有 $\arcsin$ ，就想分部积分。</p>
+<h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><script type="math/tex; mode=display">
+\int \frac{dz}{\sqrt{z^2+a^2}}</script><p>解：</p>
+<p>令 $z=a \tan t$，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+原式&=\int\frac{1}{a\sqrt{\tan^2 t+1}}d(a\tan t)\\
+&=\int\sec tdt\\
+&=\int \sec t \frac{\sec t+\tan t}{\sec t+\tan t}dt\\
+&=\int\frac{(\sec t\tan t+\sec^2 t)}{\sec t+\tan t}dt\\
+&=\ln (\sec t+\tan t)+C
+\end{align}</script><p>$原积分= \ln(z+\sqrt{z^2+a^2})+C$</p>
+<p>这个是因为不知道 $\sec x$ 如何积分。</p>
+<p>另外在计算三角函数时，除了通过恒等式进行计算，可以直接将对应边长的三角形画出计算三角函数。</p>
+]]></content>
+      <tags>
+        <tag>微积分</tag>
       </tags>
   </entry>
 </search>
