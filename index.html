@@ -146,7 +146,119 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
@@ -392,7 +504,8 @@
 
       
         
-          <p>两个遇到的关于线性代数常见的误区. 一个关于矩阵的迹, 一个关于矩阵的逆.</p>
+          <p>两个遇到的关于线性代数常见的误区. 一个关于矩阵的迹,
+一个关于矩阵的逆.</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2024/11/06/LAMisunderstanding/#more" rel="contents">
@@ -707,8 +820,23 @@
       
         
           
-          1$$\int (x^2+r^2)^{(-\frac{3}{2})}dx$$
-解：令 $x&#x3D;r\tan t$，$$\begin{align}原式&amp;&#x3D;\int \frac{1}{r^3\sec ^3t}d(r\tan t)\&amp;&#x3D;r^{-2}\int \fr
+          1
+
+解：令 ， 原式
+
+被这个积分困住很久，主要原因在于忘记了 ，以及第二类换元不熟悉。
+
+第二类换元法
+若含有 ，令 
+若含有 ，令 
+若含有 ，令 
+
+2
+ 解： $$ 原式 $$ 令 $ =a，现求解积分I=da$
+令 ，， 
+
+原式
+这个其实还是第二类换元这
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -877,7 +1005,7 @@
 
       
         
-          <p>当用mathematica作梯度矢量图时……</p>
+          <p>当用mathematica作梯度矢量图时......</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/03/31/mathematica1/#more" rel="contents">
@@ -1047,7 +1175,9 @@
         
           <p>劈开全形字和半形字之间的混沌的空白字元，被汉学家称之为「盘古之白」。</p>
 <blockquote>
-<p>有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。<a href="#refer-anchor-1"><sup>1</sup></a></p>
+<p>有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在
+34
+岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。<a href="#refer-anchor-1"><sup>1</sup></a></p>
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1149,7 +1279,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2024-12-25T14:45:41+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2024-12-25T15:50:19+08:00">
                 2024-12-25
               </time>
             
@@ -1216,7 +1346,7 @@
 
       
         
-          <p>$$<br>\require{physics}<br>\newcommand{\a}{\hat{a}}<br>$$</p>
+          <p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="0.036ex" height="0.036ex" role="img" focusable="false" viewbox="0 0 16 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"/></g></svg></mjx-container></span></p>
 <p>摘要：一些测试和 markdown 用法.</p>
           <!--noindex-->
           <div class="post-button text-center">
