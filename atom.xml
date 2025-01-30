@@ -130,9 +130,9 @@
     <category term="琐记" scheme="http://yoursite.com/categories/%E7%90%90%E8%AE%B0/"/>
     
     
-    <category term="小细节" scheme="http://yoursite.com/tags/%E5%B0%8F%E7%BB%86%E8%8A%82/"/>
-    
     <category term="琐记" scheme="http://yoursite.com/tags/%E7%90%90%E8%AE%B0/"/>
+    
+    <category term="小细节" scheme="http://yoursite.com/tags/%E5%B0%8F%E7%BB%86%E8%8A%82/"/>
     
   </entry>
   
