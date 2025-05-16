@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -95,7 +95,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '',
-    scheme: 'Mist',
+    scheme: 'Gemini',
     version: '',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
@@ -146,7 +146,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"><style>mjx-container[jax="SVG"] {
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -663,21 +663,17 @@ mjx-container[display="true"] + br {
           
           1
 
-解：令 ， 原式
+解：令 x = rtan t， 原式
 
-被这个积分困住很久，主要原因在于忘记了 ，以及第二类换元不熟悉。
+被这个积分困住很久，主要原因在于忘记了 tan2x + 1 = sec2x，以及第二类换元不熟悉。
 
 第二类换元法
 若含有 ，令 
-若含有 ，令 
-若含有 ，令 
+若含有 ，令 x = atan t
+若含有 ，令 x = asec t
 
 2
- 解： $$ 原式 $$ 令 $ =a，现求解积分I=da$
-令 ，， 
-
-原式
-这个其实还是第二类换元这
+ 解：  令 $ =
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -846,7 +842,7 @@ mjx-container[display="true"] + br {
 
       
         
-          <p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="0.036ex" height="0.036ex" role="img" focusable="false" viewbox="0 0 16 16"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"/></g></svg></mjx-container></span></p>
+          <p><span class="math display"></span></p>
 <p>摘要：一些测试和 markdown 用法.</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -987,9 +983,9 @@ mjx-container[display="true"] + br {
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://www.zhihu.com/column/c_1766454849204637696" target="_blank" title="ZhiHu">
+                    <a href="https://www.zhihu.com/column/c_1766454849204637696" target="_blank" title="Zhihu">
                       
-                        <i class="fa fa-fw fa-zhihu"></i></a>
+                        <i class="fa fa-fw fa-fa custom zhihu"></i></a>
                   </span>
                 
             </div>
@@ -1201,6 +1197,13 @@ setInterval("createtime()",250);
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v="></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v="></script>
+
+
 
   
 
