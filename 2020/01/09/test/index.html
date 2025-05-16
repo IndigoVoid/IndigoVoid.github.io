@@ -144,7 +144,16 @@
 
 
 
-
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入查看密码(。・∀・)ノ') !== ''){
+                alert('密码输错了喔~ψ(._. )>');
+                history.back();
+            }
+        }
+    })();
+</script>
   <title>测试 | indigovoid</title>
   
 
@@ -302,7 +311,7 @@ mjx-container[display="true"] + br {
       </a>
     </div>
       
-        <p class="site-subtitle">你发现了一只懒癌w</p>
+        <h1 class="site-subtitle" itemprop="description">你发现了一只懒癌w</h1>
       
   </div>
 
@@ -401,7 +410,7 @@ mjx-container[display="true"] + br {
 
         
         
-          <h1 class="post-title" itemprop="name headline">测试</h1>
+          <h2 class="post-title" itemprop="name headline">测试</h2>
         
 
         <div class="post-meta">
@@ -454,6 +463,11 @@ mjx-container[display="true"] + br {
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -649,7 +663,7 @@ mjx-container[display="true"] + br {
           <p class="site-author-name" itemprop="name"></p>
            
               <p class="site-description motion-element" itemprop="description"></p>
-          
+           
         </div>
         <nav class="site-state motion-element">
 
@@ -806,19 +820,28 @@ mjx-container[display="true"] + br {
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Gemini
-  </a>
-</div>
-
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
         
       </div>
