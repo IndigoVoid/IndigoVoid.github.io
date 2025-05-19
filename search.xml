@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>毕业论文相关内容的补充</title>
+    <url>/2025/05/19/supplementary-notes-on-the-masters-thesis/</url>
+    <content><![CDATA[<span id="more"></span>
+<h2 id="压缩态">压缩态</h2>
+]]></content>
+      <categories>
+        <category>true</category>
+      </categories>
+      <tags>
+        <tag>true</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>测试</title>
     <url>/2020/01/09/test/</url>
     <content><![CDATA[<p><span class="math display"></span></p>
 <p>摘要：一些测试和 markdown 用法.</p>
 <span id="more"></span>
-<h1 id="更新">2024.12.25 更新</h1>
+<h1 id="更新">2025.05.19 更新</h1>
+<p>将之前的内容删掉了, 更新了 Hexo.</p>
+<h1 id="更新-1">2024.12.25 更新</h1>
 <p>测试一下 mathjax 支持是否残缺.</p>
 <p><code>\newcommand</code>: <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="2.262ex" role="img" focusable="false" viewbox="0 -750 1000 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext" fill="red" stroke="red"><path data-c="5C" d="M56 731Q56 740 62 745T75 750Q85 750 92 740Q96 733 270 255T444 -231Q444 -239 438 -244T424 -250Q414 -250 407 -240Q404 -236 230 242T56 731Z"/><path data-c="61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z" transform="translate(500,0)"/></g></g></g></svg></mjx-container></span></p>
 <p><code>\require{physics}</code>: <span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.798ex;" xmlns="http://www.w3.org/2000/svg" width="2.8ex" height="3.023ex" role="img" focusable="false" viewbox="0 -983.5 1237.6 1336.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mfrac"><g data-mml-node="mrow" transform="translate(227.8,485) scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"/></g></g><g data-mml-node="mi" transform="translate(556,0)"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"/></g></g><g data-mml-node="mrow" transform="translate(220,-345) scale(0.707)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"/></g></g><g data-mml-node="mi" transform="translate(556,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"/></g></g><rect width="997.6" height="60" x="120" y="220"/></g></g></g></svg></mjx-container></span></p>
 <p><code>physics</code> 使用 hexo-filter-mathjax 可以支持了! :smile:</p>
-<h1 id="更新-1">2024.03.27 更新</h1>
+<h1 id="更新-2">2024.03.27 更新</h1>
 <p>几日不见, 这玩意儿变严格了.</p>
 <p>从前突出一个懒散和随性采用</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!------------ more -----------&gt;</span></span><br></pre></td></tr></table></figure>
@@ -93,18 +108,6 @@
       </categories>
       <tags>
         <tag>琐记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>supplementary_notes_on_the_masters_thesis</title>
-    <url>/2025/05/19/supplementary-notes-on-the-masters-thesis/</url>
-    <content><![CDATA[
-]]></content>
-      <categories>
-        <category>true</category>
-      </categories>
-      <tags>
-        <tag>true</tag>
       </tags>
   </entry>
 </search>
