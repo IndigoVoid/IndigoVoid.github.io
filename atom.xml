@@ -3,11 +3,11 @@
   <title>indigovoid</title>
   
   
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  <link href="https://indigovoid.github.io/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://indigovoid.github.io/"/>
   <updated>2025-05-19T14:30:10.213Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://indigovoid.github.io/</id>
   
   <author>
     <name>indigovoid</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>毕业论文相关内容的补充</title>
-    <link href="http://yoursite.com/2025/05/19/supplementary-notes-on-the-masters-thesis/"/>
-    <id>http://yoursite.com/2025/05/19/supplementary-notes-on-the-masters-thesis/</id>
+    <link href="https://indigovoid.github.io/2025/05/19/supplementary-notes-on-the-masters-thesis/"/>
+    <id>https://indigovoid.github.io/2025/05/19/supplementary-notes-on-the-masters-thesis/</id>
     <published>2025-05-19T07:46:06.000Z</published>
     <updated>2025-05-19T14:30:10.213Z</updated>
     
@@ -30,17 +30,17 @@
     
     
     
-    <category term="论文补充" scheme="http://yoursite.com/categories/%E8%AE%BA%E6%96%87%E8%A1%A5%E5%85%85/"/>
+    <category term="论文补充" scheme="https://indigovoid.github.io/categories/%E8%AE%BA%E6%96%87%E8%A1%A5%E5%85%85/"/>
     
     
-    <category term="量子光学" scheme="http://yoursite.com/tags/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6/"/>
+    <category term="量子光学" scheme="https://indigovoid.github.io/tags/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>测试</title>
-    <link href="http://yoursite.com/2020/01/09/test/"/>
-    <id>http://yoursite.com/2020/01/09/test/</id>
+    <link href="https://indigovoid.github.io/2020/01/09/test/"/>
+    <id>https://indigovoid.github.io/2020/01/09/test/</id>
     <published>2020-01-09T08:04:10.000Z</published>
     <updated>2025-05-19T14:26:41.241Z</updated>
     
@@ -52,10 +52,10 @@
     
     
     
-    <category term="琐记" scheme="http://yoursite.com/categories/%E7%90%90%E8%AE%B0/"/>
+    <category term="琐记" scheme="https://indigovoid.github.io/categories/%E7%90%90%E8%AE%B0/"/>
     
     
-    <category term="琐记" scheme="http://yoursite.com/tags/%E7%90%90%E8%AE%B0/"/>
+    <category term="琐记" scheme="https://indigovoid.github.io/tags/%E7%90%90%E8%AE%B0/"/>
     
   </entry>
   
