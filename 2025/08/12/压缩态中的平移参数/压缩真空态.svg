@@ -8,7 +8,10 @@
    version="1.1"
    id="svg1"
    inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
-   sodipodi:docname="压缩相干态.svg"
+   sodipodi:docname="压缩真空态.svg"
+   inkscape:export-filename="压缩真空态.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,12 +26,12 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="13.616528"
-     inkscape:cx="318.21622"
-     inkscape:cy="67.014148"
-     inkscape:window-width="2880"
-     inkscape:window-height="1586"
-     inkscape:window-x="3829"
+     inkscape:zoom="3.4041319"
+     inkscape:cx="157.89635"
+     inkscape:cy="75.349607"
+     inkscape:window-width="2560"
+     inkscape:window-height="1334"
+     inkscape:window-x="-11"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
@@ -136,8 +139,8 @@
       <ellipse
          style="fill:#ddafe9;stroke:#000000;stroke-width:0.0487805;stroke-opacity:1"
          id="path1"
-         cx="13.172637"
-         cy="9.2031221"
+         cx="11.228703"
+         cy="11.082971"
          inkscape:label="圆"
          rx="0.97560972"
          ry="0.97560978" />
@@ -297,8 +300,8 @@
       <ellipse
          style="fill:#ddafe9;stroke:#000000;stroke-width:0.0487805;stroke-opacity:1"
          id="path1-8"
-         cx="31.853138"
-         cy="10.3543"
+         cx="29.161537"
+         cy="11.678739"
          inkscape:label="圆"
          rx="0.97560972"
          ry="0.97560978" />
@@ -458,18 +461,17 @@
       <ellipse
          style="fill:#ddafe9;stroke:#000000;stroke-width:0.0487805;stroke-opacity:1"
          id="path1-53"
-         cx="32.416073"
-         cy="11.329616"
+         cx="54.989189"
+         cy="9.9985476"
          inkscape:label="圆"
          rx="0.97560972"
          ry="0.97560978"
-         inkscape:transform-center-x="10.428501"
-         inkscape:transform-center-y="-0.073439538" />
+         transform="translate(-25.969658,1.3310681)" />
     </g>
     <g
        id="g3"
        inkscape:label="rotation2"
-       transform="matrix(0.94871183,0,0,0.94871183,3.4431156,26.961036)">
+       transform="matrix(0.94871183,0,0,0.94871183,2.308203,26.738107)">
       <g
          inkscape:label="GridCartesian:X6:Y6"
          transform="matrix(0.73953972,0.00158077,0.00441623,0.32475548,73.490114,7.8997704)"
@@ -547,13 +549,11 @@
       <ellipse
          style="fill:#ddafe9;stroke:#000000;stroke-width:0.0487805;stroke-opacity:1"
          id="path1-53-2"
-         cx="86.936317"
-         cy="9.8345518"
+         cx="82.364868"
+         cy="11.799848"
          inkscape:label="圆"
          rx="0.97560972"
-         ry="0.97560978"
-         inkscape:transform-center-x="11.530102"
-         inkscape:transform-center-y="4.0392097" />
+         ry="0.97560978" />
       <g
          inkscape:label="GridCartesian:X6:Y6"
          transform="matrix(0.68086224,0.28870069,-0.12206852,0.30097325,75.655085,4.7592237)"
@@ -710,8 +710,8 @@
       <ellipse
          style="fill:#ddafe9;stroke:#000000;stroke-width:0.0486175;stroke-opacity:1"
          id="path1-53-2-3"
-         cx="108.04057"
-         cy="8.8873558"
+         cx="104.96445"
+         cy="11.920747"
          inkscape:label="圆"
          rx="0.64069128"
          ry="1.4756913" />
