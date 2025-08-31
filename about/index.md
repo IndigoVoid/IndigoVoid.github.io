@@ -18,13 +18,13 @@
 
 "Quantum Parameter Estimation Uncertainty Relation."
 **Bing-Shu Hu** and Xiao-Ming Lu
-[*axXiv:2506.15352*](https://arxiv.org/abs/2506.15352)
+Preprint at [axXiv:2506.15352](https://arxiv.org/abs/2506.15352)
 
 "Generalization of Quantum Multiparameter Estimation Theory under the Influence of Measurement Incompatibility and Parameter Correlations."
 **Bing-Shu Hu**
 [Master's thesis, Hangzhou Dianzi University, Hangzhou (2025), in Chinese.](https://kns.cnki.net/kcms2/article/abstract?v=RPbSoBw3VsGavOoYyq8sfblE7269aeghYrncPZXI6--ev3rDWLwt-lJA1qBqLE3Lkg7Wee-vIUTonAKSTwlrku02CjvSBXCzl98C_Rp45i4Qlp1OL-c2JNI-MjO5Pk1SwRSaudi8CfqQxUxlxzLIVsdLa78YmjkYWnCTASxY5Z6Ew7deh3kojw==&uniplatform=NZKPT&language=CHS)
 
-"Revisiting the quantum parameter estimation approach for Mach–Zehnder interferometry."
+"Revisiting the Quantum Parameter Estimation Approach for Mach–Zehnder Interferometry."
 **Bing-Shu Hu** and Xiao-Ming Lu
 [Communications in Theoretical Physics 77, 105105 (2025)](https://iopscience.iop.org/article/10.1088/1572-9494/adcf08)
 
