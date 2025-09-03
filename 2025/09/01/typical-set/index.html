@@ -19,22 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"indigovoid.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"utterances","storage":true,"lazyload":false,"nav":{"utterances":{"order":-1}},"activeClass":"utterances"},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="indigovoid">
-<meta property="og:url" content="https://indigovoid.github.io/tags/%E7%90%90%E8%AE%B0/index.html">
+    <meta name="description" content="典型集 (typical set), Fisher 信息.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="typical_set">
+<meta property="og:url" content="https://indigovoid.github.io/2025/09/01/typical-set/index.html">
 <meta property="og:site_name" content="indigovoid">
+<meta property="og:description" content="典型集 (typical set), Fisher 信息.">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-09-01T01:35:03.000Z">
+<meta property="article:modified_time" content="2025-09-01T01:45:34.740Z">
 <meta property="article:author" content="indigovoid">
+<meta property="article:tag" content="true">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://indigovoid.github.io/tags/%E7%90%90%E8%AE%B0/">
+<link rel="canonical" href="https://indigovoid.github.io/2025/09/01/typical-set/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/琐记/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://indigovoid.github.io/2025/09/01/typical-set/","path":"2025/09/01/typical-set/","title":"typical_set"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 琐记 | indigovoid</title>
+<title>typical_set | indigovoid</title>
   
 
 
@@ -118,7 +123,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -131,6 +136,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#markov-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">Markov 不等式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%AF%94"><span class="nav-number">1.1.2.</span> <span class="nav-text">切比</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B6%E6%95%9B"><span class="nav-number">2.</span> <span class="nav-text">收敛</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -187,51 +193,115 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">琐记
-          <small>标签</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://indigovoid.github.io/2025/09/01/typical-set/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="indigovoid">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="indigovoid">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="typical_set | indigovoid">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          typical_set
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+
+      <time title="创建时间：2025-09-01 09:35:03 / 修改时间：09:45:34" itemprop="dateCreated datePublished" datetime="2025-09-01T09:35:03+08:00">2025-09-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/true/" itemprop="url" rel="index"><span itemprop="name">true</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>典型集 (typical set), Fisher 信息.</p>
+<span id="more"></span>
+<h1 id="写在前面">写在前面</h1>
+<h2 id="定理">定理</h2>
+<h3 id="markov-不等式">Markov 不等式</h3>
+<h3 id="切比">切比</h3>
+<h1 id="收敛">收敛</h1>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2020-01-09T16:04:10+08:00"
-              content="2020-01-09">
-          01-09
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/01/09/test/" itemprop="url">
-            <span itemprop="name">测试与更新记录</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/true/" rel="tag"># true</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/12/%E5%8E%8B%E7%BC%A9%E6%80%81%E4%B8%AD%E7%9A%84%E5%B9%B3%E7%A7%BB%E5%8F%82%E6%95%B0/" rel="prev" title="压缩态中的平移参数">
+                  <i class="fa fa-angle-left"></i> 压缩态中的平移参数
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
 
+
+
+
+
+    <div class="comments utterances-container"></div>
 </div>
   </main>
 

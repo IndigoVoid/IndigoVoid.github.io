@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://indigovoid.github.io/2025/08/12/%E5%8E%8B%E7%BC%A9%E6%80%81%E4%B8%AD%E7%9A%84%E5%B9%B3%E7%A7%BB%E5%8F%82%E6%95%B0/</loc>
+    
+    <lastmod>2025-09-03</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://indigovoid.github.io/2025/09/01/typical-set/</loc>
+    
+    <lastmod>2025-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://indigovoid.github.io/2020/01/09/test/</loc>
     
     <lastmod>2025-08-31</lastmod>
@@ -12,15 +30,6 @@
   
   <url>
     <loc>https://indigovoid.github.io/box/index.html</loc>
-    
-    <lastmod>2025-08-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://indigovoid.github.io/2025/08/12/%E5%8E%8B%E7%BC%A9%E6%80%81%E4%B8%AD%E7%9A%84%E5%B9%B3%E7%A7%BB%E5%8F%82%E6%95%B0/</loc>
     
     <lastmod>2025-08-18</lastmod>
     
@@ -94,43 +103,50 @@
 
   <url>
     <loc>https://indigovoid.github.io/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://indigovoid.github.io/tags/mathematica/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <loc>https://indigovoid.github.io/tags/%E9%87%8F%E5%AD%90%E4%BF%A1%E6%81%AF/</loc>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://indigovoid.github.io/tags/%E9%87%8F%E5%AD%90%E4%BF%A1%E6%81%AF/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <loc>https://indigovoid.github.io/tags/mathematica/</loc>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://indigovoid.github.io/tags/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://indigovoid.github.io/tags/%E7%90%90%E8%AE%B0/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://indigovoid.github.io/tags/true/</loc>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://indigovoid.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -139,21 +155,28 @@
   
   <url>
     <loc>https://indigovoid.github.io/categories/%E8%AE%BA%E6%96%87%E8%A1%A5%E5%85%85/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://indigovoid.github.io/categories/%E7%90%90%E8%AE%B0/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://indigovoid.github.io/categories/true/</loc>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://indigovoid.github.io/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
-    <lastmod>2025-08-31</lastmod>
+    <lastmod>2025-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
