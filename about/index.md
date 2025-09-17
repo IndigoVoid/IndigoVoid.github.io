@@ -14,7 +14,7 @@
 
 业余乒乓球爱好者, 非常业余但是爱玩, 欢迎指教.:ping_pong:
 
-并不想将此页面建立为所谓的 Homepage, 但是如果您想了解我的工作, 以下是所谓的 Publications——
+但是如果您想了解我的工作, 以下——
 
 "Quantum Parameter Estimation Uncertainty Relation."
 **Bing-Shu Hu** and Xiao-Ming Lu
