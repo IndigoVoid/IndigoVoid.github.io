@@ -6,7 +6,7 @@
   <link href="https://indigovoid.github.io/atom.xml" rel="self"/>
   
   <link href="https://indigovoid.github.io/"/>
-  <updated>2026-11-16T11:38:43.255Z</updated>
+  <updated>2026-11-16T13:03:22.485Z</updated>
   <id>https://indigovoid.github.io/</id>
   
   <author>
@@ -21,18 +21,14 @@
     <link href="https://indigovoid.github.io/2026/11/16/the-page-of-AI4TP/"/>
     <id>https://indigovoid.github.io/2026/11/16/the-page-of-AI4TP/</id>
     <published>2026-11-16T10:06:59.000Z</published>
-    <updated>2026-11-16T11:38:43.255Z</updated>
+    <updated>2026-11-16T13:03:22.485Z</updated>
     
-    <content type="html"><![CDATA[<p>https://indigovoid.github.io/AI4TP/</p><p>网页描述：</p><p>本网页意在收录由 AI生成的理论物理的研究成果，并关注后续人类对这些成果验证和理解的论文，由于这些成果分布较广，现有的网页仅关注原成果，忽视后续验证和理解，因此制作本网页方便查询。</p><p>需注意<code>独立验证</code>标签仅表示有相关研究，不表示其结果一定是支持原成果的。</p><p>更多设计思路请访问<a href="https://indigovoid.github.io/2026/11/16/the-page-of-AI4TP/">相关博客</a>。</p>]]></content>
+    <content type="html"><![CDATA[<p>刷到人类理解 AI生成成果的论文突然想到，这类论文散落各处不太好找，于是氛围编程了一个集锦——<a href="https://indigovoid.github.io/AI4TP/">AI for TheoreticalPhysics</a>。</p><span id="more"></span><p>本网站意在收集 AI生成的理论物理研究成果资讯，并关注后续人类对这些成果验证和理解的论文。现有的成果分为四个标签：</p><ul><li><code>人类理解</code>：指已有人类书写的文章声称已经（或正在，但是已公开）理解消化了该成果。</li><li><code>独立验证</code>：指与公布单位无关的第三方声称对该成果进行了验证。验证结果可能是支持原成果表述的，也可能是不支持的。</li><li><code>形式化证明</code>：指官方给出了 Lean 的形式化证明。</li><li><code>仅宣称</code>：指官方只给出了手稿（Preprint）。</li></ul><p>目前的网页完全由 Hy4flash 生成。</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;p&gt;https://indigovoid.github.io/AI4TP/&lt;/p&gt;
-&lt;p&gt;网页描述：&lt;/p&gt;
-&lt;p&gt;本网页意在收录由 AI
-生成的理论物理的研究成果，并关注后续人类对这些成果验证和理解的论文，由于这些成果分布较广，现有的网页仅关注原成果，忽视后续验证和理解，因此</summary>
-      
+    <summary type="html">&lt;p&gt;刷到人类理解 AI
+生成成果的论文突然想到，这类论文散落各处不太好找，于是氛围编程了一个集锦——&lt;a href=&quot;https://indigovoid.github.io/AI4TP/&quot;&gt;AI for Theoretical
+Physics&lt;/a&gt;。&lt;/p&gt;</summary>
     
     
     
