@@ -35,8 +35,13 @@
     font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
     text-transform: uppercase; color: var(--accent); font-weight: 600;
   }
-  h1 { font-size: 28px; line-height: 1.25; margin: 8px 0 8px; letter-spacing: -.02em; }
+  .eyebrow a { color: inherit; text-decoration: none; }
+  .eyebrow a:hover { color: #1d3560; }
+  h1 { font-size: 36px; line-height: 1.2; margin: 8px 0 10px; letter-spacing: -.02em; }
   .sub { color: var(--text-dim); max-width: 680px; margin: 0; }
+  .sub a, footer a { color: var(--accent); text-decoration: none; }
+  .sub a:hover, footer a:hover { color: #1d3560; }
+  .sub .badge { vertical-align: 1px; }
 
   /* toolbar */
   .toolbar {
@@ -52,7 +57,22 @@
   }
   input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
   input[type=search] { flex: 1 1 280px; min-width: 200px; }
-  select { cursor: pointer; }
+  select {
+    cursor: pointer;
+    min-width: 112px;
+    color-scheme: light;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 34px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235b6675' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px 8px;
+  }
+  select::-ms-expand { display: none; }
+  select:hover { border-color: var(--text-faint); }
+  select option { color: var(--text); background: var(--surface); }
   label.fl { font-size: 12px; color: var(--text-dim); font-weight: 600; margin-right: 2px; }
   button {
     font: inherit; cursor: pointer; border-radius: 7px; padding: 8px 14px;
@@ -116,15 +136,6 @@
   .timeline { position: relative; padding-left: 30px; }
   .timeline::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--border-strong); border-radius: 1px; }
   .tl-group { margin-bottom: 26px; }
-  .tl-group-label {
-    position: relative; font-family: var(--mono); font-size: 12px; font-weight: 700;
-    letter-spacing: .08em; color: var(--text-dim); text-transform: uppercase;
-    margin: 0 0 14px -30px; padding-left: 30px;
-  }
-  .tl-group-label::before {
-    content: ''; position: absolute; left: 2px; top: 5px; width: 12px; height: 12px;
-    border-radius: 50%; background: var(--surface); border: 2px solid var(--border-strong);
-  }
   .tl-item { position: relative; margin-bottom: 18px; }
   .tl-node {
     position: absolute; left: -28px; top: 7px; width: 12px; height: 12px;
@@ -143,7 +154,8 @@
     box-shadow: var(--shadow); transition: border-color .15s; user-select: none;
   }
   .tl-event-head:hover { border-color: var(--border-strong); }
-  .ev-title { font-size: 17px; font-weight: 620; flex: 1; line-height: 1.4; }
+  .ev-main { flex: 1; min-width: 0; }
+  .ev-title { display: block; font-size: 17px; font-weight: 620; line-height: 1.4; }
   .ev-count { font-size: 11px; font-family: var(--mono); color: var(--text-faint); white-space: nowrap; }
   .ev-arrow { color: var(--text-faint); font-size: 18px; line-height: 1; transition: transform .15s; }
   .tl-event.open .ev-arrow { transform: rotate(90deg); }
@@ -172,9 +184,11 @@
 <div class="wrap">
 
 <header>
-  <div class="eyebrow">Registry · Achievements</div>
+  <div class="eyebrow"><a href="https://indigovoid.github.io/" target="_blank" rel="noopener">indigovoid</a></div>
   <h1>AI for Theoretical Physics</h1>
-  <p class="sub">只收 AI 真正做出来的理论物理结果：解出的开放问题、算出的系数、证明的界。每条标注验证状态和 AI 参与程度。<strong>宣称 ≠ 验证</strong>——未经验证的条目按原样标注。</p>
+  <p class="sub">本网页意在收录由 AI 生成的理论物理的研究成果，并关注后续人类对这些成果验证和理解的论文，由于这些成果分布较广，现有的网页仅关注原成果，忽视后续验证和理解，因此制作本网页方便查询。<br>
+    需注意 <span class="badge b-independent">独立验证</span> 标签仅表示有第三方进行相关验证，不表示其结果一定是支持原成果的。<br>
+    本网站亦由 AI 生成，请按来源自行判断。更多设计思路请访问<a href="https://indigovoid.github.io/2026/11/16/the-page-of-AI4TP/" target="_blank" rel="noopener">相关博客</a>。</p>
 </header>
 
 <div class="toolbar">
@@ -239,11 +253,24 @@ function refreshOptions() {
   f.value = cur;
 }
 
+const STATUS_ORDER = ['human', 'independent', 'formal', 'claimed'];
+function statusKeys(x) {
+  const raw = Array.isArray(x.status) ? x.status : [x.status];
+  const keys = (raw.length ? raw : ['claimed'])
+    .map(k => STATUS[k] ? k : 'claimed')
+    .filter((k, i, a) => a.indexOf(k) === i)
+    .sort((a, b) => STATUS_ORDER.indexOf(a) - STATUS_ORDER.indexOf(b));
+  return keys.length ? keys : ['claimed'];
+}
+function rankStatus(keys) {
+  const rank = { independent: 4, formal: 3, human: 2, claimed: 1 };
+  return keys.reduce((a, k) => (rank[k] || 0) > (rank[a] || 0) ? k : a, keys[0] || 'claimed');
+}
 function badgesHtml(x) {
-  const s = STATUS[x.status] || STATUS.claimed;
-  return `<div class="badges">
-    <span class="badge ${s.cls}">${s.label}</span>
-  </div>`;
+  return `<div class="badges">${statusKeys(x).map(k => {
+    const s = STATUS[k] || STATUS.claimed;
+    return `<span class="badge ${s.cls}">${s.label}</span>`;
+  }).join('')}</div>`;
 }
 function fieldHtml(x) {
   return x.field ? `<div class="field-badge"><span class="badge b-field">${esc(x.field)}</span></div>` : '';
@@ -253,6 +280,15 @@ function titleHtml(x) {
   return first
     ? `<a href="${esc(first.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`
     : esc(x.title);
+}
+function isAnnouncement(v) { return /成果公告/.test(v.label || ''); }
+function itemLinks(x) { return (x.links || []).filter(v => !isAnnouncement(v)); }
+function eventAnnouncement(items) {
+  for (const x of items) {
+    const hit = (x.links || []).find(isAnnouncement);
+    if (hit) return hit;
+  }
+  return null;
 }
 
 function linkListHtml(label, entries, color) {
@@ -267,8 +303,20 @@ function linkListHtml(label, entries, color) {
 
 function verificationHtml(x) {
   if (!x.verification || !x.verification.length) return '';
-  const s = STATUS[x.status] || STATUS.claimed;
-  return linkListHtml(s.label, x.verification, s.text);
+  const fallback = statusKeys(x)[0];
+  const groups = new Map();
+  for (const v of x.verification) {
+    const raw = v.status || fallback;
+    const k = STATUS[raw] ? raw : 'claimed';
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(v);
+  }
+  return [...groups.entries()]
+    .sort((a, b) => STATUS_ORDER.indexOf(a[0]) - STATUS_ORDER.indexOf(b[0]))
+    .map(([k, entries]) => {
+      const s = STATUS[k];
+      return linkListHtml(s.label, entries, s.text);
+    }).join('');
 }
 
 function card(x) {
@@ -299,22 +347,29 @@ function subItemHtml(x) {
       <div class="meta">${esc(x.org || '')}</div>
       ${badgesHtml(x)}
       <p class="summary">${esc(x.summary)}</p>
-      ${linkListHtml('相关链接', x.links)}
+      ${linkListHtml('相关链接', itemLinks(x))}
       ${verificationHtml(x)}
       ${fieldHtml(x)}
     </div>`;
 }
 
 function eventHtml(ev) {
-  const nodeCls = { independent: 'n-independent', formal: 'n-formal', human: 'n-human', claimed: 'n-claimed' }[ev.status] || 'n-claimed';
+  const nodeCls = { independent: 'n-independent', formal: 'n-formal', human: 'n-human', claimed: 'n-claimed' }[rankStatus(ev.status)] || 'n-claimed';
   const isOpen = !closedEvents.has(ev.key);
   const multi = ev.items.length > 1;
+  const ann = eventAnnouncement(ev.items);
+  const annHtml = ann
+    ? `<div class="verify-box"><a href="${esc(ann.url)}" target="_blank" rel="noopener">${esc(ann.label)}</a></div>`
+    : '';
   return `
     <div class="tl-item tl-event${isOpen ? ' open' : ''}" data-key="${esc(ev.key)}">
       <div class="tl-node ${nodeCls}"></div>
       <div class="tl-date">${esc(ev.date)}</div>
       <div class="tl-event-head" data-toggle>
-        <span class="ev-title">${esc(ev.event || ev.items[0].title)}</span>
+        <div class="ev-main">
+          <span class="ev-title">${esc(ev.event || ev.items[0].title)}</span>
+          ${annHtml}
+        </div>
         <span class="ev-count">${multi ? ev.items.length + ' 项成果' : '1 项成果'}</span>
         <span class="ev-arrow">›</span>
       </div>
@@ -325,7 +380,6 @@ function eventHtml(ev) {
 function renderTimeline(list) {
   const box = $('#list'); box.className = 'timeline'; box.innerHTML = '';
   const months = [];
-  const rank = { independent: 4, formal: 3, human: 2, claimed: 1 };
   list.forEach(x => {
     const m = String(x.date).slice(0, 7);
     let mo = months.find(y => y.label === m);
@@ -333,20 +387,22 @@ function renderTimeline(list) {
     const key = x.date + '|' + (x.org || '');
     let ev = mo.events.find(y => y.key === key);
     if (!ev) {
-      ev = { key, date: x.date, org: x.org || '', event: x.event || '', status: x.status, items: [] };
+      ev = { key, date: x.date, org: x.org || '', event: x.event || '', status: statusKeys(x), items: [] };
       mo.events.push(ev);
     }
     ev.items.push(x);
-    if ((rank[x.status] || 0) > (rank[ev.status] || 0)) ev.status = x.status;
+    const top = statusKeys(x);
+    if ((rankStatus(top) > rankStatus(ev.status))) ev.status = top;
   });
   months.forEach(mo => {
     const wrap = el('div', 'tl-group');
-    wrap.innerHTML = `<div class="tl-group-label">${esc(mo.label)}</div>` + mo.events.map(eventHtml).join('');
+    wrap.innerHTML = mo.events.map(eventHtml).join('');
     box.appendChild(wrap);
   });
 }
 
 $('#list').addEventListener('click', e => {
+  if (e.target.closest('a')) return;
   const head = e.target.closest('[data-toggle]'); if (!head) return;
   const ev = head.closest('.tl-event'); if (!ev) return;
   const key = ev.dataset.key;
@@ -359,7 +415,7 @@ function render() {
   const ff = $('#fField').value, fs = $('#fStatus').value;
   const list = items.filter(x => {
     if (ff && x.field !== ff) return false;
-    if (fs && x.status !== fs) return false;
+    if (fs && statusKeys(x).indexOf(fs) === -1) return false;
     if (q) {
       const hay = [x.title, x.summary, x.org, x.field, (x.tags || []).join(' ')].join(' ').toLowerCase();
       if (hay.indexOf(q) === -1) return false;
