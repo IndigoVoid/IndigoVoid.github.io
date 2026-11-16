@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Theoretical Physics</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --surface: #ffffff;
+    --surface-2: #fafbfc;
+    --border: #e2e5e9;
+    --border-strong: #cfd4da;
+    --text: #1c2430;
+    --text-dim: #5b6675;
+    --text-faint: #8b95a3;
+    --accent: #2b4c7e;
+    --accent-soft: #eaf0f8;
+    --shadow: 0 1px 2px rgba(20,30,45,.04), 0 4px 16px rgba(20,30,45,.05);
+    --radius: 10px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--font); font-size: 14px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* header */
+  header { margin-bottom: 28px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); font-weight: 600;
+  }
+  h1 { font-size: 28px; line-height: 1.25; margin: 8px 0 8px; letter-spacing: -.02em; }
+  .sub { color: var(--text-dim); max-width: 680px; margin: 0; }
+
+  /* toolbar */
+  .toolbar {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 14px 16px; box-shadow: var(--shadow); margin-bottom: 18px;
+  }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .row + .row { margin-top: 12px; }
+  input[type=search], select {
+    font: inherit; color: var(--text); background: var(--surface);
+    border: 1px solid var(--border-strong); border-radius: 7px; padding: 8px 11px;
+    outline: none; transition: border-color .15s, box-shadow .15s;
+  }
+  input:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  input[type=search] { flex: 1 1 280px; min-width: 200px; }
+  select { cursor: pointer; }
+  label.fl { font-size: 12px; color: var(--text-dim); font-weight: 600; margin-right: 2px; }
+  button {
+    font: inherit; cursor: pointer; border-radius: 7px; padding: 8px 14px;
+    border: 1px solid var(--border-strong); background: var(--surface); color: var(--text);
+    font-weight: 550; transition: background .15s, border-color .15s;
+  }
+  button:hover { background: var(--surface-2); border-color: var(--text-faint); }
+  button.ghost { border-color: transparent; background: transparent; color: var(--text-dim); }
+  button.ghost:hover { background: var(--bg); color: var(--text); }
+  .hint { font-size: 12px; color: var(--text-faint); margin-left: auto; }
+
+  /* cards */
+  .list { display: grid; gap: 12px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow);
+    transition: border-color .15s;
+  }
+  .card:hover { border-color: var(--border-strong); }
+  .card-head { display: flex; gap: 12px; align-items: flex-start; justify-content: space-between; }
+  .card h3 { font-size: 16px; margin: 0 0 4px; font-weight: 620; line-height: 1.4; }
+  .card h3 a { color: var(--text); text-decoration: none; }
+  .card h3 a:hover { color: var(--accent); }
+  .meta { font-size: 12px; color: var(--text-dim); font-family: var(--mono); }
+  .badges { display: flex; gap: 6px; flex-wrap: wrap; flex-shrink: 0; }
+  .badge {
+    font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 5px;
+    border: 1px solid transparent; white-space: nowrap;
+  }
+  .b-independent { background: #e8f4ec; color: #1d6b3a; border-color: #c9e6d2; }
+  .b-formal { background: #e9eef8; color: #2c5282; border-color: #ccd9ee; }
+  .b-human { background: #fdf3e2; color: #8a5a12; border-color: #f2e0bd; }
+  .b-claimed { background: #f2f3f5; color: #5f6b7a; border-color: #e2e5e9; }
+  .b-field { background: var(--bg); color: var(--text-dim); border-color: var(--border); }
+  .field-badge { margin-top: 12px; }
+  .card .summary { margin: 12px 0 10px; color: #394454; }
+  .verify-box {
+    margin-top: 10px; padding: 9px 12px; background: var(--surface-2);
+    border-left: 2px solid var(--border-strong); border-radius: 0 5px 5px 0;
+    font-size: 12.5px; color: var(--text-dim);
+  }
+  .verify-box strong { display: block; margin-bottom: 6px; }
+  .verify-box ul { margin: 0; padding-left: 18px; }
+  .verify-box li { margin: 3px 0; }
+  .verify-box a { color: var(--text); font-weight: 600; text-decoration: none; }
+  .verify-box a:hover { color: var(--accent); }
+  .tags { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { font-size: 11px; color: var(--text-faint); background: var(--bg); padding: 2px 7px; border-radius: 4px; }
+  .empty { text-align: center; padding: 60px 20px; color: var(--text-dim); border: 1px dashed var(--border-strong); border-radius: var(--radius); }
+
+  /* view switch */
+  .mode-switch { display: inline-flex; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 2px; gap: 2px; }
+  .mode-btn {
+    border: none; background: transparent; padding: 6px 14px; font-size: 12px;
+    font-weight: 600; color: var(--text-dim); border-radius: 6px;
+  }
+  .mode-btn:hover { background: transparent; border-color: transparent; color: var(--text); }
+  .mode-btn.active { background: var(--surface); color: var(--accent); box-shadow: 0 1px 3px rgba(20,30,45,.1); }
+
+  /* timeline view */
+  .timeline { position: relative; padding-left: 30px; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--border-strong); border-radius: 1px; }
+  .tl-group { margin-bottom: 26px; }
+  .tl-group-label {
+    position: relative; font-family: var(--mono); font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; color: var(--text-dim); text-transform: uppercase;
+    margin: 0 0 14px -30px; padding-left: 30px;
+  }
+  .tl-group-label::before {
+    content: ''; position: absolute; left: 2px; top: 5px; width: 12px; height: 12px;
+    border-radius: 50%; background: var(--surface); border: 2px solid var(--border-strong);
+  }
+  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-node {
+    position: absolute; left: -28px; top: 7px; width: 12px; height: 12px;
+    border-radius: 50%; border: 2px solid var(--surface); box-shadow: 0 0 0 2px var(--border-strong);
+  }
+  .n-independent { background: #2e9e5b; }
+  .n-formal { background: #4a7fc1; }
+  .n-human { background: #d99b3c; }
+  .n-claimed { background: #aab2bd; }
+  .tl-date { font-family: var(--mono); font-size: 11px; color: var(--text-faint); margin-bottom: 5px; }
+
+  /* event box (timeline) */
+  .tl-event-head {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 11px 16px; cursor: pointer; display: flex; align-items: center; gap: 10px;
+    box-shadow: var(--shadow); transition: border-color .15s; user-select: none;
+  }
+  .tl-event-head:hover { border-color: var(--border-strong); }
+  .ev-title { font-size: 17px; font-weight: 620; flex: 1; line-height: 1.4; }
+  .ev-count { font-size: 11px; font-family: var(--mono); color: var(--text-faint); white-space: nowrap; }
+  .ev-arrow { color: var(--text-faint); font-size: 18px; line-height: 1; transition: transform .15s; }
+  .tl-event.open .ev-arrow { transform: rotate(90deg); }
+  .tl-event-body { display: none; margin-top: 8px; padding-left: 14px; border-left: 2px solid var(--border); }
+  .tl-event.open .tl-event-body { display: block; }
+  .tl-subitem {
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+    padding: 12px 14px; margin-bottom: 8px;
+  }
+  .tl-subitem h4 { font-size: 16px; margin: 0 0 6px; font-weight: 620; line-height: 1.4; }
+  .tl-subitem h4 a { color: var(--text); text-decoration: none; }
+  .tl-subitem h4 a:hover { color: var(--accent); }
+  .tl-subitem .meta { margin-bottom: 8px; }
+  .tl-subitem .summary { font-size: 12.5px; margin: 8px 0; color: #394454; }
+  .tl-subitem .badges { margin-bottom: 2px; }
+
+  footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-faint); }
+
+  @media (max-width: 720px) {
+    .card-head { flex-direction: column; }
+    .hint { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Registry · Achievements</div>
+  <h1>AI for Theoretical Physics</h1>
+  <p class="sub">只收 AI 真正做出来的理论物理结果：解出的开放问题、算出的系数、证明的界。每条标注验证状态和 AI 参与程度。<strong>宣称 ≠ 验证</strong>——未经验证的条目按原样标注。</p>
+</header>
+
+<div class="toolbar">
+  <div class="row">
+    <div class="mode-switch" id="modeSwitch">
+      <button class="mode-btn active" data-mode="timeline">Timeline</button>
+      <button class="mode-btn" data-mode="achievement">Achievement</button>
+    </div>
+    <input type="search" id="q" placeholder="搜索标题、摘要、机构、标签…">
+    <span class="hint" id="countHint"></span>
+  </div>
+  <div class="row">
+    <label class="fl" for="fField">领域</label>
+    <select id="fField"><option value="">全部</option></select>
+    <label class="fl" for="fStatus">验证</label>
+    <select id="fStatus"><option value="">全部</option></select>
+    <button id="resetBtn" class="ghost">重置</button>
+  </div>
+</div>
+
+<div class="list" id="list"></div>
+
+<footer>
+  数据来自公开报道与预印本，多为未同行评议的结果。本网站亦由 AI 生成，请按来源自行判断。
+</footer>
+
+</div>
+
+<script src="data.js"></script>
+<script>
+/* ---------- 分级字典：标签与配色 ---------- */
+const STATUS = {
+  human:       { label: '人类理解', cls: 'b-human',       text: '#8a5a12', bg: '#fdf3e2' },
+  independent: { label: '独立验证', cls: 'b-independent', text: '#1d6b3a', bg: '#e8f4ec' },
+  formal:      { label: '形式化验证', cls: 'b-formal',      text: '#2c5282', bg: '#e9eef8' },
+  claimed:     { label: '仅宣称', cls: 'b-claimed',     text: '#5f6b7a', bg: '#f2f3f5' }
+};
+/* ---------- 数据：只读，来自 data.js ---------- */
+const items = (window.SEED_DATA || []).slice();
+
+const $ = s => document.querySelector(s);
+const el = (tag, cls, html) => {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (html !== undefined) n.innerHTML = html;
+  return n;
+};
+const esc = s => String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function fillSelect(sel, dict) {
+  Object.entries(dict).forEach(([k, v]) => {
+    const o = document.createElement('option'); o.value = k; o.textContent = v.label; sel.appendChild(o);
+  });
+}
+fillSelect($('#fStatus'), STATUS);
+
+function refreshOptions() {
+  const f = $('#fField'); const cur = f.value;
+  const set = new Set(items.map(x => x.field).filter(Boolean));
+  f.innerHTML = '<option value="">全部</option>';
+  [...set].sort().forEach(v => { const o = document.createElement('option'); o.value = v; o.textContent = v; f.appendChild(o); });
+  f.value = cur;
+}
+
+function badgesHtml(x) {
+  const s = STATUS[x.status] || STATUS.claimed;
+  return `<div class="badges">
+    <span class="badge ${s.cls}">${s.label}</span>
+  </div>`;
+}
+function fieldHtml(x) {
+  return x.field ? `<div class="field-badge"><span class="badge b-field">${esc(x.field)}</span></div>` : '';
+}
+function titleHtml(x) {
+  const first = x.links && x.links[0];
+  return first
+    ? `<a href="${esc(first.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>`
+    : esc(x.title);
+}
+
+function linkListHtml(label, entries, color) {
+  if (!entries || !entries.length) return '';
+  const items = entries.map(v =>
+    `<li><a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(v.label || v.url)}</a></li>`
+  ).join('');
+  return `<div class="verify-box"${color ? ` style="border-left-color:${color}"` : ''}>
+    <strong${color ? ` style="color:${color}"` : ''}>${esc(label)}：</strong><ul>${items}</ul>
+  </div>`;
+}
+
+function verificationHtml(x) {
+  if (!x.verification || !x.verification.length) return '';
+  const s = STATUS[x.status] || STATUS.claimed;
+  return linkListHtml(s.label, x.verification, s.text);
+}
+
+function card(x) {
+  const c = el('article', 'card');
+  c.innerHTML = `
+    <div class="card-head">
+      <div>
+        <h3>${titleHtml(x)}</h3>
+        <div class="meta">${esc(x.date)} · ${esc(x.org)}</div>
+      </div>
+      ${badgesHtml(x)}
+    </div>
+    <p class="summary">${esc(x.summary)}</p>
+    ${linkListHtml('相关链接', x.links)}
+    ${verificationHtml(x)}
+    ${x.tags && x.tags.length ? `<div class="tags">${x.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>` : ''}
+    ${fieldHtml(x)}`;
+  return c;
+}
+
+let mode = 'timeline';
+const closedEvents = new Set();
+
+function subItemHtml(x) {
+  return `
+    <div class="tl-subitem">
+      <h4>${titleHtml(x)}</h4>
+      <div class="meta">${esc(x.org || '')}</div>
+      ${badgesHtml(x)}
+      <p class="summary">${esc(x.summary)}</p>
+      ${linkListHtml('相关链接', x.links)}
+      ${verificationHtml(x)}
+      ${fieldHtml(x)}
+    </div>`;
+}
+
+function eventHtml(ev) {
+  const nodeCls = { independent: 'n-independent', formal: 'n-formal', human: 'n-human', claimed: 'n-claimed' }[ev.status] || 'n-claimed';
+  const isOpen = !closedEvents.has(ev.key);
+  const multi = ev.items.length > 1;
+  return `
+    <div class="tl-item tl-event${isOpen ? ' open' : ''}" data-key="${esc(ev.key)}">
+      <div class="tl-node ${nodeCls}"></div>
+      <div class="tl-date">${esc(ev.date)}</div>
+      <div class="tl-event-head" data-toggle>
+        <span class="ev-title">${esc(ev.event || ev.items[0].title)}</span>
+        <span class="ev-count">${multi ? ev.items.length + ' 项成果' : '1 项成果'}</span>
+        <span class="ev-arrow">›</span>
+      </div>
+      <div class="tl-event-body">${ev.items.map(subItemHtml).join('')}</div>
+    </div>`;
+}
+
+function renderTimeline(list) {
+  const box = $('#list'); box.className = 'timeline'; box.innerHTML = '';
+  const months = [];
+  const rank = { independent: 4, formal: 3, human: 2, claimed: 1 };
+  list.forEach(x => {
+    const m = String(x.date).slice(0, 7);
+    let mo = months.find(y => y.label === m);
+    if (!mo) { mo = { label: m, events: [] }; months.push(mo); }
+    const key = x.date + '|' + (x.org || '');
+    let ev = mo.events.find(y => y.key === key);
+    if (!ev) {
+      ev = { key, date: x.date, org: x.org || '', event: x.event || '', status: x.status, items: [] };
+      mo.events.push(ev);
+    }
+    ev.items.push(x);
+    if ((rank[x.status] || 0) > (rank[ev.status] || 0)) ev.status = x.status;
+  });
+  months.forEach(mo => {
+    const wrap = el('div', 'tl-group');
+    wrap.innerHTML = `<div class="tl-group-label">${esc(mo.label)}</div>` + mo.events.map(eventHtml).join('');
+    box.appendChild(wrap);
+  });
+}
+
+$('#list').addEventListener('click', e => {
+  const head = e.target.closest('[data-toggle]'); if (!head) return;
+  const ev = head.closest('.tl-event'); if (!ev) return;
+  const key = ev.dataset.key;
+  if (closedEvents.has(key)) { closedEvents.delete(key); ev.classList.add('open'); }
+  else { closedEvents.add(key); ev.classList.remove('open'); }
+});
+
+function render() {
+  const q = $('#q').value.trim().toLowerCase();
+  const ff = $('#fField').value, fs = $('#fStatus').value;
+  const list = items.filter(x => {
+    if (ff && x.field !== ff) return false;
+    if (fs && x.status !== fs) return false;
+    if (q) {
+      const hay = [x.title, x.summary, x.org, x.field, (x.tags || []).join(' ')].join(' ').toLowerCase();
+      if (hay.indexOf(q) === -1) return false;
+    }
+    return true;
+  }).sort((a, b) => String(b.date).localeCompare(String(a.date)));
+
+  $('#countHint').textContent = `显示 ${list.length} / ${items.length} 条`;
+  const box = $('#list');
+  if (!list.length) {
+    box.className = ''; box.innerHTML = '';
+    box.appendChild(el('div', 'empty', '没有匹配的条目。换个筛选条件。'));
+    return;
+  }
+  if (mode === 'timeline') renderTimeline(list);
+  else { box.className = 'list'; box.innerHTML = ''; list.forEach(x => box.appendChild(card(x))); }
+}
+
+$('#modeSwitch').addEventListener('click', e => {
+  const b = e.target.closest('[data-mode]'); if (!b) return;
+  mode = b.dataset.mode;
+  document.querySelectorAll('.mode-btn').forEach(x => x.classList.toggle('active', x === b));
+  render();
+});
+['#q', '#fField', '#fStatus'].forEach(s => $(s).addEventListener('input', render));
+$('#resetBtn').addEventListener('click', () => {
+  $('#q').value = ''; $('#fField').value = ''; $('#fStatus').value = ''; render();
+});
+
+refreshOptions();
+render();
+</script>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
