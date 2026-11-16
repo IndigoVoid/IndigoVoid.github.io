@@ -171,6 +171,17 @@
   .tl-subitem .meta { margin-bottom: 8px; }
   .tl-subitem .summary { font-size: 12.5px; margin: 8px 0; color: #394454; }
   .tl-subitem .badges { margin-bottom: 2px; }
+  .to-event {
+    position: sticky; top: 8px; z-index: 5;
+    display: flex; width: fit-content; margin: 0 0 8px auto;
+    align-items: center; gap: 5px; padding: 6px 12px;
+    background: var(--surface); color: var(--text-dim);
+    border: 1px solid var(--border-strong); border-radius: 6px;
+    box-shadow: var(--shadow);
+    font-size: 12px; font-weight: 600; cursor: pointer;
+    transition: color .15s, border-color .15s, background .15s;
+  }
+  .to-event:hover { color: var(--accent); border-color: var(--accent); background: var(--surface-2); }
 
   footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--text-faint); }
 
@@ -394,7 +405,7 @@ function eventHtml(ev) {
         <span class="ev-count">${multi ? ev.items.length + ' 项成果' : '1 项成果'}</span>
         <span class="ev-arrow">›</span>
       </div>
-      <div class="tl-event-body">${ev.items.map(subItemHtml).join('')}</div>
+      <div class="tl-event-body">${multi ? '<button class="to-event" type="button">↑ 回到事件</button>' : ''}${ev.items.map(subItemHtml).join('')}</div>
     </div>`;
 }
 
@@ -423,6 +434,13 @@ function renderTimeline(list) {
 }
 
 $('#list').addEventListener('click', e => {
+  const toEvent = e.target.closest('.to-event');
+  if (toEvent) {
+    const ev = toEvent.closest('.tl-event');
+    const head = ev && ev.querySelector('.tl-event-head');
+    if (head) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
   if (e.target.closest('a')) return;
   const head = e.target.closest('[data-toggle]'); if (!head) return;
   const ev = head.closest('.tl-event'); if (!ev) return;
