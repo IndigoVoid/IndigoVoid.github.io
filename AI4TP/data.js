@@ -1097,7 +1097,7 @@ window.SEED_DATA = [
     event: 'Anthropic 发布两项理论物理预印本',
     org: 'Anthropic', field: 'hep-th',
     status: 'claimed',
-    summary: "Hawking–Page 相变描述含引力系统中热态与黑洞态之间的转变。对弱耦合、小宇宙情形，按 2003 年提出的量子描述计算方案完成计算；公告给出的结果是该转变在小宇宙中同样为突变。",
+    summary: "Hawking–Page 相变描述含引力系统中热态与黑洞态之间的转变。对弱耦合、小宇宙情形，按 2003 年提出的量子描述计算方案完成计算；公告给出的结果是该转变在小宇宙中同样为突变。预印本给出的四次项系数为 b = −1.48×10⁻³ λ²。",
     verification: [],
     links: [
       { url: "https://www.anthropic.com/claude-fable-and-mythos-5-2", label: "成果公告：Theoretical physics 小节（Anthropic，2026-11）" },
@@ -1111,7 +1111,7 @@ window.SEED_DATA = [
     event: 'Anthropic 发布两项理论物理预印本',
     org: 'Anthropic', field: 'hep-th',
     status: 'claimed',
-    summary: "无自旋 modular bootstrap 使用模不变性与谱密度约束二维共形场论，并用于排除简化宇宙中的量子引力候选理论。在大中心荷条件下给出该约束方法的精确极限。",
+    summary: "无自旋 modular bootstrap 使用模不变性与谱密度约束二维共形场论，并用于排除简化宇宙中的量子引力候选理论。在大中心荷条件下给出该约束方法的精确极限 Λ_V = 12π²/(π² + 4 arcsinh² 1) ≈ 9.1266，此前该值仅知位于约 8.5 至 12 的区间。",
     verification: [],
     links: [
       { url: "https://www.anthropic.com/claude-fable-and-mythos-5-2", label: "成果公告：Theoretical physics 小节（Anthropic，2026-11）" },
@@ -1124,9 +1124,12 @@ window.SEED_DATA = [
     date: '2026-11-15', title: "标准模型的候选非微扰格点定义",
     event: "OpenAI 科学博客发布标准模型格点定义候选构造",
     org: 'OpenAI', field: 'hep-th',
-    status: ['formal'],
+    status: ['human', 'independent', 'formal'],
     summary: "标准模型的完整非微扰定义长期缺失，主要障碍是弱相互作用的手征性在晶格上会带来费米子倍增问题。在四维欧几里得晶格上，对包含标准模型的一类非阿贝尔手征规范理论，构造了 overlap 费米子的规范不变测度；在 admissible 规范场（晶格尺度场强有界）上，比较相邻晶格间距的手征投影算符给出指数局域的流，并满足 Lüscher 重构光滑规范不变费米子测度所需的整体性质。论文称其为标准模型的候选非微扰格点定义。",
     verification: [
+      { url: "https://arxiv.org/abs/2611.05051", label: "人类跟进工作：A Note On Lattice Definition of Gauge Theories With Chiral Fermions（Edward Witten，2026-11-03；记述 Craig 的构造并给出基于连续规范场插值的变体，指出该途径原则上可在计算机上实现，但因费米子路径积分不正而无法用蒙特卡洛方法实际模拟）", status: 'human' },
+      { url: "https://arxiv.org/abs/2611.16544", label: "第三方交叉检验：Matching lattice and continuum chiral determinants at finite volume（Zhengwen Liu，2026-11-12；在平坦四维环面、一个 SU(5) 代、光滑有隙路径等条件下，证明 Craig 测度与 Hsu–Witten 构造的相对权重在连续极限一致；覆盖范围有限，不等同于复核全部构造）", status: 'independent' },
+      { url: "https://arxiv.org/abs/2611.20084", label: "第三方相关工作（不支持其物理诠释）：On reflection positivity of lattice chiral fermions（Zhiyao Lu、Shu-Heng Shao，2026-11-15；指出 overlap Weyl 费米子在有限晶格间距的二维和四维不满足反射正性，标准 Osterwalder–Schrader 重构不给出带自伴哈密顿量的希尔伯特空间）", status: 'independent' },
       { url: "https://doi.org/10.5281/zenodo.23196062", label: "数学附录与 Lean 形式化记录：Mathematical companion and Lean formalization（Zenodo，2026-10）", status: 'formal' }
     ],
     links: [
