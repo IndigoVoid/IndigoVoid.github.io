@@ -1096,11 +1096,9 @@ window.SEED_DATA = [
     date: '2026-11-07', title: '弱耦合下的 Hawking–Page 相变',
     event: 'Anthropic 发布两项理论物理预印本',
     org: 'Anthropic', field: 'hep-th',
-    status: 'formal',
+    status: 'claimed',
     summary: "Hawking–Page 相变描述含引力系统中热态与黑洞态之间的转变。对弱耦合、小宇宙情形，按 2003 年提出的量子描述计算方案完成计算；公告给出的结果是该转变在小宇宙中同样为突变。预印本给出的四次项系数为 b = −1.48×10⁻³ λ²。",
-    verification: [
-      { url: "https://www.anthropic.com/research/claude-black-hole-physics", label: "形式化验证说明：官方研究页称两项结果于 2026-09 在 Lean 中完成形式化验证，物理学家核查每个主要结果；该页未公开 Lean 代码或形式化产物链接（Anthropic，2026-11-17）", status: 'formal' }
-    ],
+    verification: [],
     links: [
       { url: "https://www.anthropic.com/claude-fable-and-mythos-5-2", label: "成果公告：Theoretical physics 小节（Anthropic，2026-11）" },
       { url: "https://www.anthropic.com/research/claude-black-hole-physics", label: "研究说明：Claude Fable 5.2 solves two open problems in the physics of black holes（Anthropic，2026-11-17）" },
@@ -1116,7 +1114,7 @@ window.SEED_DATA = [
     status: 'formal',
     summary: "无自旋 modular bootstrap 使用模不变性与谱密度约束二维共形场论，并用于排除简化宇宙中的量子引力候选理论。在大中心荷条件下给出该约束方法的精确极限 Λ_V = 12π²/(π² + 4 arcsinh² 1) ≈ 9.1266，此前该值仅知位于约 8.5 至 12 的区间。",
     verification: [
-      { url: "https://www.anthropic.com/research/claude-black-hole-physics", label: "形式化验证说明：官方研究页称两项结果于 2026-09 在 Lean 中完成形式化验证，物理学家核查每个主要结果；该页未公开 Lean 代码或形式化产物链接（Anthropic，2026-11-17）", status: 'formal' }
+      { url: "https://www.anthropic.com/research/claude-black-hole-physics", label: "形式化验证说明：官方研究页称该项结果于 2026-09 在 Lean 中完成形式化验证，物理学家核查每个主要结果；该页未公开 Lean 代码或形式化产物链接（Anthropic，2026-11-17）", status: 'formal' }
     ],
     links: [
       { url: "https://www.anthropic.com/claude-fable-and-mythos-5-2", label: "成果公告：Theoretical physics 小节（Anthropic，2026-11）" },
