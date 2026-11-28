@@ -1065,6 +1065,8 @@ window.SEED_DATA = [
     verification: [
       { url: "https://github.com/scottnarmstrong/yang-mills-informalization/blob/main/manuscript/main.pdf", label: "人类理解手稿：Yang–Mills informalization 自然语言证明稿（Scott Armstrong / Humanise Yang–Mills，第三稿 2026-11-13，278 页；由 AI 从 Lean 代码写出并在修订中，非独立完成的人工审计）", status: 'human' },
       { url: "https://github.com/yang-mills-group/YM", label: "评审组结果与评估仓库：Lean 重建、公理审计、Comparator 检查及首份评估（Yang–Mills Working Group，2026-11-10；说明不证明质量间隙，也不证明无穷体积极限唯一）", status: 'independent' },
+      { url: "https://github.com/yang-mills-group/submissions/blob/main/docs/assessments/november-4-assessment.pdf", label: "十一月评估摘要：2026-11-25 一页摘要称 11-04 submission 的 Existence 与 Matching 目标通过 Comparator，并新增全阶陈述重述与有限 ghost-loop 检查；摘要注明该微扰参考与常规 Yang–Mills 微扰论的对应关系仍在审查，人工审阅有限（Yang–Mills Working Group）", status: 'independent' },
+      { url: "https://github.com/yang-mills-group/submissions/tree/main/reviews/openai-20261104", label: "评审记录：独立 Lean 检查、Comparator 记录、构建与公理审计、复现脚本及初步草稿报告（Yang–Mills Working Group，2026-11-25；初步草稿在人工监督下由 AI 生成，非组内批准的人类评估）", status: 'independent' },
       { url: "https://github.com/yang-mills-group/OpenAI-YM-20261028", label: "Lean 证明代码：OpenAI 于 2026-10-28 提交、由评审组公开（yang-mills-group）", status: 'formal' }
     ],
     links: [
